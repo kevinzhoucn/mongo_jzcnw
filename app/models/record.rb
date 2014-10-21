@@ -1,5 +1,6 @@
 class Record
   include Mongoid::Document
+  include Mongoid::Timestamps
   field :details, type: String
   field :job_title, type: String
   field :locate_city, type: String

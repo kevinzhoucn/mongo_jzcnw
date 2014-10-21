@@ -1,0 +1,46 @@
+<div class="center">
+  <div class="left"><a href="#"><img src="<%= root_url %>images/ny_bk/zz_r1_c1.jpg" width="88" height="53" border="0" /></a></div>
+  <div class="left"><a href="#"><img src="<%= root_url %>images/ny_bk/zz_r1_c2.jpg" width="81" height="53" border="0" /></a></div>
+  <div id="jl_bt_1a"><a href="#" class="link_4a2">免费发布资质信息 »</a></div>
+</div>
+
+<!--标题行-->
+<div id="ny_tybk">
+  <div class="ny_nr11"><span class="txt_2"><strong>信息标题(共xxxxx条)</strong></span></div>
+  <div class="ny_nr12"><span class="txt_2"><strong>发布者</strong></span></div>
+  <div class="ny_nr3"><span class="txt_2"><strong>地 区</strong></span></div>
+  <div class="ny_nr3"><span class="txt_2"><strong>代办价格/元</strong></span></div>
+  <div class="ny_nr4"><span class="txt_2"><strong>更新时间</strong></span></div>
+</div>
+
+<!--内容行-->
+<div id="ny_tybk2">
+  <!--循环 开始 显示20条-->
+  <% @records.each do |record| %>
+    <div class="nrk_l">
+      <div class="ny_nr11"><a href="#" class="link_6"><%= record.title %></a></div>
+      <div class="ny_nr12"><a href="#" class="link_6">发布者</a></div>
+      <div class="ny_nr3"><span class="txt_4"><%= record.locate_province %></span></div>
+      <div class="ny_nr3"><span class="txt_4"><%= record.price %></span></div>
+      <div class="ny_nr4"><span class="txt_4"><%= record.updated_at.strftime('%Y-%m-%d %H:%M:%S').to_s %></span></div>
+    </div>
+  <% end %>
+  <!--循环 结束 显示20条-->
+  
+  <!--分页按钮-->
+  <div id="fanye">
+  <div class="left"><img src="<%= root_url %>images/tm.png" width="986" height="15" /></div>
+    <table border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td ><a href="#" class="fy_left">上一页</a></td>
+        <td >
+    <a href="#" class="shuzi">1</a>
+    </td>
+        <td ><a href="#" class="fy_right">下一页</a></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="center"><img src="<%= root_url %>images/ny_bk/rygk_r6_c1.jpg" /></div>
+<!--内容块 结束-->

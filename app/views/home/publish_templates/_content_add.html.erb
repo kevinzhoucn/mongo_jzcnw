@@ -1,0 +1,94 @@
+<!--内容开始-->
+<div class="center"><img src="<%= root_url %>images/release/bt_3.jpg" width="1010" height="78" /></div>
+<div class="center">
+  <div id="member">
+  <div class="left"><img src="<%= root_url %>images/tm.png" width="963" height="36" /></div>
+  <div class="left">
+    <%= form_for :record, :url => home_records_path do |f| %>
+      <table width="964" height="323" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="125" height="45" align="right" class="txt_4"><span class="txt_2">*</span> 标题：</td>
+          <td width="566" height="45">
+            <input name="record[title]" type="text" class="fb3_sr" />            
+          </td>
+          <td width="273" rowspan="5"><input name="" type="image" src="<%= root_url %>images/release/fabu.jpg" width="153" height="41" /></td>
+        </tr>
+        <tr>
+          <td height="45" align="right" class="txt_4"><span class="txt_2">*</span> 证书所在地：</td>
+        <td height="45">
+      <select name="record[locate_province]" class="txt_1">
+            <option value="无">请选择省份</option>
+            <option value="安徽">A 安徽</option>
+            <option value="北京">B 北京</option>
+            <option value="重庆">C 重庆</option>
+            <option value="福建">F 福建</option>
+            <option value="广东">G 广东</option>
+            <option value="广西">G 广西</option>
+            <option value="甘肃">G 甘肃</option>
+            <option value="贵州">G 贵州</option>
+            <option value="河北">H 河北</option>
+            <option value="河南">H 河南</option>
+            <option value="海南">H 海南</option>
+            <option value="湖北">H 湖北</option>
+            <option value="湖南">H 湖南</option>
+            <option value="黑龙江">H 黑龙江</option>
+            <option value="吉林">J 吉林</option>
+            <option value="江苏">J 江苏</option>
+            <option value="江西">J 江西</option>
+            <option value="辽宁">L 辽宁</option>
+            <option value="内蒙古">N 内蒙古</option>
+            <option value="宁夏">N 宁夏</option>
+            <option value="青海">Q 青海</option>
+            <option value="上海">S 上海</option>
+            <option value="四川">S 四川</option>
+            <option value="山东">S 山东</option>
+            <option value="山西">S 山西</option>
+            <option value="陕西">S 陕西</option>
+            <option value="天津">T 天津</option>
+            <option value="新疆">X 新疆</option>
+            <option value="西藏">X 西藏</option>
+            <option value="云南">Y 云南</option>
+            <option value="浙江">Z 浙江</option>
+          </select>
+      
+          <select name="record[locate_city]" class="txt_1">
+            <option value="">请选择城市</option>
+          </select>
+    </td>
+          </tr>
+        <tr>
+          <td height="45" align="right" class="txt_4"><span class="txt_2">*</span> 注册情况：</td>
+          <td height="45" class="txt_4"><input type="radio" name="record[register_status]" value="初始注册" />
+            初始注册
+              <input type="radio" name="record[register_status]" value="转注册" />
+            转注册</td>
+          </tr>
+        <tr>
+          <td height="45" align="right" class="txt_4">挂靠价格：</td>
+          <td height="45" class="txt_4">
+      <select name="record[price]" class="txt_1">
+            <option value="" selected="selected">面议</option>
+      <option value="1万元以下">1万元以下</option>
+      <option value="1-2万元">1-2万元</option>
+      <option value="2-3万元">2-3万元</option>
+      <option value="3-5万元">3-5万元</option>
+      <option value="5-10万元">5-10万元</option>
+      <option value="10-15万元">10-15万元</option>
+      <option value="15万元以上">15万元以上</option>
+      </select>
+            职称：
+            <select name="record[job_title]" class="txt_1">
+              <option value="">没有</option>
+      </select>
+      </td>
+          </tr>
+        <tr>
+          <td align="right" class="txt_4"><span class="txt_2">*</span> 详细说明：</td>
+          <td><textarea name="record[details]" class="fb3_sr2"></textarea></td>
+          </tr>
+      </table>
+    <% end %>  
+  </div>
+  </div>
+</div>
+<div class="center"><img src="<%= root_url %>images/release/fgx_r2_c1.jpg" width="1010" height="25" /></div>

@@ -1,25 +1,35 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Rails3 Mongoid Devise" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Rails3 Mongoid Devise" %>">
-    <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
-    <%= yield(:head) %>
-  </head>
-  <body class="<%= controller_name %> <%= action_name %>">
-    <div id="container" class="container">
-      <header>
-        <%= render 'layouts/navigation' %>
-        <%= render 'layouts/messages' %>
-      </header>
-      <div id="main" role="main">
-        <%= yield %>
-      </div>
-      <footer>
-      </footer>
-    </div> <!--! end of #container -->
-  </body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>建筑同城</title>
+  <link href=" <%= root_url %>/css/css.css " rel="stylesheet" type="text/css" />  
+  <!--脚本区域-->
+  <script type="text/JavaScript">
+    var myDivId1, divId2, divId3, divId4, divId5;
+    function showDiv(myDivId1, divId2, divId3, divId4, divId5)
+    { 
+      document.getElementById( myDivId1 ).style.display  = '';
+      document.getElementById( divId2 ).style.display   = 'none';
+      document.getElementById( divId3 ).style.display   = 'none';
+      document.getElementById( divId4 ).style.display   = 'none';
+      document.getElementById( divId5 ).style.display   = 'none';
+    }
+  </script>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <!--头部功能栏-->
+  <%= render :partial => 'common/theme_jianzhu/top_bar' %>
+
+  <!--LOGO-->
+  <!--导航-->
+  <%= render :partial => 'common/theme_jianzhu/top_nav' %>
+
+  <%= yield %>
+
+  <%= javascript_include_tag "application" %>
+</body>
 </html>

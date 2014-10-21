@@ -1,0 +1,25 @@
+<div id="top_bjs">
+  <div class="center">
+    <div class="top_nr"><a href="<%= root_url %>" class="link_1">【全国】</a></div>
+  <div class="top_nr">[
+    <a href="#" class="link_2">切换城市</a>&nbsp;
+    <a href="#" class="link_2">北京</a>&nbsp;
+    <a href="#" class="link_2">天津</a>&nbsp;
+    <a href="#" class="link_2">上海</a>&nbsp;
+    <a href="#" class="link_2">深圳</a>&nbsp;
+    <a href="#" class="link_2">山东</a>]
+  </div>
+  <div id="top_nr_2">
+    <% if !current_user %>
+      <a href="<%= new_user_session_path %>" class="link_2">会员登录</a>&nbsp;&nbsp;
+      <a href="<%= new_user_registration_path %>" class="link_2">免费注册</a>&nbsp;&nbsp;
+    <% else %>
+      <a href="#" class="link_2">
+        <%= current_user.email %>
+      </a>&nbsp;&nbsp;
+      <%= link_to '退出', destroy_user_session_path, { method: :delete, class: 'link_2'} %>
+    <% end %>
+    <a href="<%= home_publish_url %>" class="link_2">发布</a>&nbsp;&nbsp; </div>
+  <div class="left"><a href="创建简历_1.html" class="top_jl">创建我的简历</a></div>
+  </div>
+</div>

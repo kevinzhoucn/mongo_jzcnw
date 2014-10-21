@@ -1,20 +1,129 @@
-<h2>Sign up</h2>
+<div class="center">
+  <div id="hy_dl_1a">
+    <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: {class: "form-horizontal"}) do |f| %>
+      <%= f.error_notification %>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-<p><%= f.label :name %><br />
-<%= f.text_field :name %></p>
+      <div class="hy_dl_2">
+        <div class="hy_dl_3a">
+          <span class="txt_2">*</span> 用户类型：
+        </div>
+        <div class="hy_dl_3b">
+          <div class="left">
+            <input type="radio" name="radiobutton" value="radiobutton">
+          </div>
+          <div class="left">&nbsp;个人</div>
+          <div class="left">
+            <img src="<%= root_url %>/images/tm.png" width="15" height="20">
+          </div>
+          <div class="left">
+            <input type="radio" name="radiobutton" value="radiobutton">
+          </div>
+          <div class="left">&nbsp;公司</div>
+          <div class="left">
+            <img src="<%= root_url %>/images/tm.png" width="15" height="20">
+          </div>
+          <div class="left">
+            <input type="radio" name="radiobutton" value="radiobutton">
+          </div>
+          <div class="left">&nbsp;猎头</div>
+        </div>
+      </div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+      <div class="left"><img src="<%= root_url %>/images/tm.png" width="449" height="25"></div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+      <div class="hy_dl_2">
+        <div class="hy_dl_3a"><span class="txt_2">*</span> 手&nbsp;机&nbsp;号：</div>
+        <div class="hy_dl_4b">
+          <input name="textfield" type="text" class="dl_sr2" />
+        </div>
+      </div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+      <div class="left"><img src="<%= root_url %>/images/tm.png" width="449" height="25" /></div>
+      <div class="hy_dl_2">
+        <div class="hy_dl_3a"><span class="txt_2">*</span> 密&nbsp;&nbsp;&nbsp;&nbsp;码：</div>
+        <div class="hy_dl_4b">
+          <input name="textfield2" type="password" class="dl_sr2" />
+        </div>
+      </div>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+      <div class="left"><img src="<%= root_url %>/images/tm.png" width="449" height="25" /></div>
+      <div class="hy_dl_2">
+        <div class="hy_dl_3a"><span class="txt_2">*</span> 确认密码：</div>
+        <div class="hy_dl_4b">
+          <input name="textfield2" type="password" class="dl_sr2" />
+        </div>
+      </div>
 
-<%= render "devise/shared/links" %>
+      <div class="left"><img src="<%= root_url %>/images/tm.png" width="449" height="25" /></div>
+      <div class="hy_dl_2">
+        <div class="hy_dl_3a"><span class="txt_2">*</span> 联&nbsp;系&nbsp;人：
+        </div>
+        <div class="hy_dl_4b">
+          <input name="textfield" type="text" class="dl_sr2" />
+        </div>
+      </div>
+
+      <div class="left"><img src="<%= root_url %>/images/tm.png" width="449" height="25" /></div>
+      <div class="hy_dl_2">
+        <div class="hy_dl_3a"><span class="txt_2">*</span> 地&nbsp;&nbsp;&nbsp;&nbsp;址：</div>
+        <div class="hy_dl_3c">
+          <div class="left">
+            <select name="select" class="txt_1">
+              <option value="">请选择省份</option>
+              <option value="12">A 安徽</option>
+              <option value="1">B 北京</option>
+              <option value="22">C 重庆</option>
+              <option value="13">F 福建</option>
+              <option value="19">G 广东</option>
+              <option value="20">G 广西</option>
+              <option value="28">G 甘肃</option>
+              <option value="24">G 贵州</option>
+              <option value="3">H 河北</option>
+              <option value="16">H 河南</option>
+              <option value="21">H 海南</option>
+              <option value="17">H 湖北</option>
+              <option value="18">H 湖南</option>
+              <option value="8">H 黑龙江</option>
+              <option value="7">J 吉林</option>
+              <option value="10">J 江苏</option>
+              <option value="14">J 江西</option>
+              <option value="6">L 辽宁</option>
+              <option value="5">N 内蒙古</option>
+              <option value="30">N 宁夏</option>
+              <option value="29">Q 青海</option>
+              <option value="9">S 上海</option>
+              <option value="23">S 四川</option>
+              <option value="15">S 山东</option>
+              <option value="4">S 山西</option>
+              <option value="27">S 陕西</option>
+              <option value="2">T 天津</option>
+              <option value="31">X 新疆</option>
+              <option value="26">X 西藏</option>
+              <option value="25">Y 云南</option>
+              <option value="11">Z 浙江</option>
+            </select>
+          </div>
+          <div class="left">
+            <select name="select" class="txt_1">
+              <option value="">请选择城市</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="hy_dl_5">
+        <input name="image" type="image" src="<%= root_url %>images/member/qr.jpg" width="236" height="43" />
+      </div>
+      <div class="hy_dl_5"><a href="#" class="link_4">新用户注册须知？</a></div>
+    <% end %>
+  </div>
+
+  <div class="hy_dl_6a">
+    已有账号？<a href="#" class="link_4">直接登录！</a>
+    <div class="left"><img src="<%= root_url %>images/tm.png" width="396" height="50" /></div>
+    <div class="left"><img src="<%= root_url %>images/member/m1_r4_c5.jpg" /></div>
+    <div class="left"><img src="<%= root_url %>images/tm.png" width="396" height="25" /></div>
+    <div class="left"><a href="#" class="dla_1"></a></div>
+    <div class="left"><img src="<%= root_url %>images/tm.png" width="108" height="42" /></div>
+    <div class="left"><a href="#" class="dla_2"></a></div>
+  </div>
+</div>

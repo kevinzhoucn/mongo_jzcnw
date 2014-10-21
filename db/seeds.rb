@@ -8,5 +8,21 @@
 # Environment variables (ENV['...']) can be set in the file config/application.yml.
 # See http://railsapps.github.io/rails-environment-variables.html
 puts 'DEFAULT USERS'
-user = User.create! :name => ENV['ADMIN_NAME'].dup, :email => ENV['ADMIN_EMAIL'].dup, :password => ENV['ADMIN_PASSWORD'].dup, :password_confirmation => ENV['ADMIN_PASSWORD'].dup
-puts 'user: ' << user.name
+# user = User.create! :name => ENV['ADMIN_NAME'].dup, :email => ENV['ADMIN_EMAIL'].dup, :password => ENV['ADMIN_PASSWORD'].dup, :password_confirmation => ENV['ADMIN_PASSWORD'].dup
+# puts 'user: ' << user.name
+
+admin = User.create(name: "admin01", email: "admin01@jzcnw.com", password: "password")
+admin.add_role :admin
+puts 'admin: ' << admin.name
+
+admin = User.create(name: "admin02", email: "admin02@jzcnw.com", password: "password")
+admin.add_role :admin
+puts 'admin: ' << admin.name
+
+admin = User.create(name: "admin02", email: "admin03@jzcnw.com", password: "password")
+admin.add_role :admin
+puts 'admin: ' << admin.name
+
+admin = User.create(name: "admin02", email: "admin04@jzcnw.com", password: "password")
+admin.add_role :admin
+puts 'admin: ' << admin.name

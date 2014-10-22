@@ -1,5 +1,6 @@
 zh-CN:
-  activerecord:
+  #activerecord:
+  mongoid:
     models:
       record: 
         one: 01. 帖子
@@ -7,12 +8,9 @@ zh-CN:
       user:
         one: 04. 用户
         other: 04. 用户
-      news:
-        one: 02. 要闻发布
-        other: 02. 要闻发布
-      policy:
-        one: 03. 政治解读
-        other: 03. 政治解读
+      segment:
+        one: 02. 行业管理
+        other: 02. 行业管理
 
   date:
     abbr_day_names:

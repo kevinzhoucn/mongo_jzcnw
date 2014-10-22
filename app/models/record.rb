@@ -8,4 +8,5 @@ class Record
   field :price, type: String
   field :register_status, type: String
   field :title, type: String
+  belongs_to :category
 end

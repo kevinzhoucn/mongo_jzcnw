@@ -1,6 +1,6 @@
 <div class="center">
   <div id="hy_dl_1">
-    <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :id => "form1", :name => "form1") do |f| %>
+    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :id => "form1", :name => "form1") do |f| %>
       <div class="hy_dl_2">
         <div class="hy_dl_3"><span class="txt_2">*</span> 手机号：</div>
         <div class="hy_dl_4"><input name="<%= resource_name %>[email]" type="email" class="dl_sr" /></div>

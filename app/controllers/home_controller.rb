@@ -1,6 +1,16 @@
 class HomeController < ApplicationController
   def index
-    @seg_jzqt = Segment.where(code: "jzqt").first
+    @seg_yjgcs = Segment.where(code: "yjgcs").first
+    @seg_zjs = Segment.where(code: "zjs").first
+    @seg_qtzs = Segment.where(code: "qtzs").first
+    @seg_ejjzs = Segment.where(code: "ejjzs").first
+    @seg_jls = Segment.where(code: "jls").first
+    @seg_gysbgcs = Segment.where(code: "gysbgcs").first
+    @seg_jgs = Segment.where(code: "jgs").first
+    @seg_dqgcs = Segment.where(code: "dqgcs").first
+    @seg_zczxs = Segment.where(code: "zczxs").first
+
+    @seg_qz = Segment.where(for: "qz").first
   end
 
   def show

@@ -5,7 +5,7 @@
   <ul>
     <li>
     <a href="#" class="zk_1bt">一级建造师</a>
-    <% @seg_jzqt.categories.each do |cat| %>
+    <% @seg_yjgcs.categories.each do |cat| %>
       <a href="#" class="zk_1nr"><%= cat.title %>(<%= cat.records.count %>)</a>
     <% end %>
     </li>
@@ -16,7 +16,9 @@
   <ul>
     <li>
     <a href="#" class="zk_2bt">造价师</a>
-    <a href="#" class="zk_1nr">这里显示分类(0)</a>
+    <% @seg_zjs.categories.each do |cat| %>
+      <a href="#" class="zk_1nr"><%= cat.title %>(<%= cat.records.count %>)</a>
+    <% end %>
     </li>
   </ul>
   </div>
@@ -25,7 +27,9 @@
   <ul>
     <li>
     <a href="#" class="zk_3bt">其他证书</a>
-    <a href="#" class="zk_1nr">这里显示分类(0)</a>
+    <% @seg_qtzs.categories.each do |cat| %>
+      <a href="#" class="zk_1nr"><%= cat.title %>(<%= cat.records.count %>)</a>
+    <% end %>
     </li>
   </ul>
   </div>
@@ -38,7 +42,9 @@
   <ul>
     <li>
     <a href="#" class="zk_4bt">二级建造师</a>
-    <a href="#" class="zk_2nr">这里显示分类(0)</a>
+    <% @seg_ejjzs.categories.each do |cat| %>
+      <a href="#" class="zk_4nr"><%= cat.title %>(<%= cat.records.count %>)</a>
+    <% end %>
     </li>
   </ul>
   </div>
@@ -47,7 +53,9 @@
   <ul>
     <li>
     <a href="#" class="zk_5bt">土木工程师</a>
-    <a href="#" class="zk_2nr">这里显示分类(0)</a>
+    <% @seg_zjs.categories.each do |cat| %>
+      <a href="#" class="zk_4nr"><%= cat.title %>(<%= cat.records.count %>)</a>
+    <% end %>
     </li>
   </ul>
   </div>
@@ -56,7 +64,9 @@
   <ul>
     <li>
     <a href="#" class="zk_5bt">监理师</a>
-    <a href="#" class="zk_2nr">这里显示分类(0)</a>
+    <% @seg_jls.categories.each do |cat| %>
+      <a href="#" class="zk_4nr"><%= cat.title %>(<%= cat.records.count %>)</a>
+    <% end %>
     </li>
   </ul>
   </div>
@@ -68,7 +78,9 @@
   <ul>
     <li>
     <a href="#" class="zk_6bt">公共设备工程师&nbsp;&nbsp;</a>
-    <a href="#" class="zk_3nr">这里显示分类(0)</a>
+    <% @seg_gysbgcs.categories.each do |cat| %>
+      <a href="#" class="zk_4nr"><%= cat.title %>(<%= cat.records.count %>)</a>
+    <% end %>
     </li>
   </ul>
   </div>
@@ -77,7 +89,9 @@
   <ul>
     <li>
     <a href="#" class="zk_7bt">结构师</a>
-    <a href="#" class="zk_3nr">这里显示分类(0)</a>
+    <% @seg_jgs.categories.each do |cat| %>
+      <a href="#" class="zk_4nr"><%= cat.title %>(<%= cat.records.count %>)</a>
+    <% end %>
     </li>
   </ul>
   </div>
@@ -86,7 +100,7 @@
   <ul>
     <li>
     <a href="#" class="zk_5bt">职称证书</a>
-    <a href="#" class="zk_3nr">这里显示分类(0)</a>
+    <a href="#" class="zk_4nr">这里显示分类(0)</a>
     </li>
   </ul>
   </div>
@@ -106,7 +120,9 @@
   <ul>
     <li>
     <a href="#" class="zk_5bt">建筑师</a>
-    <a href="#" class="zk_2nr">这里显示分类(0)</a>
+    <% @seg_jgs.categories.each do |cat| %>
+      <a href="#" class="zk_4nr"><%= cat.title %>(<%= cat.records.count %>)</a>
+    <% end %>
     </li>
   </ul>
   </div>
@@ -115,7 +131,9 @@
   <ul>
     <li>
     <a href="#" class="zk_5bt">电气工程师</a>
-    <a href="#" class="zk_2nr">这里显示分类(0)</a>
+    <% @seg_dqgcs.categories.each do |cat| %>
+      <a href="#" class="zk_4nr"><%= cat.title %>(<%= cat.records.count %>)</a>
+    <% end %>
     </li>
   </ul>
   </div>
@@ -136,7 +154,9 @@
   <ul>
     <li>
     <a href="#" class="zk_5bt">注册咨询师</a>
-    <a href="#" class="zk_4nr">这里显示分类(0)</a>
+    <% @seg_zczxs.categories.each do |cat| %>
+      <a href="#" class="zk_4nr"><%= cat.title %>(<%= cat.records.count %>)</a>
+    <% end %>
     </li>
   </ul>
   </div>
@@ -147,7 +167,9 @@
     <ul>
     <li>
     <a href="#" class="zk_9bt">全职招聘求职</a>
-    <a href="#" class="zk_4nr">这里显示分类(0)</a>
+    <% @seg_qz.categories.each do |cat| %>
+      <a href="#" class="zk_4nr"><%= cat.title %>(<%= cat.records.count %>)</a>
+    <% end %>
     </li>
   </ul>
   </div>

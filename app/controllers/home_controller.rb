@@ -21,10 +21,14 @@ class HomeController < ApplicationController
   end
 
   def publish
-    type_id = params[:type]
+    type_id = params[:type].to_s
     if not type_id.nil?      
       @type_id = type_id
-      @segments = Segment.all
+      if type_id = '4'
+        @segments = Segment.where(for: "qz").all
+      elsif type_id = '3'
+        @segments = Segment.where(for: "zs").all
+      end
     end
   end
 

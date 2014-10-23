@@ -9,4 +9,5 @@ class Record
   field :register_status, type: String
   field :title, type: String
   belongs_to :category
+  belongs_to :segment
 end

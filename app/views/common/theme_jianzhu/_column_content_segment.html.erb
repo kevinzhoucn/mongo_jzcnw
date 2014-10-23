@@ -5,7 +5,9 @@
   <ul>
     <li>
     <a href="#" class="zk_1bt">一级建造师</a>
-    <a href="#" class="zk_1nr">这里显示分类(0)</a>
+    <% @seg_jzqt.categories.each do |cat| %>
+      <a href="#" class="zk_1nr"><%= cat.title %>(<%= cat.records.count %>)</a>
+    <% end %>
     </li>
   </ul>
   </div>

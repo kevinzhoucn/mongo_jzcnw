@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @news = News.all
-    @policies = Policy.all
+    @seg_jzqt = Segment.where(code: "jzqt").first
   end
 
   def show
@@ -13,8 +12,9 @@ class HomeController < ApplicationController
 
   def publish
     type_id = params[:type]
-    if not type_id.nil?
+    if not type_id.nil?      
       @type_id = type_id
+      @segments = Segment.all
     end
   end
 
@@ -24,6 +24,8 @@ class HomeController < ApplicationController
 
   def add
     @record = Record.new
+    @seg_id = params[:seg]
+    @cat_id = params[:cat]
 
     respond_to do |format|
       format.html # add.html.haml

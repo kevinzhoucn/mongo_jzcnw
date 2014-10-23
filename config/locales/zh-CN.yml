@@ -11,6 +11,9 @@ zh-CN:
       segment:
         one: 02. 行业管理
         other: 02. 行业管理
+      category:
+        one: 03. 职位类别
+        other: 04. 职位类别
 
   date:
     abbr_day_names:

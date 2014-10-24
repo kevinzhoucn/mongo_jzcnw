@@ -12,21 +12,22 @@ puts 'DEFAULT USERS'
 # user = User.create! :name => ENV['ADMIN_NAME'].dup, :email => ENV['ADMIN_EMAIL'].dup, :password => ENV['ADMIN_PASSWORD'].dup, :password_confirmation => ENV['ADMIN_PASSWORD'].dup
 # puts 'user: ' << user.name
 
-# admin = User.create(name: "admin01", email: "admin01@jzcnw.com", password: "password")
-# admin.add_role :admin
-# puts 'admin: ' << admin.name
+User.delete_all
+admin = User.create(name: "admin01", email: "admin01@jzcnw.com", password: "password")
+admin.add_role :admin
+puts 'admin: ' << admin.name
 
-# admin = User.create(name: "admin02", email: "admin02@jzcnw.com", password: "password")
-# admin.add_role :admin
-# puts 'admin: ' << admin.name
+admin = User.create(name: "admin02", email: "admin02@jzcnw.com", password: "password")
+admin.add_role :admin
+puts 'admin: ' << admin.name
 
-# admin = User.create(name: "admin02", email: "admin03@jzcnw.com", password: "password")
-# admin.add_role :admin
-# puts 'admin: ' << admin.name
+admin = User.create(name: "admin03", email: "admin03@jzcnw.com", password: "password")
+admin.add_role :admin
+puts 'admin: ' << admin.name
 
-# admin = User.create(name: "admin02", email: "admin04@jzcnw.com", password: "password")
-# admin.add_role :admin
-# puts 'admin: ' << admin.name
+admin = User.create(name: "admin04", email: "admin04@jzcnw.com", password: "password")
+admin.add_role :admin
+puts 'admin: ' << admin.name
 
 # user = User.create(name: "user01", email: "user01@jzcnw.com", password: "password")
 # puts 'user: ' << user.name

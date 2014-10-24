@@ -112,7 +112,10 @@
   <ul>
     <li>
     <a href="#" class="zk_8bt">资质代办</a>
-    <a href="#" class="zk_2nr">这里显示分类(0)</a>    </li>
+    <% @seg_zzdb.categories.each do |cat| %>
+      <a href="#" class="zk_2nr"><%= cat.title %>(<%= cat.records.count %>)</a>
+    <% end %>
+    </li>
   </ul>
   </div>
     <!--建筑师-->

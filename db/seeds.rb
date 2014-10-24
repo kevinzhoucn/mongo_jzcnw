@@ -142,6 +142,12 @@ categories = Category.create! ([{code: "csghs", title: "城市规划师"}, {code
                {code: "fdcgjs", title: "房地产估价师"}])
 segment = Segment.create!(code: "qtzs", title: "其他证书", categories: categories, for: "zs")
 
+categories = Category.create! ([{code: "zcbzzbl", title: "总承包资质办理"}, {code: "yllhzzdb", title: "园林绿化资质代办"},
+               {code: "sjsgythzz", title: "施工专业承包资质"}, {code: "yllhzzdb", title: "设计施工一体化资质"},
+               {code: "yllhzzdb", title: "代办劳务分包资质"},{code: "sjsgythzz", title: "代办企业资质"},
+               {code: "yllhzzdb", title: "建筑企业资质办理"}])
+segment = Segment.create!(code: "zzdb", title: "资质代办", categories: categories, for: "db")
+
 # segment = segment.categories.push(categories)
 # segment.categories.reload
 

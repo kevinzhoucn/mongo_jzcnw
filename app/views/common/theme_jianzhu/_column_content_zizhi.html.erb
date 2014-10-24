@@ -5,7 +5,9 @@
 <div id="zzdb_nrbk">
   <ul>
     <!--循环开始 显示24条-->
-    <li><a href="资质代办三级页-公司信息.html" class="zz_link">这里显示标题名称...&nbsp;&nbsp;[12-11]</a></li>
+    <% @seg_zzdb.records.each do |record| %>
+      <li><a href="资质代办三级页-公司信息.html" class="zz_link"><%= record.title %></a></li>
+    <% end %>
   <!--循环结束 显示24条-->
   </ul>
 </div>

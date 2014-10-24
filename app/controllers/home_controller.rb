@@ -10,6 +10,8 @@ class HomeController < ApplicationController
     @seg_dqgcs = Segment.where(code: "dqgcs").first
     @seg_zczxs = Segment.where(code: "zczxs").first
 
+    @seg_zzdb = Segment.where(code: "zzdb").first
+
     @seg_qz = Segment.where(for: "qz").first
   end
 
@@ -21,13 +23,17 @@ class HomeController < ApplicationController
   end
 
   def publish
-    type_id = params[:type].to_s
+    type_id = params[:type]
     if not type_id.nil?      
       @type_id = type_id
-      if type_id = '4'
+      if type_id == '4'
         @segments = Segment.where(for: "qz").all
-      elsif type_id = '3'
+      elsif type_id == '3'
         @segments = Segment.where(for: "zs").all
+      elsif ( type_id == '9' or type_id == '10' )
+        @segments = Segment.where(for: "db").all
+      else
+        @segments = Segment.all
       end
     end
   end

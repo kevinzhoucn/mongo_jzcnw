@@ -6,7 +6,7 @@
   <ul>
     <!--循环开始 显示24条-->
     <% @seg_zzdb.records.each do |record| %>
-      <li><a href="资质代办三级页-公司信息.html" class="zz_link"><%= record.title %></a></li>
+      <li><a href="<%= record_show_url(record) %>" class="zz_link"><%= record.title %></a></li>
     <% end %>
   <!--循环结束 显示24条-->
   </ul>

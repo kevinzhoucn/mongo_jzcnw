@@ -13,6 +13,10 @@ class HomeController < ApplicationController
     @seg_zzdb = Segment.where(code: "zzdb").first
 
     @seg_qz = Segment.where(for: "qz").first
+
+    @resumes = Resume.all.limit(9)
+
+    @useful_links = UsefulLink.all.limit(15)
   end
 
   def show
@@ -26,7 +30,7 @@ class HomeController < ApplicationController
     type_id = params[:type]
     if not type_id.nil?      
       @type_id = type_id
-      if type_id == '4'
+      if type_id == '4' or type_id == '2'
         @segments = Segment.where(for: "qz").all
       elsif type_id == '3'
         @segments = Segment.where(for: "zs").all
@@ -40,12 +44,20 @@ class HomeController < ApplicationController
 
   def zizhi
     @records = Record.all
+
+    if !params[:cat_name].blank?
+      cat_name = params[:cat_name]
+      @records = Record.where(:category_id => cat_name)
+    end
   end
 
   def add
-    @record = Record.new
+    # @record = Record.new
+    @resume = Resume.new
     @seg_id = params[:seg]
     @cat_id = params[:cat]
+
+    @type_id = params[:type]
 
     respond_to do |format|
       format.html # add.html.haml

@@ -3,17 +3,23 @@ zh-CN:
   mongoid:
     models:
       record: 
-        one: 01. 帖子
-        other: 01. 帖子
+        one: 02. 帖子
+        other: 02. 帖子
       user:
-        one: 04. 用户
-        other: 04. 用户
+        one: 01. 用户
+        other: 01. 用户
       segment:
-        one: 02. 行业管理
-        other: 02. 行业管理
+        one: 03. 行业管理
+        other: 03. 行业管理
       category:
-        one: 03. 职位类别
+        one: 04. 职位类别
         other: 04. 职位类别
+      useful_link:
+        one: 05. 常用网址
+        other: 05. 常用网址
+      resume:
+        one: 06. 简历
+        other: 06. 简历
 
   date:
     abbr_day_names:

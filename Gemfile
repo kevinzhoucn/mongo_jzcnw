@@ -51,7 +51,7 @@ end
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'haml-rails'
-#gem 'simple_form'
+gem 'simple_form'
 # gem 'will_paginate'
 #gem 'bootstrap-sass'
 gem 'paperclip', '~> 3.5.3'
@@ -59,7 +59,7 @@ gem 'kaminari'
 gem 'rails_admin'
 gem 'cancan'
 gem 'rolify'
-#gem 'paperclip', '~> 4.0'
+#gem 'paperclip', '~> 4.0t'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

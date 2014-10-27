@@ -7,4 +7,5 @@ class Segment
   has_many :categories
   accepts_nested_attributes_for :categories
   has_many :records
+  has_many :resumes
 end

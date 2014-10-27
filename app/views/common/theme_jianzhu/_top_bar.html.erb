@@ -20,6 +20,8 @@
       <%= link_to '退出', destroy_user_session_path, { method: :delete, class: 'link_2'} %>
     <% end %>
     <a href="<%= home_publish_url %>" class="link_2">发布</a>&nbsp;&nbsp; </div>
-  <div class="left"><a href="创建简历_1.html" class="top_jl">创建我的简历</a></div>
+  <div class="left">
+    <%= link_to "创建我的简历", publish_path(3), class: "top_jl" %>
+  </div>
   </div>
 </div>

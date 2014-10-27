@@ -31,7 +31,7 @@ RailsAdmin.config do |config|
   # config.excluded_models = ['User']
 
   # Include specific models (exclude the others):
-  config.included_models = ["Record", "User", "Segment", "Category"]
+  config.included_models = ["Record", "User", "Segment", "Category", "UsefulLink", "Resume"]  
 
   # Label methods for model instances:
   # config.label_methods << :description # Default is [:name, :title]

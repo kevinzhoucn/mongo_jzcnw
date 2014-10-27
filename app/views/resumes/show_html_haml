@@ -1,0 +1,51 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @resume.name
+%p
+  %b Sex:
+  = @resume.sex
+%p
+  %b Mobile:
+  = @resume.mobile
+%p
+  %b Birth year:
+  = @resume.birth_year
+%p
+  %b Birth month:
+  = @resume.birth_month
+%p
+  %b Birth day:
+  = @resume.birth_day
+%p
+  %b Email:
+  = @resume.email
+%p
+  %b Qq:
+  = @resume.qq
+%p
+  %b Work year:
+  = @resume.work_year
+%p
+  %b Edu level:
+  = @resume.edu_level
+%p
+  %b Register status:
+  = @resume.register_status
+%p
+  %b Social security:
+  = @resume.social_security
+%p
+  %b Security b:
+  = @resume.security_b
+%p
+  %b Intend price:
+  = @resume.intend_price
+%p
+  %b Person summary:
+  = @resume.person_summary
+
+= link_to 'Edit', edit_resume_path(@resume)
+\|
+= link_to 'Back', resumes_path

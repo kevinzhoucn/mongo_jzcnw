@@ -5,4 +5,5 @@ class Category
   # embedded_in :segment, :inverse_of => :categories
   belongs_to :segment
   has_many :records
+  has_many :resumes
 end

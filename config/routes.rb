@@ -1,21 +1,24 @@
 Rails3MongoidDevise::Application.routes.draw do
+  resources :resumes
+
+
   devise_for :users
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   get 'home/index'
   get 'home/publish'
-  match '/publish/:type' => 'home#publish', :via => :get
+  match '/publish/:type' => 'home#publish', :via => :get, as: :publish
   match '/publish/:type/add' => 'home#add', :via => :get, :as => :home_publish_add
   match '/records/create' => 'home#create', :via => :post, :as => :home_records
-  match '/records/:id' => 'home#show', :via => :get, :as => :records_show
+  match '/records/:id' => 'home#show', :via => :get, :as => :record_show
 
   scope '(home)' do
     controller :home do
       get '/' => :index
 
       get '/publish', :action => 'publish', :as => :home_publish
-      match '/zizhi/daiban', :action => 'zizhi', :as => :zizhi_daiban
+      match '/zizhi/daiban/(:cat_name)', :action => 'zizhi', :as => :zizhi_daiban
       match '/zizhi/zhuanrang', :action => 'zizhi'
       match '/zizhi/guakao', :action => 'zizhi'
     end

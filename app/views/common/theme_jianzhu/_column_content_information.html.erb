@@ -16,7 +16,11 @@
   <div id="h_zhk">
     <div id="div_01" style="display:''">
   <!--循环开始 显示 15条-->
-  <a href="#" class="zz_link_2">这里显示标题名称 11111...&nbsp;&nbsp;[12-11]</a>
+      <% if !@resumes.blank? -%>
+        <% @resumes.each do |item| -%>
+          <%= link_to item.resume_title, resume_path(item), class: 'zz_link_2' %>
+        <% end -%>
+      <% end -%>
   <!--循环结束 显示 15条-->
   </div>
   <div id="div_02" style="display:none">

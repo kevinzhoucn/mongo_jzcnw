@@ -1,0 +1,5 @@
+%div{id: "#{div_id}"}
+  %ul
+    %li
+      = link_to segment.title, "#", class: "#{link_class}"
+      = render partial: segment.categories, locals: { class_name: "#{category_class}" }

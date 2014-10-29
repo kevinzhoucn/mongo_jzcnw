@@ -18,44 +18,15 @@
         <tr>
           <td height="45" align="right" class="txt_4"><span class="txt_2">*</span> 证书所在地：</td>
         <td height="45">
-      <select name="record[locate_province]" class="txt_1">
+      <div class="city-group">
+        <select name="record[locate_province]" class="txt_1 city-select">
             <option value="无">请选择省份</option>
-            <option value="安徽">A 安徽</option>
-            <option value="北京">B 北京</option>
-            <option value="重庆">C 重庆</option>
-            <option value="福建">F 福建</option>
-            <option value="广东">G 广东</option>
-            <option value="广西">G 广西</option>
-            <option value="甘肃">G 甘肃</option>
-            <option value="贵州">G 贵州</option>
-            <option value="河北">H 河北</option>
-            <option value="河南">H 河南</option>
-            <option value="海南">H 海南</option>
-            <option value="湖北">H 湖北</option>
-            <option value="湖南">H 湖南</option>
-            <option value="黑龙江">H 黑龙江</option>
-            <option value="吉林">J 吉林</option>
-            <option value="江苏">J 江苏</option>
-            <option value="江西">J 江西</option>
-            <option value="辽宁">L 辽宁</option>
-            <option value="内蒙古">N 内蒙古</option>
-            <option value="宁夏">N 宁夏</option>
-            <option value="青海">Q 青海</option>
-            <option value="上海">S 上海</option>
-            <option value="四川">S 四川</option>
-            <option value="山东">S 山东</option>
-            <option value="山西">S 山西</option>
-            <option value="陕西">S 陕西</option>
-            <option value="天津">T 天津</option>
-            <option value="新疆">X 新疆</option>
-            <option value="西藏">X 西藏</option>
-            <option value="云南">Y 云南</option>
-            <option value="浙江">Z 浙江</option>
-          </select>
-      
-          <select name="record[locate_city]" class="txt_1">
-            <option value="">请选择城市</option>
-          </select>
+            <%= options_for_select(ChinaCity.list) %>
+        </select>      
+        <select name="record[locate_city]" class="txt_1 city-select">
+          <option value="">请选择城市</option>
+        </select>
+      </div>
     </td>
           </tr>
         <tr>

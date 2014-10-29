@@ -29,6 +29,11 @@ admin = User.create(name: "admin04", email: "admin04@jzcnw.com", password: "pass
 admin.add_role :admin
 puts 'admin: ' << admin.name
 
+user = User.create(name: "user01", email: "user01@jzcnw.com", password: "password")
+puts 'user: ' << user.name
+
+user = User.create(name: "user02", email: "user02@jzcnw.com", password: "password")
+puts 'user: ' << user.name
 # user = User.create(name: "user01", email: "user01@jzcnw.com", password: "password")
 # puts 'user: ' << user.name
 # categories = Category.create!([code: "jzs", title: "建造师"], [code: "xmjl", title: "项目经理"],

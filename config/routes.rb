@@ -1,10 +1,8 @@
 Rails3MongoidDevise::Application.routes.draw do
-  resources :resumes
-
-
   devise_for :users
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+  mount ChinaCity::Engine => '/china_city'
 
   get 'home/index'
   get 'home/publish'
@@ -21,8 +19,14 @@ Rails3MongoidDevise::Application.routes.draw do
       match '/zizhi/daiban/(:cat_name)', :action => 'zizhi', :as => :zizhi_daiban
       match '/zizhi/zhuanrang', :action => 'zizhi'
       match '/zizhi/guakao', :action => 'zizhi'
+      match '/zizhi/lt/(:province)', action: 'zizhi', as: :zizhi_province
     end
   end
+
+  resources :resumes
+
+  #get "profile/index"
+  match '/profiles/:id' => 'profile#show', via: :get, as: :profile_show
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

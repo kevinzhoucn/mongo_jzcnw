@@ -49,6 +49,11 @@ class HomeController < ApplicationController
       cat_name = params[:cat_name]
       @records = Record.where(:category_id => cat_name)
     end
+
+    if !params[:province].blank?
+      province = params[:province]
+      @records = Record.where(locate_province: province)
+    end
   end
 
   def add

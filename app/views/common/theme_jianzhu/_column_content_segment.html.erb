@@ -1,106 +1,41 @@
 <div class="center">
   <div id="zk_k1">
     <!--一级建造师-->
-    <div id="zk_1">
-  <ul>
-    <li>
-    <a href="#" class="zk_1bt">一级建造师</a>
-    <% @seg_yjgcs.categories.each do |cat| %>
-      <a href="<%= zizhi_daiban_path(cat.id) %>" class="zk_1nr"><%= cat.title %>(<%= cat.records.count %>)</a>
-    <% end %>
-    </li>
-  </ul>
-  </div>
-  <!--造价师-->
-  <div id="zk_2">
-  <ul>
-    <li>
-    <a href="#" class="zk_2bt">造价师</a>
-    <% @seg_zjs.categories.each do |cat| %>
-      <a href="<%= zizhi_daiban_path(cat.id) %>" class="zk_1nr"><%= cat.title %>(<%= cat.records.count %>)</a>
-    <% end %>
-    </li>
-  </ul>
-  </div>
-  <!--其他证书-->
-  <div id="zk_3">
-  <ul>
-    <li>
-    <a href="#" class="zk_3bt">其他证书</a>
-    <% @seg_qtzs.categories.each do |cat| %>
-      <a href="<%= zizhi_daiban_path(cat.id) %>" class="zk_1nr"><%= cat.title %>(<%= cat.records.count %>)</a>
-    <% end %>
-    </li>
-  </ul>
-  </div>
+    <%= render partial: @seg_yjgcs, locals: { div_id: "zk_1", link_class: "zk_1bt", category_class: "zk_1nr"} %>
+    <!--造价师-->
+    <%= render partial: @seg_zjs, locals: { div_id: "zk_2", link_class: "zk_2bt", category_class: "zk_1nr"} %>
+    <!--其他证书-->
+    <%= render partial: @seg_qtzs, locals: { div_id: "zk_3", link_class: "zk_3bt", category_class: "zk_1nr"} %>
   </div>
   
-  <div id="zk_k2">
-  <div id="zk_k2_1">
-    <!--二级建造师-->
-    <div id="zk_4">
-  <ul>
-    <li>
-    <a href="#" class="zk_4bt">二级建造师</a>
-    <% @seg_ejjzs.categories.each do |cat| %>
-      <a href="<%= zizhi_daiban_path(cat.id) %>" class="zk_2nr"><%= cat.title %>(<%= cat.records.count %>)</a>
-    <% end %>
-    </li>
-  </ul>
-  </div>
-  <!--土木工程师-->
-  <div id="zk_5">
-  <ul>
-    <li>
-    <a href="#" class="zk_5bt">土木工程师</a>
-    <% @seg_zjs.categories.each do |cat| %>
-      <a href="<%= zizhi_daiban_path(cat.id) %>" class="zk_2nr"><%= cat.title %>(<%= cat.records.count %>)</a>
-    <% end %>
-    </li>
-  </ul>
-  </div>
-  <!--监理师-->
-  <div id="zk_6">
-  <ul>
-    <li>
-    <a href="#" class="zk_5bt">监理师</a>
-    <% @seg_jls.categories.each do |cat| %>
-      <a href="<%= zizhi_daiban_path(cat.id) %>" class="zk_2nr"><%= cat.title %>(<%= cat.records.count %>)</a>
-    <% end %>
-    </li>
-  </ul>
-  </div>
+  <div id="zk_k2">    
+    <div id="zk_k2_1">
+      <!--二级建造师-->
+      <div id="zk_4">
+        <ul>
+          <li>
+            <a href="#" class="zk_4bt">二级建造师</a>
+            <%= render partial: @seg_ejjzs.categories.all.limit(5), locals: { class_name: 'zk_2nr'} %>
+          </li>
+        </ul>
+      </div>
+    <!--土木工程师-->
+    <%= render partial: @seg_qtzs, locals: { div_id: "zk_5", link_class: "zk_5bt", category_class: "zk_2nr"} %>
+    <!--监理师-->
+    <%= render partial: @seg_qtzs, locals: { div_id: "zk_6", link_class: "zk_5bt", category_class: "zk_2nr"} %>
   </div>
   
   <div id="zk_k2_2">
     <!--公共设备工程师-->
-    <div id="zk_7">
-  <ul>
-    <li>
-    <a href="#" class="zk_6bt">公共设备工程师&nbsp;&nbsp;</a>
-    <% @seg_gysbgcs.categories.each do |cat| %>
-      <a href="<%= zizhi_daiban_path(cat.id) %>" class="zk_4nr"><%= cat.title %>(<%= cat.records.count %>)</a>
-    <% end %>
-    </li>
-  </ul>
-  </div>
+    <%= render partial: @seg_gysbgcs, locals: { div_id: "zk_7", link_class: "zk_6bt", category_class: "zk_4nr"} %>   
     <!--结构师-->
-  <div id="zk_8">
-  <ul>
-    <li>
-    <a href="#" class="zk_7bt">结构师</a>
-    <% @seg_jgs.categories.each do |cat| %>
-      <a href="<%= zizhi_daiban_path(cat.id) %>" class="zk_4nr"><%= cat.title %>(<%= cat.records.count %>)</a>
-    <% end %>
-    </li>
-  </ul>
-  </div>
+     <%= render partial: @seg_gysbgcs, locals: { div_id: "zk_8", link_class: "zk_7bt", category_class: "zk_4nr"} %>
     <!--职称证书-->
   <div id="zk_9">
   <ul>
     <li>
-    <a href="#" class="zk_5bt">职称证书</a>
-    <a href="#" class="zk_4nr">这里显示分类(0)</a>
+      <a href="#" class="zk_5bt">职称证书</a>
+      <a href="#" class="zk_4nr">这里显示分类(0)</a>
     </li>
   </ul>
   </div>
@@ -108,72 +43,27 @@
   
   <div id="zk_k2_3">
     <!--资质代办-->
-    <div id="zk_10">
-  <ul>
-    <li>
-    <a href="#" class="zk_8bt">资质代办</a>
-    <% @seg_zzdb.categories.each do |cat| %>
-      <a href="<%= zizhi_daiban_path(cat.id) %>" class="zk_2nr"><%= cat.title %>(<%= cat.records.count %>)</a>
-    <% end %>
-    </li>
-  </ul>
-  </div>
+    <%= render partial: @seg_zzdb, locals: { div_id: "zk_10", link_class: "zk_8bt", category_class: "zk_2nr"} %>
     <!--建筑师-->
-  <div id="zk_11">
-  <ul>
-    <li>
-    <a href="#" class="zk_5bt">建筑师</a>
-    <% @seg_jgs.categories.each do |cat| %>
-      <a href="<%= zizhi_daiban_path(cat.id) %>" class="zk_2nr"><%= cat.title %>(<%= cat.records.count %>)</a>
-    <% end %>
-    </li>
-  </ul>
-  </div>
+    <%= render partial: @seg_jgs, locals: { div_id: "zk_11", link_class: "zk_5bt", category_class: "zk_2nr"} %> 
     <!--电气工程师-->
-  <div id="zk_12">
-  <ul>
-    <li>
-    <a href="#" class="zk_5bt">电气工程师</a>
-    <% @seg_dqgcs.categories.each do |cat| %>
-      <a href="<%= zizhi_daiban_path(cat.id) %>" class="zk_2nr"><%= cat.title %>(<%= cat.records.count %>)</a>
-    <% end %>
-    </li>
-  </ul>
-  </div>
+    <%= render partial: @seg_dqgcs, locals: { div_id: "zk_12", link_class: "zk_5bt", category_class: "zk_2nr"} %>  
   </div>
   
   <div id="zk_k2_4">
     <!--建筑培训-->
     <div id="zk_13">
-  <ul>
-    <li>
-    <a href="#" class="zk_5bt">建筑培训</a>
-    <a href="#" class="zk_4nr">这里显示分类(0)</a>
-    </li>
-  </ul>
-  </div>
-  <!--注册咨询师-->
-  <div id="zk_14">
-  <ul>
-    <li>
-    <a href="#" class="zk_5bt">注册咨询师</a>
-    <% @seg_zczxs.categories.each do |cat| %>
-      <a href="<%= zizhi_daiban_path(cat.id) %>" class="zk_4nr"><%= cat.title %>(<%= cat.records.count %>)</a>
-    <% end %>
-    </li>
-  </ul>
+      <ul>
+        <li>
+          <a href="#" class="zk_5bt">建筑培训</a>
+          <a href="#" class="zk_4nr">这里显示分类(0)</a>
+        </li>
+      </ul>
+    </div>
+    <!--注册咨询师-->
+    <%= render partial: @seg_zczxs, locals: { div_id: "zk_14", link_class: "zk_5bt", category_class: "zk_4nr"} %>    
   </div>
   </div>
-  </div>
-  <!--全职招聘求职-->
-  <div id="zk_15">
-    <ul>
-    <li>
-    <a href="#" class="zk_9bt">全职招聘求职</a>
-    <% @seg_qz.categories.each do |cat| %>
-      <a href="<%= zizhi_daiban_path(cat.id) %>" class="zk_2nr"><%= cat.title %>(<%= cat.records.count %>)</a>
-    <% end %>
-    </li>
-  </ul>
-  </div>
+    <!--全职招聘求职-->
+    <%= render partial: @seg_qz, locals: { div_id: "zk_15", link_class: "zk_9bt", category_class: "zk_2nr"} %>
 </div>

@@ -9,6 +9,7 @@ gem 'rails', '~> 3.2.16'
 gem 'devise'
 gem 'figaro'
 gem 'mongoid'
+gem 'china_city'
 
 group :production do
 #  gem 'mysql2'

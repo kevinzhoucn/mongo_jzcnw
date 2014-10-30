@@ -43,6 +43,7 @@ puts 'user: ' << user.name
 # 全职招聘部分
 Category.delete_all
 Segment.delete_all
+Record.delete_all
 categories = Category.create! ([{code: "jzs", title: "建造师"}, {code: "xmjl", title: "项目经理"},
                {code: "xmgl", title: "项目管理"}, {code: "gcs", title: "工程师"},
                {code: "zrgcs", title: "责任工程师"}, {code: "gz", title: "工长"},
@@ -118,21 +119,14 @@ categories = Category.create! ([{code: "jzgc", title: "建筑工程"}, {code: "s
                {code: "tlgc", title: "铁路工程"}, {code: "mhjc", title: "民航机场"}])
 segment = Segment.create!(code: "yjgcs", title: "一级建造师", categories: categories, for: "zs")
 
-categories = Category.create! ([{code: "gpd", title: "供配电"}, {code: "fsbd", title: "发输变电"}])
-segment = Segment.create!(code: "dqgcs", title: "电气工程师", categories: categories, for: "zs")
-
-categories = Category.create! ([{code: "ntkt", title: "暖通空调"}, {code: "jsps", title: "给水排水"},
-               {code: "dl", title: "动力"}])
-segment = Segment.create!(code: "gysbgcs", title: "公用设备工程师", categories: categories, for: "zs")
-
-categories = Category.create! ([{code: "jsb", title: "建设部"}, {code: "slb", title: "水利部"},
-               {code: "jtb", title: "交通部"}])
-segment = Segment.create!(code: "zjs", title: "造价师", categories: categories, for: "zs")
-
 categories = Category.create! ([{code: "jzgc", title: "建筑工程"}, {code: "jdgc", title: "机电工程"},
                {code: "szgygc", title: "市政公用工程"}, {code: "slsdgc", title: "水利水电工程"},
                {code: "glgc", title: "公路工程"}, {code: "kygc", title: "矿业工程"}])
 segment = Segment.create!(code: "ejjzs", title: "二级建造师", categories: categories, for: "zs")
+
+categories = Category.create! ([{code: "jsb", title: "建设部"}, {code: "slb", title: "水利部"},
+               {code: "jtb", title: "交通部"}])
+segment = Segment.create!(code: "zjs", title: "造价师", categories: categories, for: "zs")
 
 categories = Category.create! ([{code: "yjjgs", title: "一级结构师"}, {code: "ejjgs", title: "二级结构师"}])
 segment = Segment.create!(code: "jgs", title: "结构师", categories: categories, for: "zs")
@@ -140,6 +134,13 @@ segment = Segment.create!(code: "jgs", title: "结构师", categories: categorie
 categories = Category.create! ([{code: "jsb", title: "建设部"}, {code: "slb", title: "水利部"},
                {code: "jtb", title: "交通部"}])
 segment = Segment.create!(code: "jls", title: "监理师", categories: categories, for: "zs")
+
+categories = Category.create! ([{code: "gpd", title: "供配电"}, {code: "fsbd", title: "发输变电"}])
+segment = Segment.create!(code: "dqgcs", title: "电气工程师", categories: categories, for: "zs")
+
+categories = Category.create! ([{code: "ntkt", title: "暖通空调"}, {code: "jsps", title: "给水排水"},
+               {code: "dl", title: "动力"}])
+segment = Segment.create!(code: "gysbgcs", title: "公用设备工程师", categories: categories, for: "zs")
 
 categories = Category.create! ([{code: "hjgchstjs", title: "环境工程和生态建设"}, {code: "szgygc", title: "市政公用工程"}])
 segment = Segment.create!(code: "zczxs", title: "注册咨询师", categories: categories, for: "zs")

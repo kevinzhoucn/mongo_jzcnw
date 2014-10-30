@@ -32,7 +32,7 @@ class HomeController < ApplicationController
       @type_id = type_id
       if type_id == '4' or type_id == '2'
         @segments = Segment.where(for: "qz").all
-      elsif type_id == '3'
+      elsif type_id == '3' or type_id == '1'
         @segments = Segment.where(for: "zs").all
       elsif ( type_id == '9' or type_id == '10' )
         @segments = Segment.where(for: "db").all

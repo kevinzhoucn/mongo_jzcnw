@@ -124,43 +124,20 @@
         </tr>
         <tr>
           <td height="40" align="right" class="txt_1"><span class="txt_2">*</span> 求职地区：</td>
-          <td height="40"><select name="resume[work_province]" class="jl_xl">
-            <option value="">请选择省份</option>
-            <option value="12">A 安徽</option>
-            <option value="1">B 北京</option>
-            <option value="22">C 重庆</option>
-            <option value="13">F 福建</option>
-            <option value="19">G 广东</option>
-            <option value="20">G 广西</option>
-            <option value="28">G 甘肃</option>
-            <option value="24">G 贵州</option>
-            <option value="3">H 河北</option>
-            <option value="16">H 河南</option>
-            <option value="21">H 海南</option>
-            <option value="17">H 湖北</option>
-            <option value="18">H 湖南</option>
-            <option value="8">H 黑龙江</option>
-            <option value="7">J 吉林</option>
-            <option value="10">J 江苏</option>
-            <option value="14">J 江西</option>
-            <option value="6">L 辽宁</option>
-            <option value="5">N 内蒙古</option>
-            <option value="30">N 宁夏</option>
-            <option value="29">Q 青海</option>
-            <option value="9">S 上海</option>
-            <option value="23">S 四川</option>
-            <option value="15">S 山东</option>
-            <option value="4">S 山西</option>
-            <option value="27">S 陕西</option>
-            <option value="2">T 天津</option>
-            <option value="31">X 新疆</option>
-            <option value="26">X 西藏</option>
-            <option value="25">Y 云南</option>
-            <option value="11">Z 浙江</option>
-          </select>
-            <select name="resume[work_city]" class="jl_xl">
-              <option value="">请选择城市</option>
-            </select></td>
+          <td height="40">
+            <div class="city-group">
+              <select name="resume[work_province]" class="jl_xl city-select">
+                  <option value="无">请选择省份</option>
+                  <%= options_for_select(ChinaCity.list) %>
+              </select>      
+              <select name="resume[locate_city]" class="jl_xl city-select">
+                <option value="">请选择城市</option>
+              </select>
+              <select name="" class="jl_xl city-select">
+                <option value="">请选择区县</option>
+              </select>
+            </div>
+          </td>
         </tr>
         <tr>
           <td height="40" align="right" class="txt_1"><span class="txt_2">*</span> 期望月薪：</td>

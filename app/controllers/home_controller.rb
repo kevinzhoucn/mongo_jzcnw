@@ -14,7 +14,7 @@ class HomeController < ApplicationController
 
     @seg_qz = Segment.where(for: "qz").first
 
-    @resumes = Resume.all.limit(9)
+    @resumes = Resume.desc(:created_at).all.limit(9)
 
     @useful_links = UsefulLink.all.limit(15)
   end

@@ -5,7 +5,7 @@ Rails3MongoidDevise::Application.routes.draw do
   mount ChinaCity::Engine => '/china_city'
 
   get 'home/index'
-  get 'home/publish'
+  get '/publish' => 'home#publish', as: :home_publish
   match '/publish/:type' => 'home#publish', :via => :get, as: :publish
   match '/publish/:type/add' => 'home#add', :via => :get, :as => :home_publish_add
   match '/add/resumes' => 'home#publishresumes', via: :get, as: :publish_resumes
@@ -13,17 +13,18 @@ Rails3MongoidDevise::Application.routes.draw do
   match '/records/:id' => 'home#show', :via => :get, :as => :record_show
   match '/region/(:province)' => 'home#zizhi', as: :zizhi_province
 
-  scope '(home)' do
-    controller :home do
-      get '/' => :index
+  match '/categories/(:cat_name)' => 'home#zizhi', :as => :zizhi_daiban
+  # scope '(home)' do
+  #   controller :home do
+  #     get '/' => :index
 
-      get '/publish', :action => 'publish', :as => :home_publish
-      match '/zizhi/daiban/(:cat_name)', :action => 'zizhi', :as => :zizhi_daiban
-      match '/zizhi/zhuanrang', :action => 'zizhi'
-      match '/zizhi/guakao', :action => 'zizhi'
-      # match '/zizhi/lt/(:province)', action: 'zizhi', as: :zizhi_province
-    end
-  end
+  #     get '/publish', :action => 'publish', :as => :home_publish
+  #     match '/zizhi/daiban/(:cat_name)', :action => 'zizhi', :as => :zizhi_daiban
+  #     match '/zizhi/zhuanrang', :action => 'zizhi'
+  #     match '/zizhi/guakao', :action => 'zizhi'
+  #     # match '/zizhi/lt/(:province)', action: 'zizhi', as: :zizhi_province
+  #   end
+  # end
 
   resources :resumes
 

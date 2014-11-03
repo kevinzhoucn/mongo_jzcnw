@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class HomeController < ApplicationController 
   def index
     @seg_yjgcs = Segment.where(code: "yjgcs").first
     @seg_zjs = Segment.where(code: "zjs").first
@@ -20,7 +20,10 @@ class HomeController < ApplicationController
   end
 
   def show
+    add_breadcrumb t("breadcrumbs.homepage"), root_path, :title => t("breadcrumbs.homepage"), class: "link_4a1"
     @record = Record.find(params[:id])
+    cat_title = Category.find(@record.category_id).title
+    add_breadcrumb cat_title, zizhi_daiban_path(@record.category_id), class: "link_4a1"#, onclick: "return false"
   end
 
   def region
@@ -28,7 +31,9 @@ class HomeController < ApplicationController
 
   def publish
     type_id = params[:type]
+    add_breadcrumb t("breadcrumbs.homepage"), root_path, :title => t("breadcrumbs.homepage"), class: "link_4a1"
     if not type_id.nil?      
+      add_breadcrumb I18n.t("breadcrumbs.publish_type"), home_publish_path, :title => t("breadcrumbs.publish_type"), class: "link_4a1"
       @type_id = type_id
       if type_id == '4' or type_id == '2' or type_id == '7'
         @segments = Segment.where(for: "qz").all
@@ -54,9 +59,12 @@ class HomeController < ApplicationController
 
   def zizhi
     @records = Record.all
+    add_breadcrumb t("breadcrumbs.homepage"), root_path, :title => t("breadcrumbs.homepage"), class: "link_4a1"    
 
     if !params[:cat_name].blank?
       cat_name = params[:cat_name]
+      cat_title = Category.find(cat_name).title
+      add_breadcrumb cat_title, "#", class: "link_4a1", onclick: "return false"
       @records = Record.where(:category_id => cat_name)
     end
 
@@ -71,14 +79,20 @@ class HomeController < ApplicationController
     @resume = Resume.new
     @seg_id = params[:seg]
     @cat_id = params[:cat]
+    cat_name = Category.find(@cat_id).title
 
     @type_id = params[:type]
+    add_breadcrumb t("breadcrumbs.homepage"), root_path, :title => t("breadcrumbs.homepage"), class: "link_4a1"
+    add_breadcrumb t("breadcrumbs.publish_type_0#{@type_id}"), home_publish_path, :title => t("breadcrumbs.publish_type"), class: "link_4a1"
 
     if @type_id == '3' or @type_id == '4' or @type_id == '5'
       @job_type = 1
     elsif @type_id == '6'
       @job_type = 2      
+    elsif @type_id == '9'
+      @job_type = 3
     end
+    add_breadcrumb cat_name, '#', class: "link_4a1", onclick: "return false"
 
     respond_to do |format|
       format.html # add.html.haml

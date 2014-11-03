@@ -2,6 +2,10 @@
 <div class="center">
   <img src="<%= root_path %>images/jianli/bt_2.jpg" />
 </div>
+<div id="ny3_dh">
+  当前位置：
+  <%= render_breadcrumbs :separator => ' / ' %>
+</div>
 <div class="center">
   <%= simple_form_for @resume do |f| %>
     <% if @resume.errors.any? %>

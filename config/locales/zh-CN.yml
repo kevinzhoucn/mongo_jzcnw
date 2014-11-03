@@ -21,6 +21,20 @@ zh-CN:
         one: 06. 简历
         other: 06. 简历
 
+  breadcrumbs:
+    homepage: 首页
+    publish_type: 选择类型
+    publish_type_01: 兼职简历
+    publish_type_02: 全职简历
+    publish_type_03: 企业聘证
+    publish_type_04: 全职招聘
+    publish_type_05: 猎头聘证
+    publish_type_06: 猎头挂证
+    publish_type_07: 全职招聘
+    publish_type_08: 培训信息
+    publish_type_09: 资质代办
+    publish_category: 选择分类
+
   date:
     abbr_day_names:
     - 日

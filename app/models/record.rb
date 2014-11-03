@@ -9,6 +9,10 @@ class Record
   field :register_status, type: String
   field :title, type: String
   field :job_type, type: Integer
+  
+  field :company_location, type: String
+  field :company_start_date, type: String
+  field :company_reg_price, type: String
   belongs_to :category
   belongs_to :segment
 

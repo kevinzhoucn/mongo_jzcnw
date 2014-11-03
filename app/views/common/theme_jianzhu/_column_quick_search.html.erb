@@ -1,0 +1,12 @@
+<div id="ksdh">
+  <ul>
+    <li><strong>快速分类：</strong></li>
+    <li><a href="#" class="link_4a2">不限</a></li>
+    <% @seg_zzdb.categories.each do |cat| %>
+      <li>&nbsp;|&nbsp;</li>
+      <li>
+        <%= link_to cat.title, zizhi_daiban_path(cat.id), class: 'link_4a1' %>
+      </li>
+    <% end %>
+  </ul>
+</div>

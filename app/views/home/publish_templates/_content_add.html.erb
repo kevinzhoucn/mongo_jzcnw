@@ -1,5 +1,9 @@
 <!--内容开始-->
 <div class="center"><img src="<%= root_url %>images/release/bt_3.jpg" width="1010" height="78" /></div>
+<div id="ny3_dh">
+  当前位置：
+  <%= render_breadcrumbs :separator => ' / ' %>
+</div>
 <div class="center">
   <div id="member">
   <div class="left"><img src="<%= root_url %>images/tm.png" width="963" height="36" /></div>
@@ -39,9 +43,12 @@
           <td height="45" align="right" class="txt_4"><span class="txt_2">*</span> 注册情况：</td>
           <td height="45" class="txt_4"><input type="radio" name="record[register_status]" value="初始注册" />
             初始注册
-              <input type="radio" name="record[register_status]" value="转注册" />
-            转注册</td>
-          </tr>
+            <input type="radio" name="record[register_status]" value="转注册" />
+            转注册
+            <input type="radio" name="record[register_status]" value="两者皆可" />
+            两者皆可
+          </td>
+        </tr>
         <tr>
           <td height="45" align="right" class="txt_4">挂靠价格：</td>
           <td height="45" class="txt_4">
@@ -57,7 +64,8 @@
       </select>
             职称：
             <select name="record[job_title]" class="txt_1">
-              <option value="">没有</option>
+              <option value="没有">没有</option>
+              <option value="有">有</option>
       </select>
       </td>
           </tr>

@@ -8,6 +8,7 @@ class Record
   field :price, type: String
   field :register_status, type: String
   field :title, type: String
+  field :job_type, type: Integer
   belongs_to :category
   belongs_to :segment
 

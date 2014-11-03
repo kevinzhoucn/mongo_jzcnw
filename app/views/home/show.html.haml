@@ -1,1 +1,6 @@
-= render partial: 'home/show_templates/view_content'
+- if !@record.blank?
+- job_type = @record.job_type
+  - if job_type == 1
+    = render partial: 'home/show_templates/view_content_pinzheng'
+  - elsif job_type == 2
+    = render partial: 'home/show_templates/view_content_guazheng'

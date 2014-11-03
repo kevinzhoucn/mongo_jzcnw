@@ -32,8 +32,14 @@ class HomeController < ApplicationController
       @type_id = type_id
       if type_id == '4' or type_id == '2' or type_id == '7'
         @segments = Segment.where(for: "qz").all
-      elsif type_id == '3' or type_id == '1' or type_id == '5' or type_id == '6'  
+        # @job_type = 1
+      elsif type_id == '3' or type_id == '1' or type_id == '5' or type_id == '6'
         @segments = Segment.where(for: "zs").all
+        if type_id == '5'
+          # @job_type = 1
+        else type_id == '6'
+          # @job_type = 2
+        end
       elsif ( type_id == '9' or type_id == '10' )
         @segments = Segment.where(for: "db").all
       else
@@ -67,6 +73,12 @@ class HomeController < ApplicationController
     @cat_id = params[:cat]
 
     @type_id = params[:type]
+
+    if @type_id == '3' or @type_id == '4' or @type_id == '5'
+      @job_type = 1
+    elsif @type_id == '6'
+      @job_type = 2      
+    end
 
     respond_to do |format|
       format.html # add.html.haml

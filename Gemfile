@@ -10,6 +10,7 @@ gem 'devise'
 gem 'figaro'
 gem 'mongoid'
 gem 'china_city'
+gem 'breadcrumbs_on_rails'
 
 group :production do
 #  gem 'mysql2'

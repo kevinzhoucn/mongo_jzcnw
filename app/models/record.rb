@@ -10,4 +10,6 @@ class Record
   field :title, type: String
   belongs_to :category
   belongs_to :segment
+
+  default_scope desc(:created_at)
 end

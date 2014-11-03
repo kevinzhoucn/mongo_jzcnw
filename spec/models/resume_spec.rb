@@ -1,5 +1,11 @@
 require 'spec_helper'
 
-describe Resume do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Resume do  
+  before :each do
+    @city_list = ChinaCity.list
+  end
+
+  it "get all provinces list from china" do
+    puts city_list.first
+  end
 end

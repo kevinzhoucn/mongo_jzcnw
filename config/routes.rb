@@ -11,6 +11,7 @@ Rails3MongoidDevise::Application.routes.draw do
   match '/add/resumes' => 'home#publishresumes', via: :get, as: :publish_resumes
   match '/records/create' => 'home#create', :via => :post, :as => :home_records
   match '/records/:id' => 'home#show', :via => :get, :as => :record_show
+  match '/region/(:province)' => 'home#zizhi', as: :zizhi_province
 
   scope '(home)' do
     controller :home do
@@ -20,7 +21,7 @@ Rails3MongoidDevise::Application.routes.draw do
       match '/zizhi/daiban/(:cat_name)', :action => 'zizhi', :as => :zizhi_daiban
       match '/zizhi/zhuanrang', :action => 'zizhi'
       match '/zizhi/guakao', :action => 'zizhi'
-      match '/zizhi/lt/(:province)', action: 'zizhi', as: :zizhi_province
+      # match '/zizhi/lt/(:province)', action: 'zizhi', as: :zizhi_province
     end
   end
 

@@ -20,15 +20,15 @@
           <%= current_user.email %>
         </a>&nbsp;&nbsp;
       <% else %>
-        <a href="<%= profile_show_path(current_user.id) %>" class="link_2">
+        <a href="<%= profile_show_path(current_user.id) %>" class="link_2", target="_blank">
           <%= current_user.email %>
         </a>&nbsp;&nbsp;
       <% end %>
       <%= link_to '退出', destroy_user_session_path, { method: :delete, class: 'link_2'} %>
     <% end %>
-    <a href="<%= home_publish_url %>" class="link_2">发布</a>&nbsp;&nbsp; </div>
+    <a href="<%= home_publish_url %>" class="link_2", target="_blank">发布</a>&nbsp;&nbsp; </div>
   <div class="left">
-    <%= link_to "创建我的简历", publish_path(2), class: "top_jl" %>
+    <%= link_to "创建我的简历", publish_resumes_path, class: "top_jl", target:"_blank" %>
   </div>
   </div>
 </div>

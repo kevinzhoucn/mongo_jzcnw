@@ -42,6 +42,10 @@ class HomeController < ApplicationController
     end
   end
 
+  def publishresumes
+
+  end
+
   def zizhi
     @records = Record.all
 

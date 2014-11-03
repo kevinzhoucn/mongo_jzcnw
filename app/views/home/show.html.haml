@@ -9,3 +9,7 @@
     = render partial: 'home/show_templates/view_content_guazheng'
   - elsif job_type == 3
     = render partial: 'home/show_templates/view_content_pinzheng'
+  - else
+    = render partial: 'home/show_templates/view_content_pinzheng'
+- else
+  = render partial: 'home/show_templates/view_content_pinzheng'

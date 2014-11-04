@@ -8,53 +8,38 @@
           <span class="txt_2">*</span> 用户类型：
         </div>
         <div class="hy_dl_3b">
-          <div class="left">
-            <input type="radio" name="radiobutton" value="radiobutton">
+          <div style="margin: auto;width: 240px;">
+            <%= f.collection_radio_buttons :user_type, [['geren', '个人   '], ['gongsi', '公司   '], ['lietou', '猎头']], :first, :last %>
           </div>
-          <div class="left">&nbsp;个人</div>
-          <div class="left">
-            <img src="<%= root_url %>/images/tm.png" width="15" height="20">
-          </div>
-          <div class="left">
-            <input type="radio" name="radiobutton" value="radiobutton">
-          </div>
-          <div class="left">&nbsp;公司</div>
-          <div class="left">
-            <img src="<%= root_url %>/images/tm.png" width="15" height="20">
-          </div>
-          <div class="left">
-            <input type="radio" name="radiobutton" value="radiobutton">
-          </div>
-          <div class="left">&nbsp;猎头</div>
         </div>
       </div>
 
-      <div class="left"><img src="<%= root_url %>/images/tm.png" width="449" height="25"></div>
+      <div class="left"><img src="/img/tm.png" width="449" height="25"></div>
 
       <div class="hy_dl_2">
         <div class="hy_dl_3a"><span class="txt_2">*</span> 手&nbsp;机&nbsp;号：</div>
         <div class="hy_dl_4b">
-          <input name="textfield" type="text" class="dl_sr2" />
+          <%= f.input_field :phone_number, class: "dl_sr2" %>
         </div>
       </div>
 
-      <div class="left"><img src="<%= root_url %>/images/tm.png" width="449" height="25" /></div>
+      <div class="left"><img src="/img/tm.png" width="449" height="25" /></div>
       <div class="hy_dl_2">
         <div class="hy_dl_3a"><span class="txt_2">*</span> 密&nbsp;&nbsp;&nbsp;&nbsp;码：</div>
         <div class="hy_dl_4b">
-          <input name="textfield2" type="password" class="dl_sr2" />
+          <%= f.input_field :password, as: :password, class: "dl_sr2" %>
         </div>
       </div>
 
-      <div class="left"><img src="<%= root_url %>/images/tm.png" width="449" height="25" /></div>
+      <div class="left"><img src="/img/tm.png" width="449" height="25" /></div>
       <div class="hy_dl_2">
         <div class="hy_dl_3a"><span class="txt_2">*</span> 确认密码：</div>
         <div class="hy_dl_4b">
-          <input name="textfield2" type="password" class="dl_sr2" />
+          <%= f.input_field :password_confirmation, as: :password, class: "dl_sr2" %>
         </div>
       </div>
 
-      <div class="left"><img src="<%= root_url %>/images/tm.png" width="449" height="25" /></div>
+      <div class="left"><img src="/img/tm.png" width="449" height="25" /></div>
       <div class="hy_dl_2">
         <div class="hy_dl_3a"><span class="txt_2">*</span> 联&nbsp;系&nbsp;人：
         </div>
@@ -63,7 +48,7 @@
         </div>
       </div>
 
-      <div class="left"><img src="<%= root_url %>/images/tm.png" width="449" height="25" /></div>
+      <div class="left"><img src="/img/tm.png" width="449" height="25" /></div>
       <div class="hy_dl_2">
         <div class="hy_dl_3a"><span class="txt_2">*</span> 地&nbsp;&nbsp;&nbsp;&nbsp;址：</div>
         <div class="hy_dl_3c">

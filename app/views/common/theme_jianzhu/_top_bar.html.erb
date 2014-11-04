@@ -17,11 +17,11 @@
       <%# if ( current_user.has_role? :admin ) %>
       <% if ( can? :access, :rails_admin ) %>
         <a href="<%= rails_admin_path %>" class="link_2">
-          <%= current_user.email %>
+          <%= current_user.phone_number %>, 管理员
         </a>&nbsp;&nbsp;
       <% else %>
         <a href="<%= profile_show_path(current_user.id) %>" class="link_2", target="_blank">
-          <%= current_user.email %>
+          <%= current_user.phone_number %>
         </a>&nbsp;&nbsp;
       <% end %>
       <%= link_to '退出', destroy_user_session_path, { method: :delete, class: 'link_2'} %>

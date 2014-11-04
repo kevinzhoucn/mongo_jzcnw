@@ -20,6 +20,16 @@ zh-CN:
       resume:
         one: 06. 简历
         other: 06. 简历
+    attributes:
+      user:
+        email: 邮箱
+        phone_number: 手机号码
+        company_name: 公司名称
+        locate_province: 省份
+        user_name: 联系人
+        password: 密码
+        password_confirmation: 确认密码
+        encrypted_password: 密码
 
   breadcrumbs:
     homepage: 首页
@@ -135,7 +145,7 @@ zh-CN:
     format: ! '%{attribute}%{message}'
     messages:
       accepted: 必须是可被接受的
-      blank: 不能为空字符
+      blank: 不能为空
       present: 必须是空白
       confirmation: 与确认值不匹配
       empty: 不能留空

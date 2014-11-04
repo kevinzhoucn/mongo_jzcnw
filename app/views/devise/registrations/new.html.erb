@@ -1,7 +1,20 @@
 <div class="center">
-  <div id="hy_dl_1a">
-    <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: {class: "form-horizontal"}) do |f| %>
-      <%= f.error_notification %>
+  <div id="hy_dl_1a" style="height:600px">
+    <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+      <% if resource.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= "#{resource.errors.count}个错误:" %>
+          </h2>
+          <ul>
+            <% resource.errors.full_messages.each do |msg| %>
+              <li style="float:none">
+                <%= msg %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
       <div class="hy_dl_2">
         <div class="hy_dl_3a">
@@ -13,8 +26,15 @@
           </div>
         </div>
       </div>
+      <div class="left corp_item" style="display:none"><img src="/img/tm.png" width="449" height="25"></div>
 
-      <div class="left"><img src="/img/tm.png" width="449" height="25"></div>
+      <div class="hy_dl_2 corp_item" style="display:none">
+        <div class="hy_dl_3a"><span class="txt_2">*</span> 公司名称：</div>
+        <div class="hy_dl_4b">
+          <%= f.input_field :company_name, class: "dl_sr2" %>
+        </div>
+      </div>      
+      <div class="left"><img src="/img/tm.png" width="449" height="25" /></div>
 
       <div class="hy_dl_2">
         <div class="hy_dl_3a"><span class="txt_2">*</span> 手&nbsp;机&nbsp;号：</div>
@@ -44,7 +64,7 @@
         <div class="hy_dl_3a"><span class="txt_2">*</span> 联&nbsp;系&nbsp;人：
         </div>
         <div class="hy_dl_4b">
-          <input name="textfield" type="text" class="dl_sr2" />
+          <%= f.input_field :user_name, class: "dl_sr2" %>
         </div>
       </div>
 
@@ -53,50 +73,20 @@
         <div class="hy_dl_3a"><span class="txt_2">*</span> 地&nbsp;&nbsp;&nbsp;&nbsp;址：</div>
         <div class="hy_dl_3c">
           <div class="left">
-            <select name="select" class="txt_1">
-              <option value="">请选择省份</option>
-              <option value="12">A 安徽</option>
-              <option value="1">B 北京</option>
-              <option value="22">C 重庆</option>
-              <option value="13">F 福建</option>
-              <option value="19">G 广东</option>
-              <option value="20">G 广西</option>
-              <option value="28">G 甘肃</option>
-              <option value="24">G 贵州</option>
-              <option value="3">H 河北</option>
-              <option value="16">H 河南</option>
-              <option value="21">H 海南</option>
-              <option value="17">H 湖北</option>
-              <option value="18">H 湖南</option>
-              <option value="8">H 黑龙江</option>
-              <option value="7">J 吉林</option>
-              <option value="10">J 江苏</option>
-              <option value="14">J 江西</option>
-              <option value="6">L 辽宁</option>
-              <option value="5">N 内蒙古</option>
-              <option value="30">N 宁夏</option>
-              <option value="29">Q 青海</option>
-              <option value="9">S 上海</option>
-              <option value="23">S 四川</option>
-              <option value="15">S 山东</option>
-              <option value="4">S 山西</option>
-              <option value="27">S 陕西</option>
-              <option value="2">T 天津</option>
-              <option value="31">X 新疆</option>
-              <option value="26">X 西藏</option>
-              <option value="25">Y 云南</option>
-              <option value="11">Z 浙江</option>
-            </select>
-          </div>
-          <div class="left">
-            <select name="select" class="txt_1">
-              <option value="">请选择城市</option>
-            </select>
+            <div class="city-group">
+              <select name="user[locate_province]" class="txt_1 city-select">
+                  <option value="">请选择省份</option>
+                  <%= options_for_select(ChinaCity.list) %>
+              </select>      
+              <select name="user[locate_city]" class="txt_1 city-select">
+                <option value="">请选择城市</option>
+              </select>
+            </div>
           </div>
         </div>
       </div>
       <div class="hy_dl_5">
-        <input name="image" type="image" src="<%= root_url %>images/member/qr.jpg" width="236" height="43" />
+        <input name="image" type="image" src="/img/member/qr.jpg" width="236" height="43" />
       </div>
       <div class="hy_dl_5"><a href="#" class="link_4">新用户注册须知？</a></div>
     <% end %>

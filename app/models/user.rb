@@ -57,7 +57,7 @@ class User
   # field :authentication_token, :type => String
   # run 'rake db:mongoid:create_indexes' to create indexes
 
-  field :user_type, :type => String
+  field :user_type, :type => String # "geren", "gongsi", "lietou"
   field :company_name, :type => String
   field :phone_number, :type => String
   validates_uniqueness_of :phone_number

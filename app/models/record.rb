@@ -10,6 +10,8 @@ class Record
   field :title, type: String
   field :job_type, type: Integer
   
+  field :company_name, type: String
+  field :contact_phone_number, type: String
   field :company_location, type: String
   field :company_start_date, type: String
   field :company_reg_price, type: String

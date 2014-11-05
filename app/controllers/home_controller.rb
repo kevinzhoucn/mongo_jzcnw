@@ -123,6 +123,12 @@ class HomeController < ApplicationController
 
   def create
     @record = Record.new(params[:record])
+    if current_user
+      @record.contact_phone_number = current_user.phone_number
+      if current_user.user_type != "geren"
+        @record.company_name = current_user.company_name
+      end      
+    end
 
     respond_to do |format|
       if @record.save

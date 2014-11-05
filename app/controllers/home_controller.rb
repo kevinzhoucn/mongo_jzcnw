@@ -1,4 +1,5 @@
 class HomeController < ApplicationController 
+  before_filter :authenticate_user!, only: [:publish, :add, :create]
   def index
     @seg_yjgcs = Segment.where(code: "yjgcs").first
     @seg_zjs = Segment.where(code: "zjs").first
@@ -77,6 +78,7 @@ class HomeController < ApplicationController
   def add
     # @record = Record.new
     @resume = Resume.new
+    @record = Record.new
     @seg_id = params[:seg]
     @cat_id = params[:cat]
     cat_name = Category.find(@cat_id).title

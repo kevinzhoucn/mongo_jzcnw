@@ -21,6 +21,7 @@
         </a>&nbsp;&nbsp;
       <% else %>
         <a href="<%= profile_show_path(current_user.id) %>" class="link_2", target="_blank">
+          欢迎：
           <%= current_user.phone_number %>
         </a>&nbsp;&nbsp;
       <% end %>

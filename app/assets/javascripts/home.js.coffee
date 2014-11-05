@@ -3,6 +3,10 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
+  # $('#user_user_type_gongsi').attr("checked", false)
+  bflag = $('#user_user_type_gongsi:checked').val()
+  $('.corp_item').css('display','block') if ( bflag == 'gongsi')
+
   $('#user_user_type_gongsi').click ->
     $('.corp_item').css('display','block');
   $('#user_user_type_geren').click ->

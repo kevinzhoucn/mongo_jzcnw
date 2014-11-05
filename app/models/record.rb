@@ -17,4 +17,17 @@ class Record
   belongs_to :segment
 
   default_scope desc(:created_at)
+
+  validates_presence_of :title, :details
+  validates_presence_of :locate_province, :locate_city, :register_status, if: :zhengshu_type?
+  validates_presence_of :company_location, :company_reg_price, if: :zizhi_type?
+
+  protected
+    def zhengshu_type?
+      job_type.blank? or job_type == 1 or job_type == 2
+    end
+
+    def zizhi_type?
+      !job_type.blank? && job_type == 3
+    end
 end

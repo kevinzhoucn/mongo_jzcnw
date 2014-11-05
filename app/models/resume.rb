@@ -25,6 +25,8 @@ class Resume
   belongs_to :category
   belongs_to :segment
 
+  validates_presence_of :name, :mobile, :register_status, :edu_level, :social_security, :security_b, :intend_price, :person_summary, :resume_title, :work_province, :work_city, :price_month
+
   def birthday
     if !birth_day.blank? && !birth_month.blank? && !birth_day.blank?
       birth_year + '-' + birth_month + '-' + birth_day

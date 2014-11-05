@@ -30,6 +30,33 @@ zh-CN:
         password: 密码
         password_confirmation: 确认密码
         encrypted_password: 密码
+      resume:
+        name: 姓名
+        mobile: 移动电话
+        register_status: 注册状态
+        edu_level: 学历
+        social_security: 社保状态
+        security_b: 安全员B证
+        intend_price: 意向价格
+        person_summary: 自我描述
+        resume_title: 简历标题
+        work_province: 求职省份
+        work_city: 求职城市
+        price_month: 期望月薪
+      record:
+        title: 标题
+        locate_province: 证书所在省份
+        locate_city: 证书所在城市
+        details: 详细说明
+        job_title: 职称
+        register_status: 注册情况
+        price: 挂靠价格
+        company_location: 公司所在省份
+        company_start_date: 公司所在城市
+        company_reg_price: 公司注册资金
+
+
+
 
   breadcrumbs:
     homepage: 首页

@@ -60,6 +60,7 @@ class User
   field :user_type, :type => String
   field :company_name, :type => String
   field :phone_number, :type => String
+  validates_uniqueness_of :phone_number
 
   field :locate_province, :type => String
   field :locate_city, :type => String
@@ -68,6 +69,8 @@ class User
   #index({ email: 1 }, { unique: true, background: true })
   field :user_name, :type => String
   validates_presence_of :user_name, :phone_number, :locate_province
+  validates_presence_of :company_name, if: :company_type?
+
   attr_accessible :user_type, :company_name, :phone_number, :locate_province, :locate_city, :user_name, :email, :password, :password_confirmation, :remember_me, :created_at, :updated_at
 
   protected
@@ -79,5 +82,9 @@ class User
     # From Devise module Validatable
     def email_required?
       false
+    end
+
+    def company_type?
+      !user_type.blank? && user_type == 'gongsi'
     end
 end

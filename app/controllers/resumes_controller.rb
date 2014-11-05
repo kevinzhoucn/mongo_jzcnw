@@ -41,13 +41,16 @@ class ResumesController < ApplicationController
   # POST /resumes.json
   def create
     @resume = Resume.new(params[:resume])
+    @seg_id = params[:resume][:segment_id]
+    @cat_id = params[:resume][:category_id]
+    # back_link = '/publish/2/add?seg=#{seg_id}&cat=#{cat_id}'
 
     respond_to do |format|
       if @resume.save
         format.html { redirect_to @resume, notice: 'Resume was successfully created.' }
         format.json { render json: @resume, status: :created, location: @resume }
       else
-        format.html { render action: "new" }
+        format.html { render action: "new"}
         format.json { render json: @resume.errors, status: :unprocessable_entity }
       end
     end

@@ -8,7 +8,21 @@
   <div id="member">
   <div class="left"><img src="<%= root_url %>images/tm.png" width="963" height="36" /></div>
   <div class="left">
-    <%= form_for :record, :url => home_records_path do |f| %>
+    <%= form_for @record, :url => home_records_path do |f| %>
+      <% if @record.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= "#{@record.errors.count}个错误:" %>
+          </h2>
+          <ul>
+            <% @record.errors.full_messages.each do |msg| %>
+              <li style="float:none">
+                <%= msg %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
       <table width="964" height="323" border="0" cellpadding="0" cellspacing="0">
         <input type="hidden" name="record[segment_id]" value="<%= seg_id %>" >
         <input type="hidden" name="record[category_id]" value="<%= cat_id %>" >

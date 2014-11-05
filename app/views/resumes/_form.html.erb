@@ -73,27 +73,7 @@
             <%= f.input_field :edu_level, collection: ['高中', '中专', '大专', '本科', '硕士', '博士'], class: 'jl_xl', prompt: "请选择.." %>
           </td>
         </tr>
-        <tr>
-          <td height="40" align="right" class="txt_1"><span class="txt_2">*</span> 注册状态：</td>
-          <td height="40">
-            <%= f.input_field :register_status, collection: ['初始注册', '转 注 册', '重新注册', '延期注册'], class: 'jl_xl', prompt: "请选择.." %>
-          </td>
-          <td height="40" align="right"><span class="txt_1"><span class="txt_2">*</span> 社保状态：</span></td>
-          <td height="40">
-            <%= f.input_field :social_security, collection: ['可转社保', '不可转社保'], class: 'jl_xl', prompt: "请选择.." %>
-          </td>
-        </tr>
-        <tr>
-          <td height="40" align="right" class="txt_1"><span class="txt_2">*</span> 安全员B证：</td>
-          <td height="40">
-            <%= f.input_field :security_b, collection: ['可考B证', '不可考B证', '带有B证'], class: 'jl_xl', prompt: "请选择.." %>
-          </td>
-          <td height="40" align="right"><span class="txt_1"><span class="txt_2">*</span> 意向价格：</span></td>
-          <td height="40">
-            <%= f.input_field :intend_price, collection: ['面 议', '0-1万', '1-2万', '2-6万', '6万以上'], class: 'jl_xl', prompt: "请选择.." %>
-          </td>
-        </tr>
-        
+               
         <tr>
           <td height="85" align="right" class="txt_1"><span class="txt_2">*</span> 自我描述：</td>
           <td height="85" colspan="3">
@@ -135,7 +115,7 @@
                   <option value="无">请选择省份</option>
                   <%= options_for_select(ChinaCity.list) %>
               </select>      
-              <select name="resume[locate_city]" class="jl_xl city-select">
+              <select name="resume[work_city]" class="jl_xl city-select">
                 <option value="">请选择城市</option>
               </select>
               <select name="" class="jl_xl city-select">

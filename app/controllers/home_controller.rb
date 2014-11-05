@@ -15,7 +15,7 @@ class HomeController < ApplicationController
 
     @seg_qz = Segment.where(for: "qz").first
 
-    @resumes = Resume.desc(:created_at).all.limit(9)
+    @resumes = Resume.where(resume_type: 2).desc(:created_at).all.limit(9)
 
     @useful_links = UsefulLink.all.limit(15)
   end
@@ -101,11 +101,13 @@ class HomeController < ApplicationController
     @record = Record.new
     @seg_id = params[:seg]
     @cat_id = params[:cat]
+    seg_name = Segment.find(@seg_id).title
     cat_name = Category.find(@cat_id).title
 
     @type_id = params[:type]
     add_breadcrumb t("breadcrumbs.homepage"), root_path, :title => t("breadcrumbs.homepage"), class: "link_4a1"
     add_breadcrumb t("breadcrumbs.publish_type_0#{@type_id}"), home_publish_path, :title => t("breadcrumbs.publish_type"), class: "link_4a1"
+    add_breadcrumb seg_name, publish_path, :title => seg_name, class: "link_4a1" 
 
     if @type_id == '3' or @type_id == '4' or @type_id == '5'
       @job_type = 1

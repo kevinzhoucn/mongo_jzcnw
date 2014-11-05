@@ -24,7 +24,7 @@
   <!--循环 开始 显示20条-->
   <% @records.each do |record| %>
     <div class="nrk_l">
-      <div class="ny_nr11"><a href="<%= record_show_url(record.id) %>" class="link_6"><%= record.title %></a></div>
+      <div class="ny_nr11"><a href="<%= record_show_url(record.id) %>" class="link_6" target="_blank"><%= record.title %></a></div>
       <div class="ny_nr12"><a href="#" class="link_6">发布者</a></div>
       <div class="ny_nr3"><span class="txt_4"><%= ChinaCity.get(record.locate_province) %></span></div>
       <div class="ny_nr3"><span class="txt_4"><%= record.price %></span></div>

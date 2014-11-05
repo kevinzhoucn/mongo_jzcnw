@@ -29,11 +29,23 @@ class Resume
   belongs_to :category
   belongs_to :segment
 
-  validates_presence_of :name, :mobile, :register_status, :edu_level, :social_security, :security_b, :intend_price, :person_summary, :resume_title, :work_province, :work_city, :price_month
+  validates_presence_of :name, :mobile, :edu_level, :person_summary
+  validates_presence_of :resume_title, :work_province, :work_city, :price_month, if: :quanzhi_type?
+  
+  validates_presence_of :job_title, :guakao_price, :register_status, if: :jianzhi_type?
 
   def birthday
     if !birth_day.blank? && !birth_month.blank? && !birth_day.blank?
       birth_year + '-' + birth_month + '-' + birth_day
     end
   end
+
+  protected
+    def jianzhi_type?
+        resume_type == 1
+    end
+
+    def quanzhi_type?
+        resume_type == 2
+    end
 end

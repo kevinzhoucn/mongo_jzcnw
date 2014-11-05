@@ -65,7 +65,7 @@
           </td>
         </tr>
         <tr>
-          <td height="40" align="right" class="txt_1"><span class="txt_2">*</span> 注册状态：</td>
+          <td height="40" align="right" class="txt_1"><span class="txt_2">*</span> 注册情况：</td>
           <td height="40" colspan="3">
             <%= f.input_field :register_status, collection: ['初始注册', '转 注 册', '重新注册', '延期注册'], as: :radio, class: 'jl_xl' %>
           </td>
@@ -88,7 +88,7 @@
           </td>
         </tr>
         <tr>
-          <td height="40" align="right" class="txt_1">职称：</td>
+          <td height="40" align="right" class="txt_1"><span class="txt_2">*</span> 职称：</td>
           <td height="40">
             <%= f.input_field :job_title, collection: ['无', '有'], class: 'jl_xl', as: :radio %>
           </td>
@@ -103,7 +103,7 @@
           </td>
         </tr>
         <tr>
-          <td height="40" align="right" class="txt_1">挂靠价格：</td>
+          <td height="40" align="right" class="txt_1"><span class="txt_2">*</span> 挂靠价格：</td>
           <td height="40">
             <%= f.input_field :guakao_price, collection: ['面议', '1万元以下', '1-2万元', '2-3万元', '3-5万元', '5-10万元', '10-15万元', '15万元以上'], class: 'jl_xl', prompt: "请选择..." %>
           </td>

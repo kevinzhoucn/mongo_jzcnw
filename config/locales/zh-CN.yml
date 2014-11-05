@@ -43,6 +43,9 @@ zh-CN:
         work_province: 求职省份
         work_city: 求职城市
         price_month: 期望月薪
+        job_title: 职称
+        guakao_price: 挂靠价格
+        register_status: 注册情况
       record:
         title: 标题
         locate_province: 证书所在省份

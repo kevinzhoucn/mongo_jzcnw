@@ -29,6 +29,7 @@
         <tbody>
           <%= f.input_field :segment_id, value: @seg_id, as: :hidden %>
           <%= f.input_field :category_id, value: @cat_id, as: :hidden %>
+          <%= f.input_field :resume_type, value: @type_id, as: :hidden %>
           <tr>
           <td width="110" height="40" align="right" class="txt_1"><span class="txt_2">*</span> 姓&nbsp;&nbsp;&nbsp;&nbsp;名：</td>
           <td width="185" height="40">
@@ -96,7 +97,7 @@
         <tr>
           <td height="85" align="right" class="txt_1"><span class="txt_2">*</span> 自我描述：</td>
           <td height="85" colspan="3">
-            <%= f.input_field :person_summary, class: "jl_sr2" %>
+            <%= f.input_field :person_summary, as: :text, class: "jl_sr2" %>
           </td>
         </tr>
         <tr>

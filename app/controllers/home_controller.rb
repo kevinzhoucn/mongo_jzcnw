@@ -59,19 +59,39 @@ class HomeController < ApplicationController
   end
 
   def zizhi
+    @segments = Segment.where(for: 'zs').all
     @records = Record.all
-    add_breadcrumb t("breadcrumbs.homepage"), root_path, :title => t("breadcrumbs.homepage"), class: "link_4a1"    
+
+    if !params[:seg_name].blank?
+      @seg_id = params[:seg_name]
+      # seg = Segment.find(seg_id)
+      @categories = Category.where(:segment_id => @seg_id)
+      @records = Record.where(:segment_id => @seg_id)
+    else
+      @categories = Category.where(:segment_id => Segment.first.id)
+    end
+
+    # add_breadcrumb t("breadcrumbs.homepage"), root_path, :title => t("breadcrumbs.homepage"), class: "link_4a1"    
 
     if !params[:cat_name].blank?
-      cat_name = params[:cat_name]
-      cat_title = Category.find(cat_name).title
-      add_breadcrumb cat_title, "#", class: "link_4a1", onclick: "return false"
-      @records = Record.where(:category_id => cat_name)
+      @cat_name = params[:cat_name]
+      # @records = Record.where(:category_id => @cat_name)
+      if @cat_name != 'a'
+        # cat_title = Category.find(@cat_name).title
+        # add_breadcrumb cat_title, "#", class: "link_4a1", onclick: "return false"
+        @records = Record.where(:category_id => @cat_name)
+      end
+    else
+      @cat_name = 'a'
     end
 
     if !params[:province].blank?
-      province = params[:province]
-      @records = Record.where(locate_province: province)
+      province = params[:province]      
+      if @cat_name != 'a'
+        @records = Record.where(locate_province: province, category_id: @cat_name)
+      else
+        @records = Record.where(locate_province: province)
+      end
     end
   end
 

@@ -15,12 +15,16 @@ class Resume
   field :social_security, type: String
   field :security_b, type: String
   field :intend_price, type: String  
-  field :person_summary, type: String
+  field :person_summary, type: String  
 
   field :resume_title, type: String
   field :work_province, type: String
   field :work_city, type: String
   field :price_month, type: String
+
+  field :resume_type, type: Integer
+  field :job_title, type: Integer
+  field :guakao_price, type: String
   
   belongs_to :category
   belongs_to :segment

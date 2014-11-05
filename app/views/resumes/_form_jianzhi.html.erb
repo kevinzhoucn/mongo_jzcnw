@@ -1,0 +1,145 @@
+<!--内容块 开始-->
+<div class="center">
+  <img src="/img/release/bt_3.jpg" />
+</div>
+<div id="ny3_dh">
+  当前位置：
+  <%= render_breadcrumbs :separator => ' / ' %>
+</div>
+<div class="center">
+  <%= simple_form_for @resume do |f| %>
+    <% if @resume.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= "#{@resume.errors.count}个错误:" %>
+        </h2>
+        <ul>
+          <% @resume.errors.full_messages.each do |msg| %>
+            <li style="float:none">
+              <%= msg %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <div class="fb_b1">基本信息</div>
+  <div class="fb_b3">
+    <div id="fb_jbxx">
+      <table width="678" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <%= f.input_field :segment_id, value: @seg_id, as: :hidden %>
+          <%= f.input_field :category_id, value: @cat_id, as: :hidden %>
+          <%= f.input_field :resume_type, value: @type_id, as: :hidden %>
+          <tr>
+          <td width="110" height="40" align="right" class="txt_1"><span class="txt_2">*</span> 姓&nbsp;&nbsp;&nbsp;&nbsp;名：</td>
+          <td width="185" height="40">
+            <%= f.input_field :name, class: "jl_sr" %>
+          </td>
+          <td width="105" height="40" align="right"><span class="txt_1">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</span></td>
+          <td width="293" height="40">
+            <%= f.input_field :sex, collection: ['男', '女'], class: 'jl_xl', prompt: "请选择.." %>
+          </td>
+        </tr>
+        <tr>
+          <td height="40" align="right" class="txt_1"><span class="txt_2">*</span> 移动电话：</td>
+          <td height="40">
+            <%= f.input_field :mobile, class: "jl_sr" %>
+          </td>
+          <td height="40" align="right">出生年月：</td>
+          <td height="40" class="txt_1">
+            <%= f.input_field :birth_year, class: "jl_sr3" %>
+            年
+            <%= f.input_field :birth_month, class: "jl_sr4"%>
+            月
+            <%= f.input_field :birth_day, class: "jl_sr4"%>
+            日</td>
+        </tr>        
+        <tr>
+          <td height="40" align="right" class="txt_1">电子邮件：</td>
+          <td height="40">
+            <%= f.input_field :email, class: "jl_sr" %>
+          </td>
+          <td height="40" align="right"><span class="txt_1">QQ 号&nbsp;码：</span></td>
+          <td height="40">
+            <%= f.input_field :qq, class: "jl_sr" %>
+          </td>
+        </tr>
+        <tr>
+          <td height="40" align="right" class="txt_1"><span class="txt_2">*</span> 注册状态：</td>
+          <td height="40" colspan="3">
+            <%= f.input_field :register_status, collection: ['初始注册', '转 注 册', '重新注册', '延期注册'], as: :radio, class: 'jl_xl' %>
+          </td>
+        </tr>
+        <tr>
+          <td height="40" align="right" class="txt_1"><span class="txt_2">*</span> 求职地区：</td>
+          <td height="40" colspan="3">
+            <div class="city-group">
+              <select name="resume[work_province]" class="jl_xl city-select" height="40">
+                  <option value="">请选择省份</option>
+                  <%= options_for_select(ChinaCity.list) %>
+              </select>      
+              <select name="resume[work_city]" class="jl_xl city-select">
+                <option value="">请选择城市</option>
+              </select>
+              <select name="" class="jl_xl city-select">
+                <option value="">请选择区县</option>
+              </select>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td height="40" align="right" class="txt_1">职称：</td>
+          <td height="40">
+            <%= f.input_field :job_title, collection: ['无', '有'], class: 'jl_xl', as: :radio %>
+          </td>
+          <td height="40" align="right">
+            <span class="txt_1">
+              <span class="txt_2">*</span>
+               学&nbsp;&nbsp;&nbsp;&nbsp;历：
+            </span>
+          </td>            
+          <td height="40">
+            <%= f.input_field :edu_level, collection: ['高中', '中专', '大专', '本科', '硕士', '博士'], class: 'jl_xl', prompt: "请选择.." %>
+          </td>
+        </tr>
+        <tr>
+          <td height="40" align="right" class="txt_1">挂靠价格：</td>
+          <td height="40">
+            <%= f.input_field :guakao_price, collection: ['面议', '1万元以下', '1-2万元', '2-3万元', '3-5万元', '5-10万元', '10-15万元', '15万元以上'], class: 'jl_xl', prompt: "请选择..." %>
+          </td>
+        </tr>
+        
+        
+        <tr>
+          <td height="85" align="right" class="txt_1"><span class="txt_2">*</span> 详细说明：</td>
+          <td height="85" colspan="3">
+            <%= f.input_field :person_summary, as: :text, class: "jl_sr2" %>
+          </td>
+        </tr>
+        <tr>
+          <td height="40" align="right" class="txt_2">温馨提示：</td>
+          <td height="40" colspan="3" class="txt_2">
+            <span class="txt_1">
+              <span class="txt_2"></span> 
+            </span>
+            如是建造师，请注明安全员B本及到期时间。如是其它证书，请注明一些特殊情况。
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+  <div id="fb_txbk">
+    <div id="fb_tx"><img src="" width="219" height="155" alt=""></div>
+    <div id="fb_txan"><a href="#" class="fb_sc"></a></div>
+    <div id="fb_txt">上传头像，有助于企业更好地认识您<br>
+      头像建议：800*600像素</div>
+  </div>
+</div>
+<div class="fb_b3">
+  <div id="fb_txan">
+    <input name="" type="image" src="<%= root_url %>images/jianli/anniu_r3_c2.jpg"/>
+  </div>
+</div>
+<% end %>
+</div>
+
+<!--内容块 结束-->

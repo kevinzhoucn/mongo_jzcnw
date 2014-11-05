@@ -1,149 +1,255 @@
-<div class="center">
-  <div class="fb_b1">基本信息</div>
-  <div class="fb_b3">
-    <div id="fb_jbxx">
-      <table width="678" border="0" cellpadding="0" cellspacing="0">
-        <tbody>
+<% if @resume.resume_type == 2 %>
+  <div class="center">
+    <div class="fb_b1">基本信息</div>
+    <div class="fb_b3">
+      <div id="fb_jbxx">
+        <table width="678" border="0" cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+            <td width="110" height="40" align="right" class="txt_1"><span class="txt_2">*</span> 姓&nbsp;&nbsp;&nbsp;&nbsp;名：</td>
+            <td width="185" height="40">
+              <span class= "jl_sr">
+                <%= @resume.name %>
+              </span>
+            </td>
+            <td width="105" height="40" align="right"><span class="txt_1">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</span></td>
+            <td width="293" height="40">
+              <span class= "jl_xl">
+                <%= @resume.sex %>
+              </span>
+            </td>
+          </tr>
           <tr>
-          <td width="110" height="40" align="right" class="txt_1"><span class="txt_2">*</span> 姓&nbsp;&nbsp;&nbsp;&nbsp;名：</td>
-          <td width="185" height="40">
-            <span class= "jl_sr">
-              <%= @resume.name %>
-            </span>
-          </td>
-          <td width="105" height="40" align="right"><span class="txt_1">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</span></td>
-          <td width="293" height="40">
-            <span class= "jl_xl">
-              <%= @resume.sex %>
-            </span>
-          </td>
-        </tr>
-        <tr>
-          <td height="40" align="right" class="txt_1"><span class="txt_2">*</span> 移动电话：</td>
-          <td height="40">
-            <span class= "jl_sr">
-              <%= @resume.mobile %>
-            </span>
-          </td>
-          <td height="40" align="right">出生年月：</td>
-          <td height="40" class="txt_1">
-            <span class= "jl_sr">
-              <%#= @resume.birthday %>
-            </span>
-          </td>
-        </tr>
-        <tr>
-          <td height="40" align="right" class="txt_1">电子邮件：</td>
-          <td height="40">
-            <span class= "jl_sr">
-              <%= @resume.email %>
-            </span>
-          </td>
-          <td height="40" align="right"><span class="txt_1">QQ 号&nbsp;码：</span></td>
-          <td height="40">
-            <span class= "jl_sr">
-              <%= @resume.qq %>
-            </span>
-          </td>
-        </tr>
-        <tr>
-          <td height="40" align="right" class="txt_1">工作年限：</td>
-          <td height="40">
-            <span class= "jl_xl">
-              <%= @resume.work_year %>
-            </span>
-          <td height="40" align="right"><span class="txt_1"><span class="txt_2">*</span> 学&nbsp;&nbsp;&nbsp;&nbsp;历：</span></td>            
-          <td height="40">
-            <span class= "jl_xl">
-              <%= @resume.edu_level %>
-            </span>
-          </td>
-        </tr>
-        <tr>
-          <td height="40" align="right" class="txt_1"><span class="txt_2">*</span> 注册状态：</td>
-          <td height="40">
-            <span class= "jl_xl">
-              <%= @resume.register_status %>
-            </span>
-          </td>
-          <td height="40" align="right"><span class="txt_1"><span class="txt_2">*</span> 社保状态：</span></td>
-          <td height="40">
-            <span class= "jl_xl">
-              <%= @resume.social_security %>
-            </span>
-          </td>
-        </tr>
-        <tr>
-          <td height="40" align="right" class="txt_1"><span class="txt_2">*</span> 安全员B证：</td>
-          <td height="40">
-            <span class= "jl_xl">
-              <%= @resume.security_b %>
-            </span>
-          </td>
-          <td height="40" align="right"><span class="txt_1"><span class="txt_2">*</span> 意向价格：</span></td>
-          <td height="40">
-            <span class= "jl_xl">
-              <%= @resume.intend_price %>
-            </span>
-          </td>
-        </tr>        
-        <tr>
-          <td height="85" align="right" class="txt_1"><span class="txt_2">*</span> 自我描述：</td>
-          <td height="85" colspan="3">
-            <span class= "jl_xl">
-              <%= @resume.person_summary %>
-            </span>
-          </td>
-        </tr>
-      </tbody></table>
+            <td height="40" align="right" class="txt_1"><span class="txt_2">*</span> 移动电话：</td>
+            <td height="40">
+              <span class= "jl_sr">
+                <%= @resume.mobile %>
+              </span>
+            </td>
+            <td height="40" align="right">出生年月：</td>
+            <td height="40" class="txt_1">
+              <span class= "jl_sr">
+                <%#= @resume.birthday %>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td height="40" align="right" class="txt_1">电子邮件：</td>
+            <td height="40">
+              <span class= "jl_sr">
+                <%= @resume.email %>
+              </span>
+            </td>
+            <td height="40" align="right"><span class="txt_1">QQ 号&nbsp;码：</span></td>
+            <td height="40">
+              <span class= "jl_sr">
+                <%= @resume.qq %>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td height="40" align="right" class="txt_1">工作年限：</td>
+            <td height="40">
+              <span class= "jl_xl">
+                <%= @resume.work_year %>
+              </span>
+            <td height="40" align="right"><span class="txt_1"><span class="txt_2">*</span> 学&nbsp;&nbsp;&nbsp;&nbsp;历：</span></td>            
+            <td height="40">
+              <span class= "jl_xl">
+                <%= @resume.edu_level %>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td height="40" align="right" class="txt_1"><span class="txt_2">*</span> 注册状态：</td>
+            <td height="40">
+              <span class= "jl_xl">
+                <%= @resume.register_status %>
+              </span>
+            </td>
+            <td height="40" align="right"><span class="txt_1"><span class="txt_2">*</span> 社保状态：</span></td>
+            <td height="40">
+              <span class= "jl_xl">
+                <%= @resume.social_security %>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td height="40" align="right" class="txt_1"><span class="txt_2">*</span> 安全员B证：</td>
+            <td height="40">
+              <span class= "jl_xl">
+                <%= @resume.security_b %>
+              </span>
+            </td>
+            <td height="40" align="right"><span class="txt_1"><span class="txt_2">*</span> 意向价格：</span></td>
+            <td height="40">
+              <span class= "jl_xl">
+                <%= @resume.intend_price %>
+              </span>
+            </td>
+          </tr>        
+          <tr>
+            <td height="85" align="right" class="txt_1"><span class="txt_2">*</span> 自我描述：</td>
+            <td height="85" colspan="3">
+              <span class= "jl_xl">
+                <%= @resume.person_summary %>
+              </span>
+            </td>
+          </tr>
+        </tbody></table>
+      </div>
+    <div id="fb_txbk">
+      <div id="fb_tx"><img src="" width="219" height="155" alt=""></div>
+      <div id="fb_txan"><a href="#" class="fb_sc"></a></div>
+      <div id="fb_txt">上传头像，有助于企业更好地认识您<br>
+        头像建议：800*600像素</div>
     </div>
-  <div id="fb_txbk">
-    <div id="fb_tx"><img src="" width="219" height="155" alt=""></div>
-    <div id="fb_txan"><a href="#" class="fb_sc"></a></div>
-    <div id="fb_txt">上传头像，有助于企业更好地认识您<br>
-      头像建议：800*600像素</div>
   </div>
-</div>
 
-<!-- <div class="center"><img src="<%#= root_path %>images/jianli/bk_1_r4_c1.jpg"></div>
- -->
-<!--基本信息 结束-->
+  <!-- <div class="center"><img src="<%#= root_path %>images/jianli/bk_1_r4_c1.jpg"></div>
+   -->
+  <!--基本信息 结束-->
 
-<!--求职意向 开始-->
-<div class="fb_b1">求职意向</div>
-<div class="fb_b3">
-  <div id="fb_jbxx2">
-      <table width="678" border="0" cellpadding="0" cellspacing="0">
-        <tbody><tr>
-          <td width="105" height="40" align="right" class="txt_1"><span class="txt_2">*</span> 简历标题：</td>
-          <td width="573" height="40">
-            <span class= "jl_sr5">
-              <%= @resume.resume_title %>
-            </span>
-          </td>
-        </tr>
-        <tr>
-          <td height="40" align="right" class="txt_1"><span class="txt_2">*</span> 求职地区：</td>
-          <td height="40">
-            <span class= "jl_xl">
-              <%= @resume.work_province %>
-            </span>
-          </td>
-        </tr>
-        <tr>
-          <td height="40" align="right" class="txt_1"><span class="txt_2">*</span> 期望月薪：</td>
-          <td height="40">
-            <span class= "jl_xl">
-              <%= @resume.price_month %>
-            </span>
-          </td>
-        </tr>
-      </tbody></table>
+  <!--求职意向 开始-->
+  <div class="fb_b1">求职意向</div>
+  <div class="fb_b3">
+    <div id="fb_jbxx2">
+        <table width="678" border="0" cellpadding="0" cellspacing="0">
+          <tbody><tr>
+            <td width="105" height="40" align="right" class="txt_1"><span class="txt_2">*</span> 简历标题：</td>
+            <td width="573" height="40">
+              <span class= "jl_sr5">
+                <%= @resume.resume_title %>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td height="40" align="right" class="txt_1"><span class="txt_2">*</span> 求职地区：</td>
+            <td height="40">
+              <span class= "jl_xl">
+                <%= @resume.work_province %>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td height="40" align="right" class="txt_1"><span class="txt_2">*</span> 期望月薪：</td>
+            <td height="40">
+              <span class= "jl_xl">
+                <%= @resume.price_month %>
+              </span>
+            </td>
+          </tr>
+        </tbody></table>
+      </div>
+  <!--     
+    <div id="fb_txan">
+      <input name="" type="image" src="<%#= root_url %>images/jianli/anniu_r3_c2.jpg"/>
     </div>
-<!--     
-  <div id="fb_txan">
-    <input name="" type="image" src="<%#= root_url %>images/jianli/anniu_r3_c2.jpg"/>
+  -->
+   </div>
   </div>
--->
- </div>
-</div>
+<% else %>
+  <div class="center">
+    <div class="fb_b1">基本信息</div>
+      <div class="fb_b3">
+        <div id="fb_jbxx">
+          <table width="678" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+              <tr>
+              <td width="110" height="40" align="right" class="txt_1"><span class="txt_2">*</span> 姓&nbsp;&nbsp;&nbsp;&nbsp;名：</td>
+              <td width="185" height="40">
+                <span class= "jl_sr">
+                  <%= @resume.name %>
+                </span>
+              </td>
+              <td width="105" height="40" align="right"><span class="txt_1">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</span></td>
+              <td width="293" height="40">
+                <span class= "jl_xl">
+                  <%= @resume.sex %>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td height="40" align="right" class="txt_1"><span class="txt_2">*</span> 移动电话：</td>
+              <td height="40">
+                <span class= "jl_sr">
+                  <%= @resume.mobile %>
+                </span>
+              </td>
+              <td height="40" align="right">出生年月：</td>
+              <td height="40" class="txt_1">
+                <span class= "jl_sr">
+                  <%#= @resume.birthday %>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td height="40" align="right" class="txt_1">电子邮件：</td>
+              <td height="40">
+                <span class= "jl_sr">
+                  <%= @resume.email %>
+                </span>
+              </td>
+              <td height="40" align="right"><span class="txt_1">QQ 号&nbsp;码：</span></td>
+              <td height="40">
+                <span class= "jl_sr">
+                  <%= @resume.qq %>
+                </span>
+              </td>
+            </tr>
+
+            <tr>
+              <td height="40" align="right" class="txt_1"><span class="txt_2">*</span> 注册状态：</td>
+              <td height="40">
+                <span class= "jl_xl">
+                  <%= @resume.register_status %>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td height="40" align="right" class="txt_1">求职地区:</td>
+              <td height="40">
+                <span class= "jl_xl">
+                  <%= @resume.work_province %>
+                </span>
+              <td height="40" align="right"><span class="txt_1"><span class="txt_2">*</span> 学&nbsp;&nbsp;&nbsp;&nbsp;历：</span></td>            
+              <td height="40">
+                <span class= "jl_xl">
+                  <%= @resume.edu_level %>
+                </span>
+              </td>
+            </tr>
+
+            <tr>
+              <td height="40" align="right" class="txt_1"><span class="txt_2">*</span> 职称：</td>
+              <td height="40">
+                <span class= "jl_xl">
+                  <%= @resume.job_title %>
+                </span>
+              </td>
+              <td height="40" align="right"><span class="txt_1"><span class="txt_2">*</span> 挂靠价格：</span></td>
+              <td height="40">
+                <span class= "jl_xl">
+                  <%= @resume.guakao_price %>
+                </span>
+              </td>
+            </tr>        
+            <tr>
+              <td height="85" align="right" class="txt_1"><span class="txt_2">*</span> 详细说明：</td>
+              <td height="85" colspan="3">
+                <span class= "jl_xl">
+                  <%= @resume.person_summary %>
+                </span>
+              </td>
+            </tr>
+          </tbody></table>
+        </div>
+      <div id="fb_txbk">
+        <div id="fb_tx"><img src="" width="219" height="155" alt=""></div>
+        <div id="fb_txan"><a href="#" class="fb_sc"></a></div>
+        <div id="fb_txt">上传头像，有助于企业更好地认识您<br>
+          头像建议：800*600像素</div>
+      </div>
+    </div>
+  </div>
+<% end %>

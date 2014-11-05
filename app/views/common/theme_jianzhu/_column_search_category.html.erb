@@ -1,0 +1,126 @@
+<!--快速选择-->
+<div class="sf_bk_n1"><img src="/img/sf2_r1_c1.jpg" /></div>
+<div id="sf_bk_n2">
+  <table width="996" height="19" border="0" align="center" cellpadding="0" cellspacing="0" class="xx_table">
+    <tr>
+      <td width="14" align="center" valign="top">&nbsp;</td>
+      <td width="43" align="left" valign="top">分类：</td>
+      <td width="939">
+    <ul>
+        <li><a href="#" class="link_4a2">不限</a></li>        
+        <% @segments.each do |seg| %>
+            <li>&nbsp;|&nbsp;</li>
+            <li>
+                <%= link_to seg.title, post_category_path(:seg_name => seg), class: "link_4a1" %>
+            </li>
+        <% end %>
+      </ul>
+    </td>
+    </tr>
+  </table>
+  <table width="996" height="19" border="0" align="center" cellpadding="0" cellspacing="0" class="xx_table">
+    <tr>
+      <td width="14" align="center" valign="top">&nbsp;</td>
+      <td width="43" align="left" valign="top">分类：</td>
+      <td width="939">
+    <ul>
+        <li><a href="#" class="link_4a2">不限</a></li>
+        <% @categories.each do |cat| %>
+            <li>&nbsp;|&nbsp;</li>
+            <li>
+                <%= link_to cat.title, post_category_path(:seg_name => cat.segment_id, :cat_name => cat), class: "link_4a1" %>
+            </li>
+        <% end %>
+      </ul>
+    </td>
+    </tr>
+  </table>
+  <table width="996" height="19" border="0" align="center" cellpadding="0" cellspacing="0" class="xx_table">
+    <tr>
+      <td width="14" align="center" valign="top">&nbsp;</td>
+      <td width="43" align="left" valign="top">省份：</td>
+      <td width="939">
+    <ul>
+        <li><a href="#" class="link_4a2">不限</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'110000') %>" class="link_4a1">北京</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'510000') %>" class="link_4a1">四川</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'320000') %>" class="link_4a1">江苏</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'310000') %>" class="link_4a1">上海</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'440000') %>" class="link_4a1">广东</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'370000') %>" class="link_4a1">山东</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'130000') %>" class="link_4a1">河北</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'330000') %>" class="link_4a1">浙江</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'610000') %>" class="link_4a1">陕西</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'340000') %>" class="link_4a1">安徽</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'500000') %>" class="link_4a1">重庆</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'420000') %>" class="link_4a1">湖北</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'410000') %>" class="link_4a1">河南</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'350000') %>" class="link_4a1">福建</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'120000') %>" class="link_4a1">天津</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'430000') %>" class="link_4a1">湖南</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'140000') %>" class="link_4a1">山西</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'360000') %>" class="link_4a1">江西</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'450000') %>" class="link_4a1">广西</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'210000') %>" class="link_4a1">辽宁</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'520000') %>" class="link_4a1">贵州</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'230000') %>" class="link_4a1">黑龙江</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'530000') %>" class="link_4a1">云南</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'620000') %>" class="link_4a1">甘肃</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'220000') %>" class="link_4a1">吉林</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'150000') %>" class="link_4a1">内蒙古</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'630000') %>" class="link_4a1">青海</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'460000') %>" class="link_4a1">海南</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'640000') %>" class="link_4a1">宁夏</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'650000') %>" class="link_4a1">新疆</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'540000') %>" class="link_4a1">西藏</a></li>
+      </ul>
+    </td>
+    </tr>
+  </table>
+  <!--
+    <table width="996" height="19" border="0" align="center" cellpadding="0" cellspacing="0" >
+    <tr>
+      <td width="14" align="center" valign="top">&nbsp;</td>
+      <td width="43" align="left" valign="top">城市：</td>
+      <td width="939">
+    <ul>
+        <li><a href="#" class="link_4a2">不限</a></li>
+        <li>&nbsp;|&nbsp;</li>
+      </ul>
+    </td>
+    </tr>
+  </table>
+-->
+</div>
+<div class="sf_bk_n1"><img src="/img/sf2_r4_c1.jpg" /></div>

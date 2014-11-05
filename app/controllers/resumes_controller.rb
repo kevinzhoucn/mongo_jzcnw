@@ -43,6 +43,7 @@ class ResumesController < ApplicationController
     @resume = Resume.new(params[:resume])
     @seg_id = params[:resume][:segment_id]
     @cat_id = params[:resume][:category_id]
+    @type_id = params[:resume][:type_id]
     # back_link = '/publish/2/add?seg=#{seg_id}&cat=#{cat_id}'
 
     respond_to do |format|

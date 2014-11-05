@@ -14,6 +14,7 @@ Rails3MongoidDevise::Application.routes.draw do
   match '/region/(:province)' => 'home#zizhi', as: :zizhi_province
 
   match '/categories/(:cat_name)' => 'home#zizhi', :as => :zizhi_daiban
+  match '/posts(/:seg_name)(/:cat_name)(/:province)(/:city)' => 'home#zizhi', as: :post_category
   # scope '(home)' do
   #   controller :home do
   #     get '/' => :index

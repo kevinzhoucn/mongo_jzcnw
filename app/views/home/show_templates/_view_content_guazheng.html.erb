@@ -22,7 +22,13 @@
           </td>
           <td width="305" height="45" class="txt_2"><%= @record.job_title %></td>
           <td width="96" height="45" align="right" class="txt_4">公司名称：&nbsp;</td>
-          <td width="241" height="45"><span class="txt_4"><a href="#" class="link_4a1">xxxxxxxx</a></span></td>
+          <td width="241" height="45"><span class="txt_4">
+            <a href="#" class="link_4a1">
+              <% if current_user.user_type == 'gongsi' %>
+                <%= current_user.company_name %>
+              <% end %>
+            </a>
+          </span></td>
         </tr>
         <tr>
           <td height="45" align="right" class="txt_4">所在地：&nbsp;</td>
@@ -40,7 +46,9 @@
           <td height="45" align="right" class="txt_4">薪资待遇：&nbsp;</td>
           <td height="45" class="txt_4">xxxxxxxx</td>
           <td height="45" align="right" class="txt_4">联系电话：&nbsp;</td>
-          <td height="45" class="txt_2">xxxxxxxx</td>
+          <td height="45" class="txt_2">
+            <%= current_user.phone_number %>
+          </td>
         </tr>
         <tr>
           <td height="45" align="right" class="txt_4">工作年限：&nbsp;</td>

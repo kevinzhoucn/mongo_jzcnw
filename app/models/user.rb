@@ -85,6 +85,6 @@ class User
     end
 
     def company_type?
-      !user_type.blank? && user_type == 'gongsi'
+      !user_type.blank? && ( user_type == 'gongsi' or user_type == 'lietou' )
     end
 end

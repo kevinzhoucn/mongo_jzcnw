@@ -7,11 +7,15 @@
       <td width="43" align="left" valign="top">分类：</td>
       <td width="939">
     <ul>
-        <li><a href="#" class="link_4a2">不限</a></li>        
+        <li><a href="#" class="link_4a1">不限</a></li>
         <% @segments.each do |seg| %>
             <li>&nbsp;|&nbsp;</li>
-            <li>
-                <%= link_to seg.title, post_category_path(:seg_name => seg), class: "link_4a1" %>
+            <li>                
+                <% if !@seg_id.blank? && @seg_id.to_s == seg.id.to_s %>
+                    <%= link_to seg.title, post_category_path(:seg_name => seg), class: "link_4a2" %>
+                <% else %>
+                    <%= link_to seg.title, post_category_path(:seg_name => seg), class: 'link_4a1' %>
+                <% end %>                
             </li>
         <% end %>
       </ul>
@@ -24,11 +28,15 @@
       <td width="43" align="left" valign="top">分类：</td>
       <td width="939">
     <ul>
-        <li><a href="#" class="link_4a2">不限</a></li>
+        <li><a href="#" class="link_4a1">不限</a></li>
         <% @categories.each do |cat| %>
             <li>&nbsp;|&nbsp;</li>
             <li>
-                <%= link_to cat.title, post_category_path(:seg_name => cat.segment_id, :cat_name => cat), class: "link_4a1" %>
+                <% if !@cat_name.blank? && @cat_name.to_s == cat.id.to_s %>
+                    <%= link_to cat.title, post_category_path(:seg_name => cat.segment_id, :cat_name => cat), class: "link_4a2" %>
+                <% else %>
+                    <%= link_to cat.title, post_category_path(:seg_name => cat.segment_id, :cat_name => cat), class: "link_4a1" %>
+                <% end %>
             </li>
         <% end %>
       </ul>
@@ -41,7 +49,7 @@
       <td width="43" align="left" valign="top">省份：</td>
       <td width="939">
     <ul>
-        <li><a href="#" class="link_4a2">不限</a></li>
+        <li><a href="#" class="link_4a1">不限</a></li>
         <li>&nbsp;|&nbsp;</li>
         <li><a href="<%= post_category_path(:seg_name => @seg_id, :cat_name => @cat_name, :province =>'110000') %>" class="link_4a1">北京</a></li>
         <li>&nbsp;|&nbsp;</li>

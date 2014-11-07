@@ -1,6 +1,7 @@
 class HomeController < ApplicationController 
   before_filter :authenticate_user!, only: [:publish, :add, :create]
   def index
+    @top_nav_bar = true
     @seg_yjgcs = Segment.where(code: "yjgcs").first
     @seg_zjs = Segment.where(code: "zjs").first
     @seg_qtzs = Segment.where(code: "qtzs").first

@@ -1,1 +1,1 @@
-= link_to "#{category.title}(#{category.records.count})", zizhi_daiban_path(category.id), class: class_name
+= link_to "#{category.title}(#{category.records.count})", post_category_path(:seg_name => category.segment_id, :cat_name => category), class: class_name

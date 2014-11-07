@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>建筑同城</title>
+  <%= render_page_title %>
+  <%= stylesheet_link_tag "front" %>
+  <%= controller_stylesheet_link_tag %>
   <link href="/stylesheets/css.css " rel="stylesheet" type="text/css" />  
+  <%= yield :styles %>
   <!--脚本区域-->
-  <script type="text/JavaScript">
+  <script type="text/javaScript">
     var myDivId1, divId2, divId3, divId4, divId5;
     function showDiv(myDivId1, divId2, divId3, divId4, divId5)
-    { 
+    {
       document.getElementById( myDivId1 ).style.display  = '';
       document.getElementById( divId2 ).style.display   = 'none';
       document.getElementById( divId3 ).style.display   = 'none';
@@ -16,7 +19,6 @@
       document.getElementById( divId5 ).style.display   = 'none';
     }
   </script>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= csrf_meta_tags %>
 </head>
 
@@ -26,12 +28,17 @@
 
   <!--LOGO-->
   <!--导航-->
-  <%= render :partial => 'common/theme_jianzhu/top_nav' %>
+  <% if @home_index_bar %>
+    <%= render :partial => 'common/theme_jianzhu/top_nav_home_index' %>
+  <% else %>
+    <%= render :partial => 'common/theme_jianzhu/top_nav' %>
+  <% end %>
 
   <%= yield %>
   
   <%= render partial: 'common/theme_jianzhu/column_foot' %>
 
-  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "app" %>
+  <%= controller_javascript_include_tag %>
 </body>
 </html>

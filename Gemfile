@@ -63,6 +63,9 @@ gem 'cancan'
 gem 'rolify'
 #gem 'paperclip', '~> 4.0t'
 
+# Setting information YAML
+gem "settingslogic"
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

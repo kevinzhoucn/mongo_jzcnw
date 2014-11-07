@@ -30,7 +30,7 @@ Rails3MongoidDevise::Application.routes.draw do
   resources :resumes
 
   #get "profile/index"
-  match '/profiles/:id' => 'profile#show', via: :get, as: :profile_show
+  match '/profiles/:id' => 'profiles#show', via: :get, as: :profile_show
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

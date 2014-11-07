@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base    
   layout :layout_by_resource
   # before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_filter :set_index_bar
   after_filter :store_location
 
   protect_from_forgery
@@ -11,6 +12,12 @@ class ApplicationController < ActionController::Base
         "appprofile"
       else
         "application"
+      end
+    end
+
+    def set_index_bar
+      if controller_name == 'home' && action_name == 'index'
+        @home_index_bar = true
       end
     end
 

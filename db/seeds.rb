@@ -13,27 +13,19 @@ puts 'DEFAULT USERS'
 # puts 'user: ' << user.name
 
 User.delete_all
-admin = User.create(name: "admin01", email: "admin01@jzcnw.com", password: "password")
+admin = User.create(user_name: "admin01", phone_number: "18888888888", password: "password")
 admin.add_role :admin
-puts 'admin: ' << admin.name
+puts 'admin: ' << admin.user_name
 
-admin = User.create(name: "admin02", email: "admin02@jzcnw.com", password: "password")
+admin = User.create(user_name: "admin02", phone_number: "18899999999", password: "password")
 admin.add_role :admin
-puts 'admin: ' << admin.name
+puts 'admin: ' << admin.user_name
 
-admin = User.create(name: "admin03", email: "admin03@jzcnw.com", password: "password")
-admin.add_role :admin
-puts 'admin: ' << admin.name
+user = User.create(user_name: "user01", phone_number: "18800000000", password: "password")
+puts 'admin: ' << user.user_name
 
-admin = User.create(name: "admin04", email: "admin04@jzcnw.com", password: "password")
-admin.add_role :admin
-puts 'admin: ' << admin.name
-
-user = User.create(name: "user01", email: "user01@jzcnw.com", password: "password")
-puts 'user: ' << user.name
-
-user = User.create(name: "user02", email: "user02@jzcnw.com", password: "password")
-puts 'user: ' << user.name
+user = User.create(user_name: "user02", phone_number: "18800000001", password: "password")
+puts 'admin: ' << user.user_name
 # user = User.create(name: "user01", email: "user01@jzcnw.com", password: "password")
 # puts 'user: ' << user.name
 # categories = Category.create!([code: "jzs", title: "建造师"], [code: "xmjl", title: "项目经理"],

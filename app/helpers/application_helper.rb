@@ -14,7 +14,7 @@ module ApplicationHelper
 
   def controller_stylesheet_link_tag
     case controller_name
-    when "home", "resume", "profiles"
+    when "home", "resumes", "profiles"
       stylesheet_link_tag controller_name
     else
       stylesheet_link_tag "home"
@@ -23,7 +23,7 @@ module ApplicationHelper
 
   def controller_javascript_include_tag
     case controller_name
-    when "home", "resume", "profiles"
+    when "home", "resumes", "profiles"
       javascript_include_tag controller_name
     else
       javascript_include_tag "home"    

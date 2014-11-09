@@ -14,7 +14,7 @@
       <div id="zk_4">
         <ul>
           <li>
-            <a href="#" class="zk_4bt">二级建造师</a>
+            <a href="<%= post_category_path(:seg_name => @seg_ejjzs) %>" class="zk_4bt">二级建造师</a>
             <%= render partial: @seg_ejjzs.categories.all.limit(5), locals: { class_name: 'zk_2nr'} %>
           </li>
         </ul>

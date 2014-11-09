@@ -1,16 +1,31 @@
 #source 'http://ruby.taobao.org'
 source 'https://rubygems.org'
 
-gem 'rails', '~> 3.2.16'
+gem 'rails', '3.2.16'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'devise'
 gem 'figaro'
-gem 'mongoid'
+gem 'breadcrumbs_on_rails', '~> 2.2.0'
+
+# Mongoid
+gem 'mongoid', '3.1.4'
+gem 'mongoid_auto_increment_id', '0.6.2'
+gem 'mongoid_rails_migrations', '0.0.14'
+
+# Redis 命名空间
+gem 'redis-namespace','~> 1.3.1'
+
+# 将一些数据存放入 Redis
+gem 'redis-objects', '0.9.1'
+
+# 分享功能
+gem 'social-share-button', '0.1.5'
+
 gem 'china_city'
-gem 'breadcrumbs_on_rails'
+gem 'thin'
 
 group :production do
 #  gem 'mysql2'
@@ -29,13 +44,12 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-
-  gem 'coffee-rails'
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'uglifier', '>= 1.0.3'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
-
-  gem 'uglifier', '>= 1.0.3'
   # gem 'therubyracer'
   # gem 'less-rails'
   # gem 'twitter-bootstrap-rails'
@@ -50,7 +64,6 @@ group :test do
   gem 'mongoid-rspec'
 end
 
-gem 'sass-rails'
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'simple_form'
@@ -65,6 +78,12 @@ gem 'rolify'
 
 # Setting information YAML
 gem "settingslogic"
+
+# Bootstrap
+# gem 'bootstrap-sass'
+# gem 'bootstrap-will_paginate'
+# gem 'bootstrap_helper'
+# gem 'autoprefixer-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

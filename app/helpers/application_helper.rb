@@ -12,6 +12,13 @@ module ApplicationHelper
     content_tag("title", title, nil, false)
   end
 
+  def render_page_keywords_descriptoin
+    keywords = @meta_keywords ? "#{@meta_keywords},#{SITE_KEYWORDS}" : SITE_KEYWORDS rescue "SITE_KEYWORDS"
+    meta_content = content_tag("meta", nil, { name: 'keywords', content: "#{keywords}" }, false)
+    description = @meta_description ? "#{@meta_description} | #{SITE_DESCRIPION}" : SITE_DESCRIPION rescue "SITE_DESCRIPION"
+    meta_content << content_tag("meta", nil, { name: 'description', content: "#{description}" }, false)
+  end
+
   def controller_stylesheet_link_tag
     case controller_name
     when "home", "resumes", "profiles"

@@ -1,8 +1,6 @@
 defaults: &defaults
   app_name: "建筑同城"
   foot_html: "&copy; 建筑同城."
-  app_keywords: "建筑,同城,资质,认证,挂靠,代办,转让,简历,培训,招聘,公司,猎头,个人,jzcnw,jianzhu"
-  app_description: "建筑同城网是一个建筑企业与人才交流的中立平台."  
   domain: "127.0.0.1:3000"
   admin_emails:
     - "admin@admin.com"

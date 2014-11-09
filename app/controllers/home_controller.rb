@@ -1,7 +1,7 @@
 class HomeController < ApplicationController 
   before_filter :authenticate_user!, only: [:publish, :add, :create]
   def index
-    @top_nav_bar = true
+    set_seo_meta t("menu.home_page")
     @seg_yjgcs = Segment.where(code: "yjgcs").first
     @seg_zjs = Segment.where(code: "zjs").first
     @seg_qtzs = Segment.where(code: "qtzs").first
@@ -16,22 +16,29 @@ class HomeController < ApplicationController
 
     @seg_qz = Segment.where(for: "qz").first
 
-    @resumes = Resume.where(resume_type: 2).desc(:created_at).all.limit(9)
+    @resumes = Resume.where(resume_type: 2).recent.all.limit(9).to_a
+    # @resumes = Resume.resume_jianzhi.recent
 
     @useful_links = UsefulLink.all.limit(15)
+
+    fresh_when(etag: [@seg_yjgcs, @seg_zjs, @seg_qtzs, @seg_ejjzs, @seg_jls, @seg_gysbgcs, @seg_jgs, @seg_dqgcs, @seg_zczxs, @seg_zzdb, @seg_qz, @resumes, @useful_links, SiteConfig.index_html])
   end
 
   def show
+    set_seo_meta t("menu.view")
     add_breadcrumb t("breadcrumbs.homepage"), root_path, :title => t("breadcrumbs.homepage"), class: "link_4a1"
     @record = Record.find(params[:id])
+    @record.inc(:hits, 1)
     cat_title = Category.find(@record.category_id).title
     add_breadcrumb cat_title, zizhi_daiban_path(@record.category_id), class: "link_4a1"#, onclick: "return false"
+    fresh_when(etag: [@record])
   end
 
   def region
   end
 
   def publish
+    set_seo_meta t("menu.publish")
     type_id = params[:type]
     add_breadcrumb t("breadcrumbs.homepage"), root_path, :title => t("breadcrumbs.homepage"), class: "link_4a1"
     if not type_id.nil?      
@@ -56,20 +63,21 @@ class HomeController < ApplicationController
   end
 
   def publishresumes
-
+    set_seo_meta t("menu.resume")
   end
 
   def zizhi
-    @segments = Segment.where(for: 'zs').all
-    @records = Record.all
+    set_seo_meta t("menu.view")
+    @segments = Segment.where(for: 'zs').all.to_a
+    @records = Record.all.recent
 
     if !params[:seg_name].blank?
       @seg_id = params[:seg_name]
       # seg = Segment.find(seg_id)
       @categories = Category.where(:segment_id => @seg_id)
-      @records = Record.where(:segment_id => @seg_id)
+      @records = Record.where(:segment_id => @seg_id).recent.fields_for_list.to_a
     else
-      @categories = Category.where(:segment_id => Segment.first.id)
+      @categories = Category.where(:segment_id => Segment.first.id).to_a
     end
 
     # add_breadcrumb t("breadcrumbs.homepage"), root_path, :title => t("breadcrumbs.homepage"), class: "link_4a1"    
@@ -80,7 +88,7 @@ class HomeController < ApplicationController
       if @cat_name != 'a'
         # cat_title = Category.find(@cat_name).title
         # add_breadcrumb cat_title, "#", class: "link_4a1", onclick: "return false"
-        @records = Record.where(:category_id => @cat_name)
+        @records = Record.where(:category_id => @cat_name).recent.fields_for_list.to_a
       end
     else
       @cat_name = 'a'
@@ -89,14 +97,16 @@ class HomeController < ApplicationController
     if !params[:province].blank?
       province = params[:province]      
       if @cat_name != 'a'
-        @records = Record.where(locate_province: province, category_id: @cat_name)
+        @records = Record.where(locate_province: province, category_id: @cat_name).recent.fields_for_list.to_a
       else
-        @records = Record.where(locate_province: province)
+        @records = Record.where(locate_province: province).recent.fields_for_list.to_a
       end
     end
+    fresh_when(etag: [@record])
   end
 
   def add
+    set_seo_meta t("menu.publish")
     # @record = Record.new
     @resume = Resume.new
     @record = Record.new

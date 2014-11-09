@@ -1,5 +1,5 @@
 Rails3MongoidDevise::Application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations"}
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   mount ChinaCity::Engine => '/china_city'
@@ -27,7 +27,7 @@ Rails3MongoidDevise::Application.routes.draw do
   #   end
   # end
 
-  resources :resumes
+  resources :resumes, only: [:show]  
 
   #get "profile/index"
   match '/profiles/:id' => 'profiles#show', via: :get, as: :profile_show

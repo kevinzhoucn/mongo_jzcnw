@@ -13,7 +13,10 @@ class ResumesController < ApplicationController
   # GET /resumes/1
   # GET /resumes/1.json
   def show
+    set_seo_meta t("menu.resume")
     @resume = Resume.find(params[:id])
+    
+    fresh_when(etag: [@record])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,6 +27,7 @@ class ResumesController < ApplicationController
   # GET /resumes/new
   # GET /resumes/new.json
   def new
+    set_seo_meta t("menu.publish")
     @resume = Resume.new
 
     respond_to do |format|

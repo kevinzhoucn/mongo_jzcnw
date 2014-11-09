@@ -8,6 +8,7 @@
   <%= render_page_keywords_descriptoin %>
   <!--脚本区域-->
   <%= yield :styles %>
+  <%= javascript_include_tag "application" %>
   <script type="text/javaScript">
     var myDivId1, divId2, divId3, divId4, divId5;
     function showDiv(myDivId1, divId2, divId3, divId4, divId5)
@@ -34,7 +35,10 @@
 
   <%= yield %>
   
-  <%= render partial: 'common/theme_jianzhu/column_foot' %>
-  <%= javascript_include_tag "application" %>
+  <%# if not mobile? %>
+    <a class="go-top" href="#" style="background-color:rgb(208, 208, 208)"><i class="icon icons-go-top"></i></a>
+    <%= render partial: 'common/theme_jianzhu/column_foot' %>
+  <%# end %>
+  
 </body>
 </html>

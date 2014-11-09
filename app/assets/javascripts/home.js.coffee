@@ -18,3 +18,16 @@ $(document).ready ->
   $('.dropdown-menu').css('display': 'none');
   #$('.dropdown-toggle').click ->
   #  $('.dropdown-menu').toggle();
+
+  # Go Top
+  $("a.go-top").click () ->
+    $('html, body').animate({ scrollTop: 0 },300)
+    return false
+
+  # Go top
+  $(window).bind 'scroll resize', ->
+    scroll_from_top = $(window).scrollTop()
+    if scroll_from_top >= 1
+      $("a.go-top").show()
+    else
+      $("a.go-top").hide()

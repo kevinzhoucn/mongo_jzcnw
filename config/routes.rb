@@ -1,5 +1,4 @@
 Rails3MongoidDevise::Application.routes.draw do
-
   devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations"}
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
@@ -34,6 +33,7 @@ Rails3MongoidDevise::Application.routes.draw do
       post :favorite
       delete :unfavorite
     end
+    resources :replies
   end
 
   #get "profile/index"

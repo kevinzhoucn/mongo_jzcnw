@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Body:
+  = @reply.body
+%p
+  %b Source:
+  = @reply.source
+
+= link_to 'Edit', edit_reply_path(@reply)
+\|
+= link_to 'Back', replies_path

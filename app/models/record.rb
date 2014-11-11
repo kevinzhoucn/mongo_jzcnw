@@ -24,6 +24,7 @@ class Record
 
   belongs_to :category
   belongs_to :segment
+  has_many :replies
 
   # default_scope desc(:created_at)
 

@@ -24,16 +24,6 @@ class HomeController < ApplicationController
     fresh_when(etag: [@seg_yjgcs, @seg_zjs, @seg_qtzs, @seg_ejjzs, @seg_jls, @seg_gysbgcs, @seg_jgs, @seg_dqgcs, @seg_zczxs, @seg_zzdb, @seg_qz, @resumes, @useful_links, SiteConfig.index_html])
   end
 
-  def show
-    set_seo_meta t("menu.view")
-    add_breadcrumb t("breadcrumbs.homepage"), root_path, :title => t("breadcrumbs.homepage"), class: "link_4a1"
-    @record = Record.find(params[:id])
-    @record.inc(:hits, 1)
-    cat_title = Category.find(@record.category_id).title
-    add_breadcrumb cat_title, zizhi_daiban_path(@record.category_id), class: "link_4a1"#, onclick: "return false"
-    fresh_when(etag: [@record])
-  end
-
   def region
   end
 

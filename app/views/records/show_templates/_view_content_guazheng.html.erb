@@ -1,0 +1,79 @@
+<div class="center"><img src="/img/ny_bkz/nyk3_r2_c1.jpg"></div>
+
+<div id="ny3_bk">
+  <div id="ny3_bk_left">
+  <div id="ny3_zl">推荐招聘信息</div>
+  <!--循环开始 显示5条信息-->
+  <div class="qz_1">
+    <div class="qz_2"><a href="#"><img src="" alt="" width="60" height="60" border="0"></a></div>
+    <div class="qz_3"><span class="txt_5">这里显示标题</span><br> 这里显示内容</div>
+  </div>
+  <!--循环结束 显示5条信息-->
+  </div>
+  
+  <div id="ny3_bk_right">
+    <div id="ny3_bk_r1" style="font-size:160%"><%= @record.title %></div>
+    <div id="ny3_bk_r2">更新时间：<%= @record.updated_at.strftime('%Y-%m-%d').to_s %></div>
+    <div class="left">
+      <table width="743" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td width="101" height="45" align="right" class="txt_4">职位类别：
+          <div id="zp_djk"><img src="/img/ny_bkz/qz.png" width="155" height="139"></div>            &nbsp;
+          </td>
+          <td width="305" height="45" class="txt_2"><%= @record.job_title %></td>
+          <td width="96" height="45" align="right" class="txt_4">公司名称：&nbsp;</td>
+          <td width="241" height="45"><span class="txt_4">
+            <a href="#" class="link_4a1">
+              <% if !@record.company_name.blank? %>
+                <%= @record.company_name %>
+              <% end %>
+            </a>
+          </span></td>
+        </tr>
+        <tr>
+          <td height="45" align="right" class="txt_4">所在地：&nbsp;</td>
+          <td height="45" class="txt_4"><%= ChinaCity.get(@record.locate_province) %></td>
+          <td height="45" align="right" class="txt_4"> 注册情况：&nbsp;</td>
+          <td height="45"><span class="txt_4"><%= @record.register_status %></span></td>
+        </tr>
+        <tr>
+          <td height="45" align="right" class="txt_4">价&nbsp;&nbsp;格：&nbsp;</td>
+          <td height="45" class="txt_4"><%= @record.price %></td>
+          <td height="45" align="right" class="txt_4">注册情况：&nbsp;</td>
+          <td height="45" class="txt_4"><%= @record.register_status %></td>
+        </tr>
+        <tr>
+          <td height="45" align="right" class="txt_4">薪资待遇：&nbsp;</td>
+          <td height="45" class="txt_4">xxxxxxxx</td>
+          <td height="45" align="right" class="txt_4">联系电话：&nbsp;</td>
+          <td height="45" class="txt_2">
+            <% if !@record.contact_phone_number.blank? %>
+                <%= @record.contact_phone_number %>
+              <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td height="45" align="right" class="txt_4">工作年限：&nbsp;</td>
+          <td height="45" class="txt_4">xxxxxxxx</td>
+          <td height="45" align="right" class="txt_4">QQ 号 码：&nbsp;</td>
+          <td height="45" class="txt_4">xxxxxxxx</td>
+        </tr>
+        <tr>
+          <td height="45" align="right" class="txt_4">工作地点：&nbsp;</td>
+          <td height="45" class="txt_4">xxxxxxxx</td>
+          <td height="45" align="right" class="txt_4">电子邮箱：&nbsp;</td>
+          <td height="45" class="txt_4">xxxxxxxx</td>
+        </tr>
+      </tbody></table>
+    </div>
+    <div id="ny3_bk_r3as2"><a href="#" class="qiuzhi"></a></div>
+    <div id="ny3_bk_r3as">详细说明</div>
+    <div id="ny3_bk_r3as1"><%= @record.details %></div>
+
+    <div id="ny3_bk_r3as1">        
+        <%= render "home/show_templates/button" %>
+    </div>
+  </div>
+</div>
+
+<div class="center"><img src="/img/ny_bkz/nyk3_r9_c1.jpg"></div>

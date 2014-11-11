@@ -1,5 +1,9 @@
-#source 'http://ruby.taobao.org'
-source 'https://rubygems.org'
+# coding: utf-8
+if ENV['USE_OFFICIAL_GEM_SOURCE']
+  source 'https://rubygems.org'
+else
+  source 'http://ruby.taobao.org'
+end
 
 gem 'rails', '3.2.16'
 

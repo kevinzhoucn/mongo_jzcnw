@@ -20,6 +20,9 @@ zh-CN:
       resume:
         one: 06. 简历
         other: 06. 简历
+      reply:
+        one: "回复"
+        other: "回复"
     attributes:
       user:
         email: 邮箱

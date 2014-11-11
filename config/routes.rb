@@ -1,4 +1,5 @@
 Rails3MongoidDevise::Application.routes.draw do
+  resources :replies
   devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations"}
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
@@ -28,6 +29,10 @@ Rails3MongoidDevise::Application.routes.draw do
   # end
 
   resources :resumes, only: [:show]  
+
+  resources :records do
+    resources :replies
+  end
 
   #get "profile/index"
   match '/profiles/:id' => 'profiles#show', via: :get, as: :profile_show

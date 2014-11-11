@@ -16,5 +16,5 @@ class Reply
   index record_id: 1
 
   validates_presence_of :body
-  validates_uniqueness_of :body, scope: [:record_id, :user_id], message: "不能重复提交。"
+  # validates_uniqueness_of :body, scope: [:record_id, :user_id], message: "不能重复提交。"
 end

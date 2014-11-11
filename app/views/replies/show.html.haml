@@ -6,6 +6,12 @@
 %p
   %b Source:
   = @reply.source
+%p
+  %b record_id:
+  = @reply.record_id
+%p
+  %b user_id:
+  = @reply.user_id
 
 = link_to 'Edit', edit_reply_path(@reply)
 \|

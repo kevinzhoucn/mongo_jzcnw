@@ -41,15 +41,15 @@ class RepliesController < ApplicationController
   # POST /replies.json
   def create
     @reply = Reply.new(params[:reply])
+    @reply.record_id = params[:record_id]
+    # @reply.user_id = current_user
 
-    respond_to do |format|
-      if @reply.save
-        format.html { redirect_to @reply, notice: 'Reply was successfully created.' }
-        format.json { render json: @reply, status: :created, location: @reply }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @reply.errors, status: :unprocessable_entity }
-      end
+    if @reply.save
+      @msg = "successfully"
+      redirect_to record_path(@reply.record_id)
+    else
+      @msg = @reply.errors.full_messages.join('<br />')
+      render home_publish_path
     end
   end
 

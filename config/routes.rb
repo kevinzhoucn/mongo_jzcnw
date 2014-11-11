@@ -27,7 +27,7 @@ Rails3MongoidDevise::Application.routes.draw do
   #   end
   # end
 
-  resources :resumes, only: [:show]  
+  resources :resumes, only: [:show]
   resources :records, only: [:show, :favorite, :unfavorite] do
     member do
       post :favorite
@@ -35,6 +35,8 @@ Rails3MongoidDevise::Application.routes.draw do
     end
     resources :replies
   end
+
+  # resources :replies
 
   #get "profile/index"
   match '/profiles/:id' => 'profiles#show', via: :get, as: :profile_show

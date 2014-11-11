@@ -65,13 +65,28 @@
       <div id="ny3_bk_r3as1"><%= @record.details %></div>
       <div id="ny3_bk_r3as2"><a href="#" class="toudi"></a></div>
       <div id="ny3_bk_r3as1">        
-        <%= render "home/show_templates/button" %>
+        <%= render "records/show_templates/button" %>
+      </div>
+      <div id="ny3_bk_r3as">
+        <% if @record.replies.length > 0 %>
+          <% @record.replies.each do |reply| %>
+            <%= reply.body %>
+          <% end %>
+        <% else %>
+          <span>无人回复此信息！</span>
+        <% end %>
+      </div>
+      <div id="ny3_bk_r3as">
+        <span>评论：</span>
+        <%= form_for(:reply, :url => record_replies_path(@record)) do |f| %>
+          <%= f.text_area :body, rows: "5", cols: "50" %>
+          <%= f.submit '提交' %>
+        <% end %>
       </div>
     </div>
   </div>
 
   <div class="center">
-    <img src="/img/ny_bkz/nyk3_r9_c1.jpg">
-    
+    <img src="/img/ny_bkz/nyk3_r9_c1.jpg">    
   </div>
 <% end %>

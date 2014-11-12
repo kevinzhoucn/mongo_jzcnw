@@ -9,7 +9,7 @@ module RecordsHelper
       link_title = "取消收藏"
     end
 
-    link_to("#{link_title}", "#", class: "icon small_#{class_name}", title: link_title,
+    link_to("#{link_title}", "#", class: "icon small_#{class_name} link_4a1", title: link_title,
             onclick: "return Records.favorite(this);", 'data-id' => record.id)
   end
 end

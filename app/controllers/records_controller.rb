@@ -8,6 +8,7 @@ class RecordsController < ApplicationController
     @record = Record.find(params[:id])
     @record.inc(:hits, 1)
     cat_title = Category.find(@record.category_id).title
+    @replies = @record.replies.unscoped.without_body.asc(:_id)
     add_breadcrumb cat_title, zizhi_daiban_path(@record.category_id), class: "link_4a1"#, onclick: "return false"
     fresh_when(etag: [@record])
   end

@@ -6,8 +6,8 @@
       <a href="#" class="ny3_zl">招聘信息</a>
     </div>
     
-    <div><%= record_favorite_tag(@record) %></div>
-    <div id="ny3_bk_right">      
+    <div id="ny3_bk_r3as1" style="padding-bottom:0px"><%= record_favorite_tag(@record) %></div>
+    <div id="ny3_bk_right" style="margin-top:0px">      
       <div id="ny3_bk_r1" style="font-size:160%"><%= @record.title %></div>
       <div id="ny3_bk_r2">更新时间：<%= @record.updated_at.strftime('%Y-%m-%d').to_s %></br>浏览次数：<%= @record.hits %></div>
       <div class="left">
@@ -64,18 +64,23 @@
       <div id="ny3_bk_r3as">详细说明</div>
       <div id="ny3_bk_r3as1"><%= @record.details %></div>
       <div id="ny3_bk_r3as2"><a href="#" class="toudi"></a></div>
-      <div id="ny3_bk_r3as1">        
+      <div id="ny3_bk_r3as1">
         <%= render "records/show_templates/button" %>
-      </div>
-      <div id="ny3_bk_r3as">
-        <% if @record.replies.length > 0 %>
-          <% @record.replies.each do |reply| %>
-            <%= reply.body %>
-          <% end %>
-        <% else %>
+      </div>      
+      <% if @record.replies.length > 0 %>
+        <div id="ny3_bk_r3as">
+          共收到
+          <%= @record.replies.length %>
+          评论!
+        </div>
+        <div id="ny3_bk_r3as1">
+          <%= render @record.replies %>
+        </div>
+      <% else %>
+        <div id="ny3_bk_r3as">
           <span>无人回复此信息！</span>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
       <div id="ny3_bk_r3as">
         <span>评论：</span>
         <%= form_for(:reply, :url => record_replies_path(@record)) do |f| %>

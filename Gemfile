@@ -83,6 +83,11 @@ gem 'rolify'
 # Setting information YAML
 gem "settingslogic"
 
+# Markdown 格式 & 文本处理
+gem 'redcarpet', '~> 3.0.0'
+gem 'rouge', '~> 1.3.4'
+gem 'auto-space', '0.0.4'
+
 # Bootstrap
 # gem 'bootstrap-sass'
 # gem 'bootstrap-will_paginate'

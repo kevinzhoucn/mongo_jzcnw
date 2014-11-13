@@ -18,3 +18,5 @@ window.Records =
       $(el).text("取消收藏")
       $(el).attr("class","icon small_bookmarked")
     false
+
+  

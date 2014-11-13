@@ -27,6 +27,8 @@ class Resume
   field :resume_type, type: Integer
   field :job_title, type: Integer
   field :guakao_price, type: String
+
+  mount_uploader :avatar, AvatarUploader
   
   belongs_to :category
   belongs_to :segment

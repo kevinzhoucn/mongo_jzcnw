@@ -36,4 +36,9 @@ module ApplicationHelper
       javascript_include_tag "home"    
     end
   end
+
+  def random_tips
+    return "" if SiteConfig.tips.blank?
+    SiteConfig.tips.split("&&").sample
+  end
 end

@@ -3,7 +3,6 @@ class Record
   include Mongoid::Timestamps
   include Mongoid::BaseModel
   include Mongoid::CounterCache
-  include Mongoid::MarkdownBody
   # include Redis::Objects
 
   field :details, type: String

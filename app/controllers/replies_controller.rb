@@ -46,10 +46,10 @@ class RepliesController < ApplicationController
 
     if @reply.save
       @msg = "successfully"
-      redirect_to record_path(@reply.record_id)
+      # redirect_to record_path(@reply.record_id)
     else
       @msg = @reply.errors.full_messages.join('<br />')
-      render home_publish_path
+      # render home_publish_path
     end
   end
 

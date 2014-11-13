@@ -27,7 +27,7 @@ Rails3MongoidDevise::Application.routes.draw do
   #   end
   # end
 
-  resources :resumes, only: [:show]
+  resources :resumes, only: [:show, :create, :new, :update]
   resources :records, only: [:show, :favorite, :unfavorite] do
     member do
       post :favorite

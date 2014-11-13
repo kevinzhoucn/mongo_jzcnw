@@ -19,6 +19,12 @@ gem 'mongoid', '3.1.4'
 gem 'mongoid_auto_increment_id', '0.6.2'
 gem 'mongoid_rails_migrations', '0.0.14'
 
+# 上传组件
+gem 'carrierwave', '~> 0.10.0'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'carrierwave-upyun', '0.1.8'
+gem 'mini_magick','3.7.0', require: false
+
 # Redis 命名空间
 gem 'redis-namespace','~> 1.3.1'
 

@@ -3,26 +3,30 @@ zh-CN:
   mongoid:
     models:
       record: 
-        one: 02. 帖子
-        other: 02. 帖子
+        one: 帖子
+        other: 帖子
       user:
-        one: 01. 用户
-        other: 01. 用户
+        one: 用户
+        other: 用户
       segment:
-        one: 03. 行业管理
-        other: 03. 行业管理
+        one: 行业管理
+        other: 行业管理
       category:
-        one: 04. 职位类别
-        other: 04. 职位类别
+        one: 职位类别
+        other: 职位类别
       useful_link:
-        one: 05. 常用网址
-        other: 05. 常用网址
+        one: 常用网址
+        other: 常用网址
       resume:
-        one: 06. 简历
-        other: 06. 简历
+        one: 简历
+        other: 简历
       reply:
-        one: "回复"
-        other: "回复"
+        one: 评论
+        other: 评论
+      site_config:
+        one: 网站配置
+        other: 网站配置      
+
     attributes:
       user:
         email: 邮箱

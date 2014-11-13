@@ -3,10 +3,12 @@ class Reply
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::BaseModel
+  include Mongoid::MarkdownBody
 
   attr_accessible :body, :source
 
   field :body, type: String
+  field :body_html, type: String
   field :source, type: String
   
   belongs_to :user, inverse_of: :replies

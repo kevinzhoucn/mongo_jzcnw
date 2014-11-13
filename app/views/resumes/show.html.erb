@@ -99,9 +99,14 @@
         </tbody></table>
       </div>
     <div id="fb_txbk">
-      <div id="fb_tx"><img src="" width="219" height="155" alt=""></div>
-      <div id="fb_txan"><a href="#" class="fb_sc"></a></div>
-      <div id="fb_txt">上传头像，有助于企业更好地认识您<br>
+      <div id="fb_tx">
+        <img src="<%= @resume.avatar_url if @resume.avatar? %>" width="219" height="155" alt="">        
+      </div>
+      <div id="fb_txan"></div>
+      <div id="fb_txt">
+        <% if @resume.avatar.blank? %>
+          上传头像，有助于企业更好地认识您<br>
+        <% end %>
         头像建议：800*600像素</div>
     </div>
   </div>

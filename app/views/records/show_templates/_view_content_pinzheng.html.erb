@@ -66,24 +66,26 @@
       <div id="ny3_bk_r3as2"><a href="#" class="toudi"></a></div>
       <div id="ny3_bk_r3as1">
         <%= render "records/show_templates/button" %>
-      </div>      
-      <% if @record.replies.length > 0 %>
-        <div id="ny3_bk_r3as">
-          共收到
-          <%= @record.replies.length %>
-          评论!
-        </div>
-        <div id="ny3_bk_r3as1">
-          <%= render @record.replies %>
-        </div>
-      <% else %>
-        <div id="ny3_bk_r3as">
-          <span>无人回复此信息！</span>
-        </div>
-      <% end %>
+      </div>
+      <div id="replies">
+        <% if @record.replies.length > 0 %>
+          <div id="ny3_bk_r3as" class="total" data-last-floor="<%= @replies.count %>">
+            共收到
+            <%= @record.replies.length %>
+            评论!
+          </div>
+          <div id="ny3_bk_r3as1" class="items">
+            <%= render @record.replies %>
+          </div>
+        <% else %>
+          <div id="ny3_bk_r3as">
+            <span>无人回复此信息！</span>
+          </div>
+        <% end %>
+      </div>
       <div id="ny3_bk_r3as">
         <span>评论：</span>
-        <%= form_for(:reply, :url => record_replies_path(@record)) do |f| %>
+        <%= form_for(:reply, remote: true, url: record_replies_path(@record)) do |f| %>
           <%= f.text_area :body, rows: "5", cols: "50" %>
           <%= f.submit '提交' %>
         <% end %>

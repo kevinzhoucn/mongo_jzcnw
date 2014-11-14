@@ -1,0 +1,56 @@
+/*选择分类页面专属css*/
+.menu{/*大类容器*/
+position: relative;
+}
+.menu li{ /*大类*/
+  font-family: "宋体";
+  font-size: 14px;
+  font-weight: bold;
+  color: #43A7BF;
+  background-image: url(/img/jianli/bk_1_r1_c1.jpg);
+  float: left;
+  position: relative;
+  z-index: 1;
+  height: 28px;
+  width: 447px;
+  margin: 0px 0px 32px 0px;
+  padding-left: 55px;
+  padding-top: 15px;
+  border-right: 1px solid #ddd;
+}
+.menu li ul{/*小类容器*/
+  width: 341px;
+  overflow: visible;
+  padding: 0px;
+  position: relative;
+}
+.menu li li{/*小类*/
+  background:rgb(244,244,244);
+  float: left;
+  display: none;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  font-weight: normal;
+  width: 50%;
+  padding:0 0 5px 0;
+  margin:0px;
+}
+.menu li li a{
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: #555;
+}
+.menu li:hover ul{
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  left: 160px;
+  z-index: 10;
+  background-color: #f4f4f4;
+  border: solid 1px #DDD;
+}
+.menu li:hover li{display: block;border:0px;}
+.menu li:hover{z-index: 10;}
+.menu li li:hover{background-color: #ddd;}

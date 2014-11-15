@@ -100,7 +100,12 @@
       </div>
     <div id="fb_txbk">
       <div id="fb_tx">
-        <img src="<%= @resume.avatar_url if @resume.avatar? %>" width="219" height="155" alt="">        
+        <% if @resume.avatar? %>
+          <a href="<%= @resume.avatar.url %>" target="_blank" title="查看大图">
+            <img src="<%= @resume.avatar.thumb.url if @resume.avatar? %>" width="219" height="155" alt="">
+          </a>
+        <% else %>
+        <% end %>
       </div>
       <div id="fb_txan"></div>
       <div id="fb_txt">

@@ -30,15 +30,17 @@
       <td width="939">
     <ul>
         <li><a href="<%= home_qualify_path(:type => @qualify_type, :seg_name => @seg_id) %>" class="link_4a1">不限</a></li>
-        <% @categories.each do |cat| %>
-            <li>&nbsp;|&nbsp;</li>
-            <li>
-                <% if !@cat_name.blank? && @cat_name.to_s == cat.id.to_s %>
-                    <%= link_to cat.title, home_qualify_path(:type => @qualify_type, :seg_name => cat.segment_id, :cat_name => cat), class: "link_4a2" %>
-                <% else %>
-                    <%= link_to cat.title, home_qualify_path(:type => @qualify_type, :seg_name => cat.segment_id, :cat_name => cat), class: "link_4a1" %>
-                <% end %>
-            </li>
+        <% if @categories %>
+            <% @categories.each do |cat| %>
+                <li>&nbsp;|&nbsp;</li>
+                <li>
+                    <% if !@cat_name.blank? && @cat_name.to_s == cat.id.to_s %>
+                        <%= link_to cat.title, home_qualify_path(:type => @qualify_type, :seg_name => cat.segment_id, :cat_name => cat), class: "link_4a2" %>
+                    <% else %>
+                        <%= link_to cat.title, home_qualify_path(:type => @qualify_type, :seg_name => cat.segment_id, :cat_name => cat), class: "link_4a1" %>
+                    <% end %>
+                </li>
+            <% end %>
         <% end %>
       </ul>
     </td>

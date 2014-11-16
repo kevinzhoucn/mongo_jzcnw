@@ -31,10 +31,23 @@
               <% end %>
             </td>
             <td height="45" class="txt_4">
-              <%= @qualify.qualify_status ? Qualify::QUALIFY_STATUS[@qualify.qualify_status][1] : "无" %></td>
+              <% if @qualify.status_ids.length != 0 %>
+                <% for id in @qualify.status_ids %>
+                  <%= Qualify::QUALIFY_STATUS[id.to_i][1] %>
+                <% end %>
+              <% else %>
+                无
+              <% end %>              
             <td height="45" align="right" class="txt_4">类型：&nbsp;</td>
             <td height="45" class="txt_4">
-              <%= @qualify.qualify_type ? Qualify::QUALIFY_TYPE[@qualify.qualify_type][1] : "无" %></td>
+              <% if @qualify.type_ids.length != 0 %>
+                <% for id in @qualify.type_ids %>
+                  <%= Qualify::QUALIFY_TYPE[id.to_i][1] %>
+                <% end %>
+              <% else %>
+                无
+              <% end %>              
+            </td>
           </tr>
           <tr>
             <td height="45" align="right" class="txt_4">公司情况：&nbsp;</td>

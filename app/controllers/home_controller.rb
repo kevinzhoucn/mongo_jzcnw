@@ -60,9 +60,9 @@ class HomeController < ApplicationController
   def qualify
     @qualify_type = params[:type]
     @segments = Segment.where(for: 'zz').all.to_a
-    @qualifies = Qualify.all
-    @qualifies_agent = Qualify.agent_type_01
-    @qualifies_want = Qualify.agent_type_02
+    @qualifies = Qualify.fields_for_list.recent.all.to_a
+    @qualifies_agent = Qualify.agent_type_01.fields_for_list.recent.to_a
+    @qualifies_want = Qualify.agent_type_02.fields_for_list.recent.to_a
 
     # if !params[:type].blank?
     #   @qualify_type = params[:type] 
@@ -84,7 +84,7 @@ class HomeController < ApplicationController
       @categories = Category.where(:segment_id => @seg_id)
       @qualifies = Qualify.where(:segment_id => @seg_id).recent.fields_for_list.to_a
     else
-      @categories = Category.where(:segment_id => Segment.where(for: 'zz').first.id).to_a
+      # @categories = Category.where(:segment_id => Segment.where(for: 'zz').first.id).to_a
     end
 
     # add_breadcrumb t("breadcrumbs.homepage"), root_path, :title => t("breadcrumbs.homepage"), class: "link_4a1"    

@@ -62,16 +62,22 @@
         <tr>
           <td height="45" align="right" class="txt_4">
             <span class="txt_2">*</span> 
-            <%= @cat_name ? @cat_name : "资质代办" %>
+            <%= @cat_name ? "#{@cat_name}:" : "资质代办: " %>
           </td>
           <td height="45" class="txt_4">            
-            <%= f.collection_radio :qualify_status, Qualify::QUALIFY_STATUS, :first, :last %>
+            <% for item in Qualify::QUALIFY_STATUS %>
+              <%= check_box_tag "qualify[status_ids][]", item[0] %>
+              <%= item[1] %>
+            <% end %>
           </td>
         </tr>
         <tr>
           <td height="45" align="right" class="txt_4"></td>
           <td height="45" class="txt_4">
-            <%= f.collection_radio :qualify_type, Qualify::QUALIFY_TYPE, :first, :last %>
+            <% for item in Qualify::QUALIFY_TYPE %>
+              <%= check_box_tag "qualify[type_ids][]", item[0] %>
+              <%= item[1] %>
+            <% end %>          
           </td>
         </tr>
         <tr>

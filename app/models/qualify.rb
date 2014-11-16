@@ -11,7 +11,9 @@ class Qualify
 
   field :agent_type, type: Integer
   field :qualify_status, type: Integer, default: 0
-  field :qualify_type, type: Integer, default: 1
+  field :status_ids, type: Array, default: []  
+  field :qualify_type, type: Integer, default: 0
+  field :type_ids, type: Array, default: []
   field :corp_qualify_status, type: Integer, default: 0
   field :corp_reg_status, type: Integer, default: 0
   field :details, type: String
@@ -28,17 +30,17 @@ class Qualify
   AGENT_TYPE = [[0, '中介代办'], [1, '要办资质']]
   QUALIFY_STATUS = [[0, '新办'], [1, '三升二'], [2, '二升一'], [3, '一升特']]
   # QUALIFY_STATUS = [['0', '新办'], ['1', '三升二'], ['2', '二升一'], ['3', '一升特']]
-  QUALIFY_TYPE = [['1', '建筑'], ['2', '机电'], ['3', '市政'], ['4', '电力'], ['5', '矿山'], ['6', '水利水电'], ['7', '通信'], ['8', '冶金'], ['9', '石油化工']]
-  CORP_QUALIFY_STATUS = [[1, '单独找证'], [2, '全部委托']]
-  CORP_REG_STATUS = [[1, '已注册公司'], [2, '未注册公司']]
+  QUALIFY_TYPE = [[0, '建筑'], [1, '机电'], [2, '市政'], [3, '电力'], [4, '矿山'], [5, '水利水电'], [6, '通信'], [7, '冶金'], [8, '石油化工']]
+  CORP_QUALIFY_STATUS = [[0, '单独找证'], [1, '全部委托']]
+  CORP_REG_STATUS = [[0, '已注册公司'], [1, '未注册公司']]
 
   belongs_to :category
   belongs_to :segment
   has_many :replies
 
   scope :fields_for_list, -> { without(:details) }
-  scope :agent_type_01, -> { where(agent_type: 1) }
-  scope :agent_type_02, -> { where(agent_type: 2) }
+  scope :agent_type_01, -> { where(agent_type: 0) }
+  scope :agent_type_02, -> { where(agent_type: 1) }
 
   validates_presence_of :agent_type, :title, :locate_province, :locate_city, :qualify_status, \
                         :qualify_type, :corp_qualify_status, :corp_reg_status, :details, :company_name

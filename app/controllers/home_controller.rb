@@ -12,11 +12,12 @@ class HomeController < ApplicationController
     @seg_dqgcs = Segment.where(code: "dqgcs").first
     @seg_zczxs = Segment.where(code: "zczxs").first
 
-    @seg_zzdb = Segment.where(code: "zzdb").first
+    @seg_zzdb = Segment.where(for: "zz").all
 
     @seg_qz = Segment.where(for: "qz").first
 
     @resumes = Resume.where(resume_type: 2).recent.all.limit(9).to_a
+    @qualifies = Qualify.fields_for_list.recent.all.limit(24).to_a
     # @resumes = Resume.resume_jianzhi.recent
 
     @useful_links = UsefulLink.all.limit(15)

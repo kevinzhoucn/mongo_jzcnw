@@ -5,8 +5,8 @@
 <div id="zzdb_nrbk">
   <ul>
     <!--循环开始 显示24条-->
-    <% @seg_zzdb.records.each do |record| %>
-      <li><a href="<%= record_show_url(record) %>" class="zz_link"><%= record.title %></a></li>
+    <% @qualifies.each do |qualify| %>
+      <li><a href="<%= qualify_path(qualify) %>" class="zz_link"><%= qualify.title %></a></li>
     <% end %>
   <!--循环结束 显示24条-->
   </ul>

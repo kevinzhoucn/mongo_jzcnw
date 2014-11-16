@@ -95,7 +95,7 @@ SiteConfig.save_default("new_topic_dropdown_node_ids","")
 SiteConfig.save_default("ban_words_on_reply","mark\n收藏\n顶\n赞\nup\n")
 
 # 随机显示的 tip 信息
-SiteConfig.save_default("tips","提示1\n提示2")
+SiteConfig.save_default("tips","可以收藏信息哦&&可以评论信息")
 
 SiteConfig.save_default("newbie_notices",%(<p>为提高社区质量，防止新人一来就发帖提问接触 Ruby 遇到的问题，新用户需要达到下面条件才可发帖：</p>
     <ol style="color:#ad2b2d;">
@@ -140,6 +140,7 @@ puts 'user: ' << user.user_name
 Category.delete_all
 Segment.delete_all
 Record.delete_all
+Qualify.delete_all
 categories = Category.create! ([{code: "jzs", title: "建造师"}, {code: "xmjl", title: "项目经理"},
                {code: "xmgl", title: "项目管理"}, {code: "gcs", title: "工程师"},
                {code: "zrgcs", title: "责任工程师"}, {code: "gz", title: "工长"},

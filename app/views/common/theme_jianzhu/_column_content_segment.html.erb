@@ -43,7 +43,16 @@
   
   <div id="zk_k2_3">
     <!--资质代办-->
-    <%= render partial: @seg_zzdb, locals: { div_id: "zk_10", link_class: "zk_8bt", category_class: "zk_2nr"} %>
+    <div id="zk_10">
+      <ul>
+        <li>
+          <%= link_to '资质代办', '#', class: "zk_8bt" %>        
+          <% @seg_zzdb.each do |seg| %>
+            <%= link_to "#{seg.title}(#{seg.qualifies.count})", "#", class: "zk_2nr" %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
     <!--建筑师-->
     <%= render partial: @seg_jgs, locals: { div_id: "zk_11", link_class: "zk_5bt", category_class: "zk_2nr"} %> 
     <!--电气工程师-->

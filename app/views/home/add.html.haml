@@ -3,6 +3,6 @@
 - elsif @type_id == '1'
   = render partial: 'resumes/form_jianzhi', locals: { seg_id: @seg_id, cat_id: @cat_id }
 - elsif @type_id == '9'
-  = render partial: 'home/publish_templates/content_type_daiban', locals: { seg_id: @seg_id, cat_id: @cat_id }
+  = render partial: 'qualifies/form', locals: { seg_id: @seg_id, cat_id: @cat_id }
 - else
   = render partial: 'home/publish_templates/content_add', locals: { seg_id: @seg_id, cat_id: @cat_id }

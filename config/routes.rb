@@ -1,4 +1,7 @@
 Rails3MongoidDevise::Application.routes.draw do
+  
+
+
   devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations"}
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
@@ -15,6 +18,7 @@ Rails3MongoidDevise::Application.routes.draw do
 
   match '/categories/(:cat_name)' => 'home#zizhi', :as => :zizhi_daiban
   match '/posts(/:seg_name)(/:cat_name)(/:province)(/:city)' => 'home#zizhi', as: :post_category
+  match '/qualification(/:type)(/:seg_name)(/:cat_name)(/:province)(/:city)' => 'home#qualify', as: :home_qualify
   # scope '(home)' do
   #   controller :home do
   #     get '/' => :index
@@ -33,6 +37,10 @@ Rails3MongoidDevise::Application.routes.draw do
       post :favorite
       delete :unfavorite
     end
+    resources :replies
+  end
+
+  resources :qualifies, only: [:show, :create, :new] do
     resources :replies
   end
 

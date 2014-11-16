@@ -6,4 +6,5 @@ class Category
   belongs_to :segment
   has_many :records
   has_many :resumes
+  has_many :qualifies
 end

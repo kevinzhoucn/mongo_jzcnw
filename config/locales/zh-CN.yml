@@ -78,6 +78,8 @@ zh-CN:
     publish_type_08: 培训信息
     publish_type_09: 资质代办
     publish_category: 选择分类
+    qualify_want: 要办资质
+    qualify_agent: 中介代办
 
   date:
     abbr_day_names:

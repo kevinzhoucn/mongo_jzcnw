@@ -9,109 +9,109 @@
 # Environment variables (ENV['...']) can be set in the file config/application.yml.
 # See http://railsapps.github.io/rails-environment-variables.html
 
-# 默认配置项
-# 如需新增设置项，请在这里初始化默认值，然后到后台修改
-# 首页
-# SiteConfig.index_html
-SiteConfig.delete_all
-SiteConfig.save_default("index_html",<<-eos
-<div class="box" style="text-align:center;">
-  <p><img alt="Big_logo" src="/assets/big_logo.png"></p>
-  <p></p>
-  <p>Ruby China Group， 致力于构建完善的 Ruby 中文社区。</p>
-  <p>功能正在完善中，欢迎 <a href="http://github.com/huacnlee/ruby-china">贡献代码</a> 。</p>
-  <p>诚邀有激情的活跃 Ruby 爱好者参与维护社区，联系 <b style="color:#c00;">lgn21st@gmail.com</b></p>
-</div>
-eos
-)
+# # 默认配置项
+# # 如需新增设置项，请在这里初始化默认值，然后到后台修改
+# # 首页
+# # SiteConfig.index_html
+# SiteConfig.delete_all
+# SiteConfig.save_default("index_html",<<-eos
+# <div class="box" style="text-align:center;">
+#   <p><img alt="Big_logo" src="/assets/big_logo.png"></p>
+#   <p></p>
+#   <p>Ruby China Group， 致力于构建完善的 Ruby 中文社区。</p>
+#   <p>功能正在完善中，欢迎 <a href="http://github.com/huacnlee/ruby-china">贡献代码</a> 。</p>
+#   <p>诚邀有激情的活跃 Ruby 爱好者参与维护社区，联系 <b style="color:#c00;">lgn21st@gmail.com</b></p>
+# </div>
+# eos
+# )
 
-# Wiki 首页 HTML
-SiteConfig.save_default("wiki_index_html",<<-eos
-<div class="box">
-  Wiki Home page.
-</div>
-eos
-)
+# # Wiki 首页 HTML
+# SiteConfig.save_default("wiki_index_html",<<-eos
+# <div class="box">
+#   Wiki Home page.
+# </div>
+# eos
+# )
 
-# Footer HTML
-SiteConfig.save_default("footer_html",<<-eos
-<p class="copyright">
- &copy; Ruby China Group.
-</p>
-eos
-)
+# # Footer HTML
+# SiteConfig.save_default("footer_html",<<-eos
+# <p class="copyright">
+#  &copy; Ruby China Group.
+# </p>
+# eos
+# )
 
-# 话题后面的HTML代码
-SiteConfig.save_default("after_topic_html",<<-eos
-<div class="share_links">
- <a href="https://twitter.com/share" class="twitter-share-button" data-count="none"">Tweet</a>
- <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
-</div>
-eos
-)
+# # 话题后面的HTML代码
+# SiteConfig.save_default("after_topic_html",<<-eos
+# <div class="share_links">
+#  <a href="https://twitter.com/share" class="twitter-share-button" data-count="none"">Tweet</a>
+#  <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+# </div>
+# eos
+# )
 
-# 话题正文前面的HTML
-SiteConfig.save_default("before_topic_html",<<-eos
-eos
-)
+# # 话题正文前面的HTML
+# SiteConfig.save_default("before_topic_html",<<-eos
+# eos
+# )
 
-# 话题列表首页边栏HTML
-SiteConfig.save_default("topic_index_sidebar_html",<<-eos
-<div class="box">
-  <h2>公告</h2>
-  <div class="content">
-    Hello world.
-  </div>
-</div>
+# # 话题列表首页边栏HTML
+# SiteConfig.save_default("topic_index_sidebar_html",<<-eos
+# <div class="box">
+#   <h2>公告</h2>
+#   <div class="content">
+#     Hello world.
+#   </div>
+# </div>
 
-<div class="box">
-  <h2>置顶话题</h2>
-  <ul class="content">
-    <li><a href="/topics/1">Foo bar</a></li>
-  </ul>
-</div>
-eos
-)
+# <div class="box">
+#   <h2>置顶话题</h2>
+#   <ul class="content">
+#     <li><a href="/topics/1">Foo bar</a></li>
+#   </ul>
+# </div>
+# eos
+# )
 
-# 酷站列表首页头的HTML
-SiteConfig.save_default("site_index_html",<<-eos
-下面列出了基于 Ruby 语言开发的网站。如果你知道还有不在此列表的，请帮忙补充。
-eos
-)
+# # 酷站列表首页头的HTML
+# SiteConfig.save_default("site_index_html",<<-eos
+# 下面列出了基于 Ruby 语言开发的网站。如果你知道还有不在此列表的，请帮忙补充。
+# eos
+# )
 
-# 自定有 HTML head 区域的内容
-SiteConfig.save_default("custom_head_html",<<-eos
-<link rel="dns-prefetch" href="//assets.youhost.com">
-eos
-)
+# # 自定有 HTML head 区域的内容
+# SiteConfig.save_default("custom_head_html",<<-eos
+# <link rel="dns-prefetch" href="//assets.youhost.com">
+# eos
+# )
 
-# 要在论坛首页列表隐藏的节点,以逗号隔开
-SiteConfig.save_default("node_ids_hide_in_topics_index","")
+# # 要在论坛首页列表隐藏的节点,以逗号隔开
+# SiteConfig.save_default("node_ids_hide_in_topics_index","")
 
-# Sidebar 新建话题按钮，下拉显示的节点列表
-SiteConfig.save_default("new_topic_dropdown_node_ids","")
+# # Sidebar 新建话题按钮，下拉显示的节点列表
+# SiteConfig.save_default("new_topic_dropdown_node_ids","")
 
-# 禁止回复的某些词语
-SiteConfig.save_default("ban_words_on_reply","mark\n收藏\n顶\n赞\nup\n")
+# # 禁止回复的某些词语
+# SiteConfig.save_default("ban_words_on_reply","mark\n收藏\n顶\n赞\nup\n")
 
-# 随机显示的 tip 信息
-SiteConfig.save_default("tips","提示1\n提示2")
+# # 随机显示的 tip 信息
+# SiteConfig.save_default("tips","提示1\n提示2")
 
-SiteConfig.save_default("newbie_notices",%(<p>为提高社区质量，防止新人一来就发帖提问接触 Ruby 遇到的问题，新用户需要达到下面条件才可发帖：</p>
-    <ol style="color:#ad2b2d;">
-      <li>注册时间超过一个月；</li>
-      <li>回帖数量必须达到 10 帖以上；</li>
-    </ol>
-    <p>请在新人阶段多浏览，看看其他老用户是如何在社区里面分享与解决问题的。</p>))
+# SiteConfig.save_default("newbie_notices",%(<p>为提高社区质量，防止新人一来就发帖提问接触 Ruby 遇到的问题，新用户需要达到下面条件才可发帖：</p>
+#     <ol style="color:#ad2b2d;">
+#       <li>注册时间超过一个月；</li>
+#       <li>回帖数量必须达到 10 帖以上；</li>
+#     </ol>
+#     <p>请在新人阶段多浏览，看看其他老用户是如何在社区里面分享与解决问题的。</p>))
 
-SiteConfig.save_default("reject_newbie_reply_in_the_evening", "false")
+# SiteConfig.save_default("reject_newbie_reply_in_the_evening", "false")
 
-SiteConfig.save_default("twitter_page_html",%(
-<div class="box">
-<a class="twitter-timeline" href="https://twitter.com/ruby_china/ruby-developers" data-widget-id="435676008880959489" data-tweet-limit="20" data-chrome="noscrollbar transparent" width="940" height="800">Ruby Developers 的 Twitter Timeline</a>
-<script type="text/javasscript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-</div>
-))
+# SiteConfig.save_default("twitter_page_html",%(
+# <div class="box">
+# <a class="twitter-timeline" href="https://twitter.com/ruby_china/ruby-developers" data-widget-id="435676008880959489" data-tweet-limit="20" data-chrome="noscrollbar transparent" width="940" height="800">Ruby Developers 的 Twitter Timeline</a>
+# <script type="text/javasscript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+# </div>
+# ))
 
 #-----------------------------------------
 # User Segment Category section
@@ -317,12 +317,61 @@ categories.each do | cat |
      cat.save
 end
 
-categories = Category.create! ([{code: "zcbzzbl", title: "总承包资质办理"}, {code: "yllhzzdb", title: "园林绿化资质代办"},
-               {code: "sjsgythzz", title: "施工专业承包资质"}, {code: "yllhzzdb", title: "设计施工一体化资质"},
-               {code: "yllhzzdb", title: "代办劳务分包资质"},{code: "sjsgythzz", title: "代办企业资质"},
-               {code: "yllhzzdb", title: "建筑企业资质办理"}])
-segment = Segment.create!(code: "zzdb", title: "资质代办", categories: categories, for: "db")
+# categories = Category.create! ([{code: "zcbzzbl", title: "总承包资质"}, {code: "zycbzz", title: "专业承包资质"},
+#           {code: "lwfbzz", title: "劳务分包资质"}, {code: "yllhzzdb", title: "安全生产许可证"},
+#                {code: "sjsgythzz", title: "房地产开发资质"}, {code: "yllhzzdb", title: "园林绿化资质"},
+#                {code: "yllhzzdb", title: "工程设计资质"},{code: "sjsgythzz", title: "监理资质"},
+#                {code: "yllhzzdb", title: "勘察资质"}, {code: "yllhzzdb", title: "工程造价"},
+#                {code: "yllhzzdb", title: "招标代理"}, {code: "yllhzzdb", title: "其它资质"}])
+# segment = Segment.create!(code: "zzdb", title: "资质代办", for: "db")
+# categories.each do | cat |
+#      cat.segment = segment
+#      cat.save
+# end
+
+categories = Category.create! ([{code: "jzzz", title: "建筑资质"}, {code: "jdzz", title: "机电资质"},
+               {code: "szzz", title: "市政资质"}, {code: "dlzz", title: "电力资质"},
+               {code: "kszz", title: "矿山资质"}, {code: "slsdzz", title: "水利水电资质"},
+               {code: "slsdzz", title: "其它"}])
+segment = Segment.create!(code: "zcbzz", title: "总承包资质", for: "zz")
 categories.each do | cat |
      cat.segment = segment
      cat.save
 end
+
+categories = Category.create! ([{code: "zszxzz", title: "装饰装修资质"}, {code: "mqzz", title: "幕墙资质"},
+               {code: "gjgzz", title: "钢结构资质"}, {code: "jdzz", title: "机电资质"},
+               {code: "fszz", title: "防水资质"},{code: "dzznh", title: "电子与智能化资质"}
+               ])
+segment = Segment.create!(code: "zycbzz", title: "专业承包资质", for: "zz")
+categories.each do | cat |
+     cat.segment = segment
+     cat.save
+end
+
+categories = Category.create! ([])
+segment = Segment.create!(code: "lwfb", title: "劳务分包资质", for: "zz")
+
+categories = Category.create! ([])
+segment = Segment.create!(code: "aqsc", title: "安全生产许可证", for: "zz")
+
+categories = Category.create! ([])
+segment = Segment.create!(code: "fdckf", title: "房地产开发资质", for: "zz")
+
+categories = Category.create! ([])
+segment = Segment.create!(code: "yllh", title: "园林绿化资质", for: "zz")
+
+categories = Category.create! ([])
+segment = Segment.create!(code: "gcsj", title: "工程设计资质", for: "zz")
+
+categories = Category.create! ([])
+segment = Segment.create!(code: "jl", title: "监理资质", for: "zz")
+
+categories = Category.create! ([])
+segment = Segment.create!(code: "kc", title: "勘察资质", for: "zz")
+
+categories = Category.create! ([])
+segment = Segment.create!(code: "zbdl", title: "招标代理", for: "zz")
+
+categories = Category.create! ([])
+segment = Segment.create!(code: "qt", title: "其它资质", for: "zz")

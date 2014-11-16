@@ -31,3 +31,4 @@ $(document).ready ->
       $("a.go-top").show()
     else
       $("a.go-top").hide()
+  

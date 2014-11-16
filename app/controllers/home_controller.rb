@@ -45,7 +45,7 @@ class HomeController < ApplicationController
           # @job_type = 2
         end
       elsif ( type_id == '9' or type_id == '10' )
-        @segments = Segment.where(for: "db").all
+        @segments = Segment.where(for: "zz").all
       else
         @segments = Segment.all
       end
@@ -56,10 +56,77 @@ class HomeController < ApplicationController
     set_seo_meta t("menu.resume")
   end
 
+  def qualify
+    @qualify_type = params[:type]
+    @segments = Segment.where(for: 'zz').all.to_a
+    @qualifies = Qualify.all
+    @qualifies_agent = Qualify.agent_type_01
+    @qualifies_want = Qualify.agent_type_02
+
+    # if !params[:type].blank?
+    #   @qualify_type = params[:type] 
+    #   if @qualify_type == "agent" or @qualify_type == "9"
+    #     @segments = Segment.where(for: 'zz').all.to_a
+    #     @qualifies = Qualify.all
+    #     @qualifies_agent = Qualify.agent_type_01
+    #     @qualifies_want = Qualify.agent_type_02
+    #   else
+    #     redirect_to home_qualify_path
+    #   end
+    # else
+    #   redirect_to home_qualify_path
+    # end
+
+    if !params[:seg_name].blank?
+      @seg_id = params[:seg_name]
+      # seg = Segment.find(seg_id)
+      @categories = Category.where(:segment_id => @seg_id)
+      @qualifies = Qualify.where(:segment_id => @seg_id).recent.fields_for_list.to_a
+    else
+      @categories = Category.where(:segment_id => Segment.where(for: 'zz').first.id).to_a
+    end
+
+    # add_breadcrumb t("breadcrumbs.homepage"), root_path, :title => t("breadcrumbs.homepage"), class: "link_4a1"    
+
+    if !params[:cat_name].blank?
+      @cat_name = params[:cat_name]
+      # @records = Record.where(:category_id => @cat_name)
+      if @cat_name != 'a'
+        # cat_title = Category.find(@cat_name).title
+        # add_breadcrumb cat_title, "#", class: "link_4a1", onclick: "return false"
+        @qualifies = Qualify.where(:category_id => @cat_name).recent.fields_for_list.to_a
+      end
+    else
+      @cat_name = 'a'
+    end
+
+    if !params[:province].blank?
+      province = params[:province]      
+      if @cat_name != 'a'
+        @qualifies = Qualify.where(locate_province: province, category_id: @cat_name).recent.fields_for_list.to_a
+      else
+        @qualifies = Qualify.where(locate_province: province).recent.fields_for_list.to_a
+      end
+    end
+    fresh_when(etag: [@record])
+
+  end
+
   def zizhi
     set_seo_meta t("menu.view")
-    @segments = Segment.where(for: 'zs').all.to_a
+    # @segments = Segment.where(for: 'zs').all.to_a
     @records = Record.all.recent
+
+    if !params[:type].blank?
+      @search_type = params[:type] 
+      if @search_type == "agent"
+        @segments = Segment.where(for: 'zz').all.to_a
+      else
+        @segments = Segment.where(for: 'zs').all.to_a
+      end
+    else
+      @segments = Segment.where(for: 'zs').all.to_a
+    end
 
     if !params[:seg_name].blank?
       @seg_id = params[:seg_name]
@@ -100,15 +167,16 @@ class HomeController < ApplicationController
     # @record = Record.new
     @resume = Resume.new
     @record = Record.new
+    @qualify = Qualify.new
     @seg_id = params[:seg]
     @cat_id = params[:cat]
-    seg_name = Segment.find(@seg_id).title
-    cat_name = Category.find(@cat_id).title
+    @seg_name = Segment.find(@seg_id).title
+    @cat_name = Category.find(@cat_id).title
 
     @type_id = params[:type]
     add_breadcrumb t("breadcrumbs.homepage"), root_path, :title => t("breadcrumbs.homepage"), class: "link_4a1"
     add_breadcrumb t("breadcrumbs.publish_type_0#{@type_id}"), home_publish_path, :title => t("breadcrumbs.publish_type"), class: "link_4a1"
-    add_breadcrumb seg_name, publish_path, :title => seg_name, class: "link_4a1" 
+    add_breadcrumb @seg_name, publish_path, :title => @seg_name, class: "link_4a1" 
 
     if @type_id == '3' or @type_id == '4' or @type_id == '5'
       @job_type = 1
@@ -117,7 +185,7 @@ class HomeController < ApplicationController
     elsif @type_id == '9'
       @job_type = 3
     end
-    add_breadcrumb cat_name, '#', class: "link_4a1", onclick: "return false"
+    add_breadcrumb @cat_name, '#', class: "link_4a1", onclick: "return false"
 
     respond_to do |format|
       format.html # add.html.haml

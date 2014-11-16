@@ -1,0 +1,80 @@
+<% cache(@qualify) do %>
+  <div class="center"><img src="/img/ny_bkz/nyk3_r2_c1.jpg"></div>
+
+  <div id="ny3_bk">
+    <div id="ny3_bk_left">
+      <a href="#" class="ny3_zl">资质信息</a>
+    </div>
+    
+    <div id="ny3_bk_right">
+      <div id="ny3_bk_r1" style="font-size:160%"><%= @qualify.title %></div>
+      <div id="ny3_bk_r2">更新时间：<%= @qualify.updated_at.strftime('%Y-%m-%d').to_s %></br>浏览次数：<%= @qualify.hits %></div>
+      <div class="left">
+        <table width="743" border="0" cellpadding="0" cellspacing="0">
+          <tbody><tr>            
+            <td width="96" height="45" align="right" class="txt_4">公司名称：&nbsp;</td>
+            <td width="241" height="45"><span class="txt_4">
+            <a href="#" class="link_4a1">
+                <% if !@qualify.company_name.blank? %>
+                  <%= @qualify.company_name %>
+                <% end %>
+            </a></span></td>
+            <td height="45" align="right" class="txt_4">所在地：&nbsp;</td>
+            <td height="45" class="txt_4"><%= ChinaCity.get(@qualify.locate_province) %></td>
+          </tr>
+          <tr>
+            <td height="45" align="right" class="txt_4">
+              <% if @qualify.category_id? %>
+                <%= Category.find(@qualify.category_id).title %>：&nbsp;
+              <% else %>
+                资质代办：&nbsp;
+              <% end %>
+            </td>
+            <td height="45" class="txt_4">
+              <%= @qualify.qualify_status ? Qualify::QUALIFY_STATUS[@qualify.qualify_status][1] : "无" %></td>
+            <td height="45" align="right" class="txt_4">类型：&nbsp;</td>
+            <td height="45" class="txt_4">
+              <%= @qualify.qualify_type ? Qualify::QUALIFY_TYPE[@qualify.qualify_type][1] : "无" %></td>
+          </tr>
+          <tr>
+            <td height="45" align="right" class="txt_4">公司情况：&nbsp;</td>
+            <td height="45" class="txt_4"><%= @qualify.corp_qualify_status ? Qualify::CORP_QUALIFY_STATUS[@qualify.corp_qualify_status][1] : "无" %></td>
+            <td height="45" align="right" class="txt_4">注册情况：&nbsp;</td>
+            <td height="45" class="txt_2">
+              <%= @qualify.corp_reg_status ? Qualify::CORP_REG_STATUS[@qualify.corp_reg_status][1] : "无" %>
+            </td>
+          </tr>
+          <tr>
+            <td height="45" align="right" class="txt_4">联系人：&nbsp;</td>
+            <td height="45" class="txt_4">
+              <%= @qualify.contact ? @qualify.contact : "无" %>
+            </td>
+            <td height="45" align="right" class="txt_4">电 话：&nbsp;</td>
+            <td height="45" class="txt_4">
+              <%= @qualify.contact_phone ? @qualify.contact_phone : "无" %>
+            </td>
+          </tr>
+          <tr>
+            <td height="45" align="right" class="txt_4">QQ：&nbsp;</td>
+            <td height="45" class="txt_4">
+              <%= @qualify.qq ? @qualify.qq : "无" %>
+            </td>
+            <td height="45" align="right" class="txt_4">其它联系方式：&nbsp;</td>
+            <td height="45" class="txt_4">
+              <%= @qualify.contact_alternate ? @qualify.contact_alternate : "无" %>
+            </td>
+          </tr>
+        </tbody></table>
+      </div>
+      <div id="ny3_bk_r3as">详细说明</div>
+      <div id="ny3_bk_r3as1"><%= @qualify.details %></div>
+      <div id="ny3_bk_r3as1">        
+        <%= render partial: "home/show_templates/button", locals: { item: @qualify} %>
+      </div>
+    </div>
+  </div>
+
+  <div class="center">
+    <img src="/img/ny_bkz/nyk3_r9_c1.jpg">
+  </div>
+<% end %>

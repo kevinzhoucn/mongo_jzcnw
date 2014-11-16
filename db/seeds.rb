@@ -116,24 +116,24 @@ SiteConfig.save_default("twitter_page_html",%(
 #-----------------------------------------
 # User Segment Category section
 
-puts 'DEFAULT USERS'
-# user = User.create! :name => ENV['ADMIN_NAME'].dup, :email => ENV['ADMIN_EMAIL'].dup, :password => ENV['ADMIN_PASSWORD'].dup, :password_confirmation => ENV['ADMIN_PASSWORD'].dup
-# puts 'user: ' << user.name
+# puts 'DEFAULT USERS'
+# # user = User.create! :name => ENV['ADMIN_NAME'].dup, :email => ENV['ADMIN_EMAIL'].dup, :password => ENV['ADMIN_PASSWORD'].dup, :password_confirmation => ENV['ADMIN_PASSWORD'].dup
+# # puts 'user: ' << user.name
 
-User.delete_all
-admin = User.create!(user_name: "admin01", phone_number: "18888888888", password: "password", locate_province: "110000", locate_city: "110100")
-admin.add_role :admin
-puts 'admin: ' << admin.user_name
+# User.delete_all
+# admin = User.create!(user_name: "admin01", phone_number: "18888888888", password: "password", locate_province: "110000", locate_city: "110100")
+# admin.add_role :admin
+# puts 'admin: ' << admin.user_name
 
-admin = User.create!(user_name: "admin02", phone_number: "18899999999", password: "password", locate_province: "110000", locate_city: "110100")
-admin.add_role :admin
-puts 'admin: ' << admin.user_name
+# admin = User.create!(user_name: "admin02", phone_number: "18899999999", password: "password", locate_province: "110000", locate_city: "110100")
+# admin.add_role :admin
+# puts 'admin: ' << admin.user_name
 
-user = User.create!(user_name: "user01", phone_number: "18800000000", password: "password", locate_province: "110000", locate_city: "110100")
-puts 'user: ' << user.user_name
+# user = User.create!(user_name: "user01", phone_number: "18800000000", password: "password", locate_province: "110000", locate_city: "110100")
+# puts 'user: ' << user.user_name
 
-user = User.create!(user_name: "user02", phone_number: "18800000001", password: "password", locate_province: "110000", locate_city: "110100")
-puts 'user: ' << user.user_name
+# user = User.create!(user_name: "user02", phone_number: "18800000001", password: "password", locate_province: "110000", locate_city: "110100")
+# puts 'user: ' << user.user_name
 
 
 # 全职招聘部分

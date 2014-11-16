@@ -12,7 +12,7 @@ class HomeController < ApplicationController
     @seg_dqgcs = Segment.where(code: "dqgcs").first
     @seg_zczxs = Segment.where(code: "zczxs").first
 
-    @seg_zzdb = Segment.where(for: "zz").all
+    @seg_zzdb = Segment.where(for: "zz").all.limit(7)
 
     @seg_qz = Segment.where(for: "qz").first
 

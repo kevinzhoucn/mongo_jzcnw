@@ -1,6 +1,8 @@
 class Resume
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::BaseModel
+
   field :name, type: String
   field :sex, type: String
   field :mobile, type: String
@@ -25,6 +27,8 @@ class Resume
   field :resume_type, type: Integer
   field :job_title, type: Integer
   field :guakao_price, type: String
+
+  mount_uploader :avatar, AvatarUploader
   
   belongs_to :category
   belongs_to :segment
@@ -33,6 +37,8 @@ class Resume
   validates_presence_of :resume_title, :work_province, :work_city, :price_month, if: :quanzhi_type?
   
   validates_presence_of :job_title, :guakao_price, :register_status, if: :jianzhi_type?
+
+  scope :resume_jianzhi, -> {where(:resume_type => 2)}
 
   def birthday
     if !birth_day.blank? && !birth_month.blank? && !birth_day.blank?

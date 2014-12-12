@@ -1,0 +1,55 @@
+<!--内容开始-->
+<div class="center">
+  <div id="member">
+  <div class="left"><img src="<%= root_url %>images/tm.png" width="963" height="36" /></div>
+  <div class="left">
+      <table width="964" height="323" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="125" height="45" align="right" class="txt_4"><span class="txt_2">*</span> 标题：</td>
+          <td width="566" height="45">
+            <span class= "fb3_sr">
+              <%= @record.title %>
+            </span>
+          </td>
+        </tr>
+        <tr>
+        <td height="45" align="right" class="txt_4"><span class="txt_2">*</span> 证书所在地：</td>
+        <td height="45">
+            <span class= "txt_1">
+              <%= @record.locate_province %>
+            </span>
+        </td>
+          </tr>
+        <tr>
+          <td height="45" align="right" class="txt_4"><span class="txt_2">*</span> 注册情况：</td>
+          <td height="45" class="txt_4">
+            <span class= "txt_1">
+              <%= @record.register_status %>
+            </span>
+          </tr>
+        <tr>
+          <td height="45" align="right" class="txt_4">挂靠价格：</td>
+          <td height="45" class="txt_4">
+            <span class= "txt_1">
+              <%= @record.price %>
+            </span>
+          </tr>
+          <tr>
+          <td height="45" align="right" class="txt_4">  
+            职称：</td>
+            <span class= "txt_1">
+              <%= @record.job_title %>
+            </span>
+      </td>
+          </tr>
+        <tr>
+          <td align="right" class="txt_4"><span class="txt_2">*</span> 详细说明：</td>
+          <td>
+            <span class= "fb3_sr2">
+              <%= @record.details %>
+            </span>
+          </tr>
+      </table>
+  </div>
+  </div>
+</div>

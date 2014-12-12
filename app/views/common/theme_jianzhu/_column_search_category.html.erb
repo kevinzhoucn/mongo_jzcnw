@@ -1,28 +1,28 @@
 <!--快速选择-->
 <div class="sf_bk_n1"><img src="/img/sf2_r1_c1.jpg" /></div>
 <div id="sf_bk_n2">
-  <table width="996" height="19" border="0" align="center" cellpadding="0" cellspacing="0" class="xx_table">
+    <table width="996" height="19" border="0" align="center" cellpadding="0" cellspacing="0" class="xx_table">
     <tr>
       <td width="14" align="center" valign="top">&nbsp;</td>
       <td width="43" align="left" valign="top">分类：</td>
       <td width="939">
-    <ul>
+        <ul>
         <li><a href="#" class="link_4a1">不限</a></li>
-        <% @segments.each do |seg| %>
-            <li>&nbsp;|&nbsp;</li>
-            <li>                
-                <% if !@seg_id.blank? && @seg_id.to_s == seg.id.to_s %>
-                    <%= link_to seg.title, post_category_path(:seg_name => seg), class: "link_4a2" %>
-                <% else %>
-                    <%= link_to seg.title, post_category_path(:seg_name => seg), class: 'link_4a1' %>
-                <% end %>                
-            </li>
-        <% end %>
-      </ul>
-    </td>
+            <% @segments.each do |seg| %>
+                <li>&nbsp;|&nbsp;</li>
+                <li>                
+                    <% if !@seg_id.blank? && @seg_id.to_s == seg.id.to_s %>
+                        <%= link_to seg.title, post_category_path(:seg_name => seg), class: "link_4a2" %>
+                    <% else %>
+                        <%= link_to seg.title, post_category_path(:seg_name => seg), class: 'link_4a1' %>
+                    <% end %>                
+                </li>
+            <% end %>
+        </ul>
+      </td>
     </tr>
-  </table>
-  <table width="996" height="19" border="0" align="center" cellpadding="0" cellspacing="0" class="xx_table">
+    </table>
+    <table width="996" height="19" border="0" align="center" cellpadding="0" cellspacing="0" class="xx_table">
     <tr>
       <td width="14" align="center" valign="top">&nbsp;</td>
       <td width="43" align="left" valign="top">分类：</td>
@@ -42,7 +42,7 @@
       </ul>
     </td>
     </tr>
-  </table>
+    </table>
   <table width="996" height="19" border="0" align="center" cellpadding="0" cellspacing="0" class="xx_table">
     <tr>
       <td width="14" align="center" valign="top">&nbsp;</td>

@@ -1,0 +1,19 @@
+%h1 Listing qualifies
+
+%table
+  %tr
+    %th Title
+    %th
+    %th
+    %th
+
+  - @qualifies.each do |qualify|
+    %tr
+      %td= qualify.title
+      %td= link_to 'Show', qualify
+      %td= link_to 'Edit', edit_qualify_path(qualify)
+      %td= link_to 'Destroy', qualify, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Qualify', new_qualify_path

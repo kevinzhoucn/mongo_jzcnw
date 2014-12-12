@@ -1,10 +1,14 @@
 <div class="center">
-  <div class="left"><img src="/img/ny_logo.jpg" width="136" height="111"></div>
+  <div class="left">
+    <a href="/">
+      <img src="/img/ny_logo.jpg" width="136" height="111">
+    </a>
+  </div>
   <!--导航-->
   <div id="ny_dh">
   <ul>
     <li><a href="<%= root_url %>" class="link_dh">首 页</a></li>
-    <li><a href="<%= zizhi_daiban_path %>" class="link_dh">资质代办</a></li>
+    <li><a href="<%= home_qualify_path(:type => 'agent') %>" class="link_dh">资质代办</a></li>
     <li><a href="<%= zizhi_daiban_path %>" class="link_dh">资质转让</a></li>
     <li><a href="<%= zizhi_daiban_path %>" class="link_dh">资质挂靠</a></li>
     <li><a href="人员挂靠=已验证简历.html" class="link_dh">人员挂靠</a></li>

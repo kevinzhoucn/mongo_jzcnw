@@ -1,5 +1,8 @@
 Rails3MongoidDevise::Application.routes.draw do
-  devise_for :users
+  
+
+
+  devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations"}
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   mount ChinaCity::Engine => '/china_city'
@@ -10,11 +13,12 @@ Rails3MongoidDevise::Application.routes.draw do
   match '/publish/:type/add' => 'home#add', :via => :get, :as => :home_publish_add
   match '/add/resumes' => 'home#publishresumes', via: :get, as: :publish_resumes
   match '/records/create' => 'home#create', :via => :post, :as => :home_records
-  match '/records/:id' => 'home#show', :via => :get, :as => :record_show
+  # match '/records/:id' => 'home#show', :via => :get, :as => :record_show
   match '/region/(:province)' => 'home#zizhi', as: :zizhi_province
 
   match '/categories/(:cat_name)' => 'home#zizhi', :as => :zizhi_daiban
   match '/posts(/:seg_name)(/:cat_name)(/:province)(/:city)' => 'home#zizhi', as: :post_category
+  match '/qualification(/:type)(/:seg_name)(/:cat_name)(/:province)(/:city)' => 'home#qualify', as: :home_qualify
   # scope '(home)' do
   #   controller :home do
   #     get '/' => :index
@@ -27,7 +31,20 @@ Rails3MongoidDevise::Application.routes.draw do
   #   end
   # end
 
-  resources :resumes
+  resources :resumes, only: [:show, :create, :new, :update]
+  resources :records, only: [:show, :favorite, :unfavorite] do
+    member do
+      post :favorite
+      delete :unfavorite
+    end
+    resources :replies
+  end
+
+  resources :qualifies, only: [:show, :create, :new] do
+    resources :replies
+  end
+
+  # resources :replies
 
   #get "profile/index"
   match '/profiles/:id' => 'profiles#show', via: :get, as: :profile_show

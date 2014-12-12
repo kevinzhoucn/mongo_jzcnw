@@ -1,0 +1,6 @@
+<% if @reply.errors.blank? %>
+  // var current_floor = parseInt($("#replies").data("last-floor")) + 1;
+  $("#replies .items").append('<%= j(render("reply", reply: @reply)) %>');
+  $("form textarea#reply_body").val('');
+  $("form textarea#reply_body").focus();
+<% end %>

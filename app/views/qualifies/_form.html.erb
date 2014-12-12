@@ -1,0 +1,136 @@
+<!--内容开始-->
+<div class="center"><img src="<%= root_url %>images/release/bt_3.jpg" width="1010" height="78" /></div>
+<div id="ny3_dh">
+  当前位置：
+  <%= render_breadcrumbs :separator => ' / ' %>
+</div>
+<div class="center">
+  <div id="member">
+  <div class="left"><img src="<%= root_url %>images/tm.png" width="963" height="36" /></div>
+  <div class="left">
+    <%= form_for @qualify, :url => qualifies_path do |f| %>
+      <% if @qualify.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= "#{@qualify.errors.count}个错误:" %>
+          </h2>
+          <ul>
+            <% @qualify.errors.full_messages.each do |msg| %>
+              <li style="float:none">
+                <%= msg %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <table width="964" height="323" border="0" cellpadding="0" cellspacing="0">
+        <input type="hidden" name="qualify[segment_id]" value="<%= @seg_id %>" >
+        <input type="hidden" name="qualify[category_id]" value="<%= @cat_id %>" >
+        <input type="hidden" name="qualify[job_type]" value="<%= params[:type] ? params[:type] : '9' %>" >
+        <tr>
+          <td width="125" height="45" align="right" class="txt_4">
+            <span class="txt_2">*</span> 类型: 
+          </td>
+          <td width="566" height="45">
+            <%= f.collection_radio :agent_type, Qualify::AGENT_TYPE, :first, :last %>
+          </td>
+        </tr>
+
+        <tr>
+          <td width="125" height="45" align="right" class="txt_4"><span class="txt_2">*</span> 标题：</td>
+          <td width="566" height="45">
+            <input name="qualify[title]" type="text" class="fb3_sr" />            
+          </td>
+        </tr>
+        <tr>
+          <td height="45" align="right" class="txt_4"><span class="txt_2">*</span> 公司所在地：</td>
+          <td height="45">
+            <div class="city-group">
+              <select name="qualify[locate_province]" class="txt_1 city-select">
+                  <option value="无">请选择省份</option>
+                  <%= options_for_select(ChinaCity.list) %>
+              </select>      
+              <select name="qualify[locate_city]" class="txt_1 city-select">
+                <option value="">请选择城市</option>
+              </select>
+              <select name="locate_region" class="txt_1 city-select">
+                <option value="">请选择区县</option>
+              </select>
+            </div>
+          </td>
+        </tr>        
+        <tr>
+          <td height="45" align="right" class="txt_4">
+            <span class="txt_2">*</span> 
+            <%= @cat_name ? "#{@cat_name}:" : "资质代办: " %>
+          </td>
+          <td height="45" class="txt_4">            
+            <% for item in Qualify::QUALIFY_STATUS %>
+              <%= check_box_tag "qualify[status_ids][]", item[0] %>
+              <%= item[1] %>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td height="45" align="right" class="txt_4"></td>
+          <td height="45" class="txt_4">
+            <% for item in Qualify::QUALIFY_TYPE %>
+              <%= check_box_tag "qualify[type_ids][]", item[0] %>
+              <%= item[1] %>
+            <% end %>          
+          </td>
+        </tr>
+        <tr>
+          <td height="45" align="right" class="txt_4"><span class="txt_2">*</span> 公司情况：</td>
+          <td height="45" class="txt_4">
+            <%= f.collection_radio :corp_qualify_status, Qualify::CORP_QUALIFY_STATUS, :first, :last %>
+          </td>
+        </tr>
+        <tr>
+          <td height="45" align="right" class="txt_4"></td>
+          <td height="45" class="txt_4">
+            <%= f.collection_radio :corp_reg_status, Qualify::CORP_REG_STATUS, :first, :last %>
+          </td>
+        </tr>
+        <tr>
+          <td align="right" class="txt_4"><span class="txt_2">*</span> 详细说明：</td>
+          <td><textarea name="qualify[details]" class="fb3_sr2"></textarea></td>
+          </tr>
+        <tr>
+          <td height="45" align="right" class="txt_4"><span class="txt_2">*</span> 联系人：</td>
+          <td>
+            <input name="qualify[contact]" type="text" class="fb3_sr" value = "<%= current_user ? current_user.user_name : '' %>"/>            
+          </td>
+        </tr>
+        <tr>
+          <td height="45" align="right" class="txt_4"><span class="txt_2">*</span> 联系手机：</td>
+          <td height="45" class="txt_4">
+            <input name="qualify[contact_phone]" type="text" class="fb3_sr" value="<%= current_user ? current_user.phone_number : '' %>" />
+          </td>
+        </tr>
+        <tr>
+          <td align="right" class="txt_4">其它联系方式：</td>
+          <td  height="45" class="txt_4"><input name="qualify[contact_alternate]" type="text" class="fb3_sr" /></td>
+        </tr>
+        <tr>
+          <td align="right" class="txt_4">QQ：</td>
+          <td  height="45" class="txt_4"><input name="qualify[qq]" type="text" class="fb3_sr" /></td>
+        </tr>
+        <tr>
+          <td align="right" class="txt_4">公司网址：</td>
+          <td  height="45" class="txt_4"><input name="qualify[website]" type="text" class="fb3_sr" /></td>
+        </tr>
+        <tr>
+          <td align="right" class="txt_4"><span class="txt_2">*</span> 公司名称：</td>
+          <td  height="45" class="txt_4"><input name="qualify[company_name]" type="text" class="fb3_sr" value="<%= current_user ? current_user.company_name : '' %>" /></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td height="55" width="273" rowspan="5"><input name="" type="image" src="<%= root_url %>images/release/fabu.jpg" width="153" height="41" /></td>
+        </tr>
+      </table>
+    <% end %>  
+  </div>
+  </div>
+</div>
+<div class="center"><img src="<%= root_url %>images/release/fgx_r2_c1.jpg" width="1010" height="25" /></div>

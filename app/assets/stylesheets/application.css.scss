@@ -8,7 +8,9 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require social-share-button
  *= require_self
+ *= require_tree .
  */
 /*
 .brand {
@@ -35,4 +37,33 @@ ul.nav li {
   background-color: #FCC;
   border: solid 1px #C66;
 }
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 */
+
+.icon {
+  display:inline-block;
+  transition-property: background-position;
+  transition-duration: 0.5s;
+  -moz-transition-property: background-position; /* Firefox 4 */
+  -moz-transition-duration: 0.5s; /* Firefox 4 */
+  -webkit-transition-property: background-position; /* Safari and Chrome */
+  -webkit-transition-duration: 0.5s; /* Safari and Chrome */
+}
+.icons-go-top { width: 16px; height: 16px; background: url(image-path('go_top.png'));}
+.icons-rss { width: 16px; height: 16px; background: url(image-path('rss.png')); }
+
+.go-top {
+  background: #FFF;
+  text-align: center;
+  display:none;
+  height:20px; width:24px;
+  padding-top:4px; overflow:hidden;
+  border-radius: 3px;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+}

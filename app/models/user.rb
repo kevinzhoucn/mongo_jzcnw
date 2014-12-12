@@ -66,12 +66,31 @@ class User
   field :locate_city, :type => String
   #field :locate_region, :type => String
 
+  # user's favorites
+  field :favorite_record_ids, type: Array, default: []
+
   #index({ email: 1 }, { unique: true, background: true })
   field :user_name, :type => String
   validates_presence_of :user_name, :phone_number, :locate_province
   validates_presence_of :company_name, if: :company_type?
 
   attr_accessible :user_type, :company_name, :phone_number, :locate_province, :locate_city, :user_name, :email, :password, :password_confirmation, :remember_me, :created_at, :updated_at
+
+  # favorite record
+  def favorite_record(record_id)
+    return false if record_id.blank?
+    record_id = record_id.to_i
+    return false if self.favorite_record_ids.include?(record_id)
+    self.push(:favorite_record_ids, record_id)
+    true
+  end
+
+  def unfavorite_record(record_id)
+    return false if record_id.blank?
+    record_id = record_id.to_i
+    self.pull(:favorite_record_ids, record_id)
+    true
+  end
 
   protected
     # From Devise module Validatable

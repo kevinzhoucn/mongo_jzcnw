@@ -1,0 +1,36 @@
+<!--要闻发布/政治解读-->
+<div class="center">
+<!--要闻发布 开始-->
+<div class="news_h">
+  <div id="news_h_bt1"><a href="新闻-二级页.html"><img src="images/more_1.jpg" border="0" /></a></div>
+  <!--循环 开始 显示5条-->
+  <% news.each do |news| %>
+    <div class="news_h_nrk">
+      <div class="news_h_img"><a href="#"><img src="" alt="" name="" width="60" height="60" border="0" /></a></div>
+      <div class="news_h_bt"><%= news.title %></div>
+      <div class="news_h_day">[[<%= news.updated_at.strftime('%Y-%m-%d').to_s %>]]</div>
+      <div class="news_h_nr"><a href="#" class="link_t2"><%= sanitize( truncate( news.content.html_safe, :length => 20, :omission => "..." ) ) %></a></div>
+    </div>
+  <% end %>
+  <!--循环 结束 显示5条-->
+</div>
+<!--要闻发布 结束-->
+
+<div class="left"><img src="images/tm.png" width="23" height="476" /></div>
+
+<!--政治解读 开始-->
+<div class="news_h">
+  <div id="news_h_bt2"><a href="新闻-二级页.html"><img src="images/more_1.jpg" border="0" /></a></div>
+  <!--循环 开始 显示5条-->
+  <% policies.each do |policy| %>
+    <div class="news_h_nrk">
+      <div class="news_h_img"><a href="新闻-二级页-终页.html"><img src="" alt="" name="" width="60" height="60" border="0" /></a></div>
+      <div class="news_h_bt"><%= policy.title %></div>
+      <div class="news_h_day">[<%= policy.updated_at.strftime('%Y-%m-%d').to_s %>]</div>
+      <div class="news_h_nr"><a href="新闻-二级页-终页.html" class="link_t2"><%= sanitize( truncate( policy.content.html_safe, :length => 20, :omission => "..." ) ) %></a></div>
+    </div>
+  <% end %>
+  <!--循环 结束 显示5条-->
+</div>
+<!--政治解读 结束-->
+</div>

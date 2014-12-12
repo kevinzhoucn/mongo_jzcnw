@@ -1,0 +1,111 @@
+<!--
+<div id="ny3_dh">
+  当前位置：
+  <%#= render_breadcrumbs :separator => ' / ' %>
+</div>
+-->
+<div class="center">
+  <div class="left qualify">
+    <a href="#" class="link_4a1 item1">资质信息</a>
+    <a href="#" class="link_4a1 item2">中介代办</a>
+    <a href="#" class="link_4a1 item3">要办资质</a>
+  </div>
+  <div id="jl_bt_1a" style="float:right"><a href="<%= home_publish_path %>" class="link_4a2">免费发布信息 »</a></div>
+</div>
+
+<!--标题行-->
+<div id="ny_tybk">
+  <div class="ny_nr11"><span class="txt_2"><strong>信息标题(共<%= @qualifies.count %>条)</strong></span></div>
+  <div class="ny_nr12"><span class="txt_2"><strong>发布者</strong></span></div>
+  <div class="ny_nr3"><span class="txt_2"><strong>地 区</strong></span></div>
+  <div class="ny_nr3"><span class="txt_2"><strong>资质</strong></span></div>
+  <div class="ny_nr4"><span class="txt_2"><strong>更新时间</strong></span></div>
+</div>
+
+<!--内容行-->
+<div id="ny_tybk2" class="total">
+  <!--循环 开始 显示20条-->
+  <% @qualifies.each do |qualify| %>
+    <div class="nrk_l">
+      <div class="ny_nr11"><a href="<%= qualify_path(qualify.id) %>" class="link_6" target="_blank"><%= qualify.title %></a></div>
+      <div class="ny_nr12"><a href="#" class="link_6">发布者</a></div>
+      <div class="ny_nr3"><span class="txt_4"><%= ChinaCity.get(qualify.locate_province) %></span></div>
+      <div class="ny_nr3"><span class="txt_4"><%= qualify.qualify_status %></span></div>
+      <div class="ny_nr4"><span class="txt_4"><%= qualify.updated_at.strftime('%Y-%m-%d %H:%M:%S').to_s %></span></div>
+    </div>
+  <% end %>
+  <!--循环 结束 显示20条-->
+  
+  <!--分页按钮-->
+  <div id="fanye">
+  <div class="left"><img src="/img/tm.png" width="986" height="15" /></div>
+    <table border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td ><a href="#" class="fy_left">上一页</a></td>
+        <td >
+    <a href="#" class="shuzi">1</a>
+    </td>
+        <td ><a href="#" class="fy_right">下一页</a></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div id="ny_tybk2" class="agent" style="display:none">
+  <!--循环 开始 显示20条-->
+  <% @qualifies_agent.each do |qualify| %>
+    <div class="nrk_l">
+      <div class="ny_nr11"><a href="<%= qualify_path(qualify.id) %>" class="link_6" target="_blank"><%= qualify.title %></a></div>
+      <div class="ny_nr12"><a href="#" class="link_6">发布者</a></div>
+      <div class="ny_nr3"><span class="txt_4"><%= ChinaCity.get(qualify.locate_province) %></span></div>
+      <div class="ny_nr3"><span class="txt_4"><%= qualify.qualify_status %></span></div>
+      <div class="ny_nr4"><span class="txt_4"><%= qualify.updated_at.strftime('%Y-%m-%d %H:%M:%S').to_s %></span></div>
+    </div>
+  <% end %>
+  <!--循环 结束 显示20条-->
+  
+  <!--分页按钮-->
+  <div id="fanye">
+  <div class="left"><img src="/img/tm.png" width="986" height="15" /></div>
+    <table border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td ><a href="#" class="fy_left">上一页</a></td>
+        <td >
+    <a href="#" class="shuzi">1</a>
+    </td>
+        <td ><a href="#" class="fy_right">下一页</a></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div id="ny_tybk2" class="want" style="display:none">
+  <!--循环 开始 显示20条-->
+  <% @qualifies_want.each do |qualify| %>
+    <div class="nrk_l">
+      <div class="ny_nr11"><a href="<%= qualify_path(qualify.id) %>" class="link_6" target="_blank"><%= qualify.title %></a></div>
+      <div class="ny_nr12"><a href="#" class="link_6">发布者</a></div>
+      <div class="ny_nr3"><span class="txt_4"><%= ChinaCity.get(qualify.locate_province) %></span></div>
+      <div class="ny_nr3"><span class="txt_4"><%= qualify.qualify_status %></span></div>
+      <div class="ny_nr4"><span class="txt_4"><%= qualify.updated_at.strftime('%Y-%m-%d %H:%M:%S').to_s %></span></div>
+    </div>
+  <% end %>
+  <!--循环 结束 显示20条-->
+  
+  <!--分页按钮-->
+  <div id="fanye">
+  <div class="left"><img src="/img/tm.png" width="986" height="15" /></div>
+    <table border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td ><a href="#" class="fy_left">上一页</a></td>
+        <td >
+    <a href="#" class="shuzi">1</a>
+    </td>
+        <td ><a href="#" class="fy_right">下一页</a></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="center"><img src="/img/ny_bk/rygk_r6_c1.jpg" /></div>
+<!--内容块 结束-->

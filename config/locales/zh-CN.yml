@@ -1,0 +1,285 @@
+zh-CN:
+  #activerecord:
+  mongoid:
+    models:
+      record: 
+        one: 帖子
+        other: 帖子
+      user:
+        one: 用户
+        other: 用户
+      segment:
+        one: 行业管理
+        other: 行业管理
+      category:
+        one: 职位类别
+        other: 职位类别
+      useful_link:
+        one: 常用网址
+        other: 常用网址
+      resume:
+        one: 简历
+        other: 简历
+      reply:
+        one: 评论
+        other: 评论
+      site_config:
+        one: 网站配置
+        other: 网站配置      
+
+    attributes:
+      user:
+        email: 邮箱
+        phone_number: 手机号码
+        company_name: 公司名称
+        locate_province: 省份
+        user_name: 联系人
+        password: 密码
+        password_confirmation: 确认密码
+        encrypted_password: 密码
+      resume:
+        name: 姓名
+        mobile: 移动电话
+        register_status: 注册状态
+        edu_level: 学历
+        social_security: 社保状态
+        security_b: 安全员B证
+        intend_price: 意向价格
+        person_summary: 自我描述
+        resume_title: 简历标题
+        work_province: 求职省份
+        work_city: 求职城市
+        price_month: 期望月薪
+        job_title: 职称
+        guakao_price: 挂靠价格
+        register_status: 注册情况
+      record:
+        title: 标题
+        locate_province: 证书所在省份
+        locate_city: 证书所在城市
+        details: 详细说明
+        job_title: 职称
+        register_status: 注册情况
+        price: 挂靠价格
+        company_location: 公司所在省份
+        company_start_date: 公司所在城市
+        company_reg_price: 公司注册资金
+
+  breadcrumbs:
+    homepage: 首页
+    publish_type: 选择类型
+    publish_type_01: 兼职简历
+    publish_type_02: 全职简历
+    publish_type_03: 企业聘证
+    publish_type_04: 全职招聘
+    publish_type_05: 猎头聘证
+    publish_type_06: 猎头挂证
+    publish_type_07: 全职招聘
+    publish_type_08: 培训信息
+    publish_type_09: 资质代办
+    publish_category: 选择分类
+    qualify_want: 要办资质
+    qualify_agent: 中介代办
+
+  date:
+    abbr_day_names:
+    - 日
+    - 一
+    - 二
+    - 三
+    - 四
+    - 五
+    - 六
+    abbr_month_names:
+    -
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    day_names:
+    - 星期日
+    - 星期一
+    - 星期二
+    - 星期三
+    - 星期四
+    - 星期五
+    - 星期六
+    formats:
+      default: ! '%Y-%m-%d'
+      long: ! '%Y年%b%d日'
+      short: ! '%b%d日'
+    month_names:
+    -
+    - 一月
+    - 二月
+    - 三月
+    - 四月
+    - 五月
+    - 六月
+    - 七月
+    - 八月
+    - 九月
+    - 十月
+    - 十一月
+    - 十二月
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: 大约一小时
+        other: 大约 %{count} 小时
+      about_x_months:
+        one: 大约一个月
+        other: 大约 %{count} 个月
+      about_x_years:
+        one: 大约一年
+        other: 大约 %{count} 年
+      almost_x_years:
+        one: 接近一年
+        other: 接近 %{count} 年
+      half_a_minute: 半分钟
+      less_than_x_minutes:
+        one: 不到一分钟
+        other: 不到 %{count} 分钟
+      less_than_x_seconds:
+        one: 不到一秒
+        other: 不到 %{count} 秒
+      over_x_years:
+        one: 一年多
+        other: ! '%{count} 年多'
+      x_days:
+        one: 一天
+        other: ! '%{count} 天'
+      x_minutes:
+        one: 一分钟
+        other: ! '%{count} 分钟'
+      x_months:
+        one: 一个月
+        other: ! '%{count} 个月'
+      x_seconds:
+        one: 一秒
+        other: ! '%{count} 秒'
+    prompts:
+      day: 日
+      hour: 时
+      minute: 分
+      month: 月
+      second: 秒
+      year: 年
+  errors:
+    format: ! '%{attribute}%{message}'
+    messages:
+      accepted: 必须是可被接受的
+      blank: 不能为空
+      present: 必须是空白
+      confirmation: 与确认值不匹配
+      empty: 不能留空
+      equal_to: 必须等于 %{count}
+      even: 必须为双数
+      exclusion: 是保留关键字
+      greater_than: 必须大于 %{count}
+      greater_than_or_equal_to: 必须大于或等于 %{count}
+      inclusion: 不包含于列表中
+      invalid: 是无效的
+      less_than: 必须小于 %{count}
+      less_than_or_equal_to: 必须小于或等于 %{count}
+      not_a_number: 不是数字
+      not_an_integer: 必须是整数
+      odd: 必须为单数
+      record_invalid: ! '验证失败: %{errors}'
+      restrict_dependent_destroy: 
+        one: 由于 %{record} 需要此记录，所以无法移除记录
+        many: 由于 %{record} 需要此记录，所以无法移除记录
+      taken: 已经被使用
+      too_long: 
+        one: 过长（最长为一个字符）
+        other: 过长（最长为 %{count} 个字符）
+      too_short: 
+        one: 过短（最短为一个字符）
+        other: 过短（最短为 %{count} 个字符）
+      wrong_length: 
+        one: 长度非法（必须为一个字符）
+        other: 长度非法（必须为 %{count} 个字符）
+      other_than: 长度非法（不可为 %{count} 个字符
+    template:
+      body: 如下字段出现错误：
+      header:
+        one: 有 1 个错误发生导致「%{model}」无法被保存。
+        other: 有 %{count} 个错误发生导致「%{model}」无法被保存。
+  helpers:
+    select:
+      prompt: 请选择
+    submit:
+      create: 新增%{model}
+      submit: 储存%{model}
+      update: 更新%{model}
+  number:
+    currency:
+      format:
+        delimiter: ! ','
+        format: ! '%u %n'
+        precision: 2
+        separator: .
+        significant: false
+        strip_insignificant_zeros: false
+        unit: CN¥
+    format:
+      delimiter: ! ','
+      precision: 3
+      separator: .
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: 十亿
+          million: 百万
+          quadrillion: 千兆
+          thousand: 千
+          trillion: 兆
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 1
+        significant: false
+        strip_insignificant_zeros: false
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ', 和 '
+      two_words_connector: ! ' 和 '
+      words_connector: ! ', '
+  time:
+    am: 上午
+    formats:
+      default: ! '%Y年%b%d日 %A %H:%M:%S %Z'
+      long: ! '%Y年%b%d日 %H:%M'
+      short: ! '%b%d日 %H:%M'
+    pm: 下午

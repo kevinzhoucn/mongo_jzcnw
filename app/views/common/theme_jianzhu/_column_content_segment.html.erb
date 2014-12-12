@@ -1,0 +1,78 @@
+<div class="center">
+  <div id="zk_k1">
+    <!--一级建造师-->
+    <%= render partial: @seg_yjgcs, locals: { div_id: "zk_1", link_class: "zk_1bt", category_class: "zk_1nr"} %>
+    <!--造价师-->
+    <%= render partial: @seg_zjs, locals: { div_id: "zk_2", link_class: "zk_2bt", category_class: "zk_1nr"} %>
+    <!--其他证书-->
+    <%= render partial: @seg_qtzs, locals: { div_id: "zk_3", link_class: "zk_3bt", category_class: "zk_1nr"} %>
+  </div>
+  
+  <div id="zk_k2">    
+    <div id="zk_k2_1">
+      <!--二级建造师-->
+      <div id="zk_4">
+        <ul>
+          <li>
+            <a href="<%= post_category_path(:seg_name => @seg_ejjzs) %>" class="zk_4bt">二级建造师</a>
+            <%= render partial: @seg_ejjzs.categories.all.limit(5), locals: { class_name: 'zk_2nr'} %>
+          </li>
+        </ul>
+      </div>
+    <!--土木工程师-->
+    <%= render partial: @seg_qtzs, locals: { div_id: "zk_5", link_class: "zk_5bt", category_class: "zk_2nr"} %>
+    <!--监理师-->
+    <%= render partial: @seg_qtzs, locals: { div_id: "zk_6", link_class: "zk_5bt", category_class: "zk_2nr"} %>
+  </div>
+  
+  <div id="zk_k2_2">
+    <!--公共设备工程师-->
+    <%= render partial: @seg_gysbgcs, locals: { div_id: "zk_7", link_class: "zk_6bt", category_class: "zk_4nr"} %>   
+    <!--结构师-->
+     <%= render partial: @seg_gysbgcs, locals: { div_id: "zk_8", link_class: "zk_7bt", category_class: "zk_4nr"} %>
+    <!--职称证书-->
+  <div id="zk_9">
+  <ul>
+    <li>
+      <a href="#" class="zk_5bt">职称证书</a>
+      <a href="#" class="zk_4nr">这里显示分类(0)</a>
+    </li>
+  </ul>
+  </div>
+  </div>
+  
+  <div id="zk_k2_3">
+    <!--资质代办-->
+    <div id="zk_10">
+      <ul>
+        <li>
+          <%= link_to '资质代办', '#', class: "zk_8bt" %>        
+          <% @seg_zzdb.each do |seg| %>
+            <%= link_to "#{seg.title}(#{seg.qualifies.count})", "#", class: "zk_2nr" %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+    <!--建筑师-->
+    <%= render partial: @seg_jgs, locals: { div_id: "zk_11", link_class: "zk_5bt", category_class: "zk_2nr"} %> 
+    <!--电气工程师-->
+    <%= render partial: @seg_dqgcs, locals: { div_id: "zk_12", link_class: "zk_5bt", category_class: "zk_2nr"} %>  
+  </div>
+  
+  <div id="zk_k2_4">
+    <!--建筑培训-->
+    <div id="zk_13">
+      <ul>
+        <li>
+          <a href="#" class="zk_5bt">建筑培训</a>
+          <a href="#" class="zk_4nr">这里显示分类(0)</a>
+        </li>
+      </ul>
+    </div>
+    <!--注册咨询师-->
+    <%= render partial: @seg_zczxs, locals: { div_id: "zk_14", link_class: "zk_5bt", category_class: "zk_4nr"} %>    
+  </div>
+  </div>
+    <!--全职招聘求职-->
+    <%= render partial: @seg_qz, locals: { div_id: "zk_15", link_class: "zk_9bt", category_class: "zk_2nr"} %>
+</div>

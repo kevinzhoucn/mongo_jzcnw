@@ -7,11 +7,12 @@ RailsAdmin.config do |config|
   ################  Global configuration  ################
 
   # Set the admin name here (optional second array element will appear in red). For example:
-  config.main_app_name = ['Rails3 Mongoid Devise', 'Admin']
+  config.main_app_name = ['Web Jzcnw', 'Admin']
   # or for a more dynamic name:
   # config.main_app_name = Proc.new { |controller| [Rails.application.engine_name.titleize, controller.params['action'].titleize] }
 
   # RailsAdmin may need a way to know who the current user is]
+  config.authorize_with :cancan
   config.current_user_method { current_user } # auto-generated
 
   # If you want to track changes on your models:
@@ -30,7 +31,7 @@ RailsAdmin.config do |config|
   # config.excluded_models = ['User']
 
   # Include specific models (exclude the others):
-  config.included_models = ['User', 'Article', 'Comment', 'Author']
+  config.included_models = ["Record", "User", "Segment", "Category", "UsefulLink", "Resume", "Reply", "SiteConfig"]  
 
   # Label methods for model instances:
   # config.label_methods << :description # Default is [:name, :title]

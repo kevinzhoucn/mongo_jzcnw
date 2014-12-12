@@ -1,0 +1,50 @@
+<%= content_for :styles1 do %>
+  <style type="text/css">
+    #section_seg li{
+      list-style: none;
+      height: 0px;
+      width: 0px;
+      float: left;
+      position: relative;
+      left:200px;
+      top: 2px;
+      border: 1px solid #CCC;
+      background-color: #EEE;
+      overflow:hidden;
+    }
+    #section_seg:hover li{
+      min-height: 200px;
+      width:400px;
+    }
+    #section_seg .fb_b1{
+    }
+  </style>
+<% end %>
+
+<!--内容开始-->
+<div class="center"><img src="/img/release/bt_2.jpg" width="1010" height="78" />  
+</div>
+<div id="ny3_dh">
+  当前位置：
+  <%= render_breadcrumbs :separator => ' / ' %>
+</div>
+<div class="center">
+  <!--选择分类-循环开始-->
+    <div id="section_seg">
+      <% @segments.each do |seg| %>
+      <div class="fb_b1"><%= seg.title %></div>
+      <div class="fb_b2_jianzhu">
+        <ul>
+          <!--小类循环 开始-->
+          <% seg.categories.each do |cat| %>
+            <li><a href="<%= jz_build_link(home_publish_add_path, ['seg=' + seg._id.to_s, 'cat=' + cat._id.to_s] ) %>" class="fb_an"><%= cat.title %></a></li>
+          <% end %>
+          <!--小类循环 结束-->
+        </ul>
+      </div>
+    <% end %>
+  </div>
+  
+  <!--选择分类-循环结束-->
+</div>
+<div class="center"><img src="/img/jianli/bk_1_r4_c1.jpg" /></div>

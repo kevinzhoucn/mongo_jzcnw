@@ -1,0 +1,48 @@
+<div id="top_bjs">
+  <div class="center">
+    <div class="top_nr"><a href="<%= root_url %>" class="link_1">【全国】</a></div>
+  <div class="top_nr">
+    [<a href="#" class="link_2">切换城市</a>&nbsp;
+    <a href="<%= zizhi_province_path('110000') %>" class="link_2">北京</a>&nbsp;
+    <a href="<%= zizhi_province_path('120000') %>" class="link_2">天津</a>&nbsp;
+    <a href="<%= zizhi_province_path('310000') %>" class="link_2">上海</a>&nbsp;
+    <a href="<%= zizhi_province_path('440000') %>" class="link_2">广东</a>&nbsp;
+    <a href="<%= zizhi_province_path('370000') %>" class="link_2">山东</a>]
+  </div>
+  <div id="top_nr_2">
+    <ul>
+      <% if !current_user %>
+        <li>
+          <a href="<%= new_user_session_path %>" class="link_2">会员登录</a>&nbsp;&nbsp;
+          <a href="<%= new_user_registration_path %>" class="link_2">免费注册</a>&nbsp;&nbsp;
+        </li>
+      <% else %>      
+        <% if ( can? :access, :rails_admin ) %>
+          <a href="<%= rails_admin_path %>" class="link_2">
+            <%= current_user.phone_number %>, 管理员
+          </a>&nbsp;&nbsp;
+        <% else %>
+          <li class="dropdown" id="user_menu">
+            <%= link_to(raw("#{current_user.phone_number} <b class='caret'></b>"), profile_show_path(current_user), :class => "dropdown-toggle top_jl", "data-toggle" => "dropdown") %>
+            <ul class="dropdown-menu">
+              <li><%= link_to(t("menu.my_home_page"), "/" ) %></li>
+              <li><%= link_to(t("menu.edit_account_path"), "/") %></li>
+              <li><%= link_to(t("menu.likes"), "/") %></li>
+              <li><%= link_to(t("common.logout"), destroy_user_session_path, { method: :delete, class: 'link_2'}) %></li>
+            </ul>
+          </li>
+        <% end %>
+        <li>
+          <a href="#" class="link_2" title="<%= t('menu.notification') %>">&nbsp;<%= t('menu.notification') %>:0 </a>
+          <%= link_to '退出', destroy_user_session_path, { method: :delete, class: 'link_2'} %>
+        </li>
+      <% end %>
+      <li>
+        <a href="<%= home_publish_url %>" class="link_2", target="_blank">&nbsp;发布</a>&nbsp;</div>
+      </li>
+    </ul>
+  <div class="left">    
+    <%= link_to "创建我的简历", publish_resumes_path, class: "top_jl", target:"_blank" %>
+  </div>
+  </div>
+</div>

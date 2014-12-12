@@ -1,0 +1,47 @@
+%h1 Listing resumes
+
+%table
+  %tr
+    %th Name
+    %th Sex
+    %th Mobile
+    %th Birth year
+    %th Birth month
+    %th Birth day
+    %th Email
+    %th Qq
+    %th Work year
+    %th Edu level
+    %th Register status
+    %th Social security
+    %th Security b
+    %th Intend price
+    %th Person summary
+    %th
+    %th
+    %th
+
+  - @resumes.each do |resume|
+    %tr
+      %td= resume.name
+      %td= resume.sex
+      %td= resume.mobile
+      %td= resume.birth_year
+      %td= resume.birth_month
+      %td= resume.birth_day
+      %td= resume.email
+      %td= resume.qq
+      %td= resume.work_year
+      %td= resume.edu_level
+      %td= resume.register_status
+      %td= resume.social_security
+      %td= resume.security_b
+      %td= resume.intend_price
+      %td= resume.person_summary
+      %td= link_to 'Show', resume
+      %td= link_to 'Edit', edit_resume_path(resume)
+      %td= link_to 'Destroy', resume, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Resume', new_resume_path

@@ -1,0 +1,69 @@
+# Messages for Simplified Chinese (中文（简体）‎)
+# Exported from translatewiki.net
+# Export driver: syck-pecl
+# Author: Hydra
+# Author: Hzy980512
+# Author: Qiyue2001
+zh-CN: 
+  devise: 
+    confirmations: 
+      confirmed: 确认您的帐户。您现在登录。
+      send_instructions: 您将收到一封电子邮件带有关于如何在几分钟内确认您的帐户的说明。
+    failure: 
+      inactive: 您的账户未激活。
+      invalid: 无效的电子邮件地址或密码。
+      invalid_token: 身份标记（Token）无效。
+      locked: 您的帐户被锁定。
+      timeout: 您的会话已过期，请重新登录以继续。
+      unauthenticated: 您必须登入或注册才能继续。
+      unconfirmed: 您必须确认您的账户才能继续。
+    mailer: 
+      confirm_account: 
+        instruction1: 您可以通过以下的链接确认您的账户：
+        link: 确认账户
+        welcome: 欢迎
+      confirmation_instructions: 
+        subject: 确认说明
+      hello: 你好
+      reset_password: 
+        instruction1: 有人请求了更改密码的链接，您可以通过以下的链接这么做。
+        link: 更改我的密码
+        nonrequested: 若不是您请求的，请略过此电邮。
+        warning: 除非您游览以上的链接并且创建一个新的密码，您的密码将不会改变。
+      reset_password_instructions: 
+        subject: 重置密码说明
+      unlock: 
+        instruction1: 您的账户因过量的不成功登入尝试而被锁定了。
+        instruction2: 点击以下的链接以解锁您的账户：
+        link: 解锁我的账户
+      unlock_instructions: 
+        subject: 解锁说明
+    passwords: 
+      link: 忘记了密码吗？
+      send_button: 发给我重置密码的说明
+      send_instructions: 您将收到一封电子邮件，提供有关如何重置您的密码，在几分钟内说明。
+      updated: 您的密码已更改。您现在登录。
+    registrations: 
+      destroyed: 再见！您的帐户已被取消。我们希望很快再次见到你。
+      link: 登记
+      signed_up: 您已成功注册。如果邮件功能开启，那么一封确认信就会送至您的邮箱。
+      updated: 您更新您的帐户。
+    sessions: 
+      link: 登录
+      new: 
+        openid_url: 您的 OpenID 网络地址
+        remember_me: 记住我
+      registered_only: 您必须先登入才能观看内容。
+      sign_out: 注销
+      signed_in: 成功登录。
+      signed_out: 成功注销。
+      signin_group: 登入至%{group}
+    unlocks: 
+      link: 没有收到解锁指令吗？
+      send_instructions: 您将收到一封电子邮件，说明如何在几分钟内解锁您的帐户。
+      unlocked: 您的帐户未锁定。您现在登录。
+  errors: 
+    messages: 
+      already_confirmed: 已确认
+      not_found: 未找到
+      not_locked: 没有锁定

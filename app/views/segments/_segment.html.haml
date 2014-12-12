@@ -1,0 +1,5 @@
+%div{id: "#{div_id}"}
+  %ul
+    %li
+      = link_to segment.title, post_category_path(:seg_name => segment), class: "#{link_class}"
+      = render partial: segment.categories, locals: { class_name: "#{category_class}" }

@@ -16,6 +16,7 @@ class Qualify
   field :type_ids, type: Array, default: []
   field :corp_qualify_status, type: Integer, default: 0
   field :corp_reg_status, type: Integer, default: 0
+  field :agent_price, type: Integer
   field :details, type: String
   field :contact, type: String
   field :contact_phone, type: String

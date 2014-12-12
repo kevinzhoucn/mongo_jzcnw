@@ -62,7 +62,10 @@
         <tr>
           <td height="45" align="right" class="txt_4">
             <span class="txt_2">*</span> 
-            <%= @cat_name ? "#{@cat_name}:" : "资质代办: " %>
+            <%= @cat_name ? "#{@cat_name}" : "资质代办" %>
+            <span style="margin-right:5px" />
+            <br />
+            需求情况            
           </td>
           <td height="45" class="txt_4">            
             <% for item in Qualify::QUALIFY_STATUS %>
@@ -72,7 +75,10 @@
           </td>
         </tr>
         <tr>
-          <td height="45" align="right" class="txt_4"></td>
+          <td height="45" align="right" class="txt_4">
+            <span class="txt_2">*</span>
+            类型:<span style="margin-right:5px" />
+          </td>
           <td height="45" class="txt_4">
             <% for item in Qualify::QUALIFY_TYPE %>
               <%= check_box_tag "qualify[type_ids][]", item[0] %>
@@ -91,7 +97,17 @@
           <td height="45" class="txt_4">
             <%= f.collection_radio :corp_reg_status, Qualify::CORP_REG_STATUS, :first, :last %>
           </td>
+        </tr>       
+
+        <tr>
+          <td height="45" align="right" class="txt_4">代理费用:</td>
+          <td height="45" class="txt_4">
+            <%= f.text_field :agent_price, class: "fb3_sr", style: "width: 80px" %>
+            万元
+            <i>(默认面议)</i>
+          </td>
         </tr>
+
         <tr>
           <td align="right" class="txt_4"><span class="txt_2">*</span> 详细说明：</td>
           <td><textarea name="qualify[details]" class="fb3_sr2"></textarea></td>

@@ -1,0 +1,22 @@
+<div class="box_1003"><img src="/images/bk_r1_c1.jpg" width="1003" height="18"></div>
+
+<div id="fb_nrk_2">
+  <div class="zs_fl1">分类：</div>
+  <div class="zs_fl2">
+    <!--循环开始-->
+    <% @segments.each do |seg| %>
+        <% if !@seg_id.blank? && @seg_id.to_s == seg.id.to_s %>
+            <div class="zs_fl4">
+                <%= seg.title %>
+            </div>
+        <% else %>
+            <div class="zs_fl3">
+                <%= link_to seg.title, post_category_path(:seg_name => seg), class: 'lk_7' %>
+            </div>
+        <% end %>
+    <% end %>
+    <!--循环结束-->
+  </div>
+</div>
+
+<div class="box_1003"><img src="/images/bk_r3_c1.jpg" width="1003" height="19"></div>

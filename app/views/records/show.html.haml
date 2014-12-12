@@ -1,13 +1,13 @@
-#ny3_dh
-  当前位置：
-  = render_breadcrumbs :separator => ' / '
-- if !@record.blank?
-- job_type = @record.job_type
-  - if job_type == 1
-    = render partial: 'records/show_templates/view_content_pinzheng'
-  - elsif job_type == 2
-    = render partial: 'records/show_templates/view_content_guazheng'
-  - elsif job_type == 3
-    = render partial: 'records/show_templates/view_content_pinzheng'
-  - else
-    = render partial: 'records/show_templates/view_content_pinzheng'
+/ #ny3_dh
+/   当前位置：
+/   = render_breadcrumbs :separator => ' / '
+/ - if !@record.blank?
+/ - job_type = @record.job_type
+/   - if job_type == 1
+/     = render partial: 'records/show_templates/view_content_pinzheng'
+/   - elsif job_type == 2
+/     = render partial: 'records/show_templates/view_content_guazheng'
+/   - elsif job_type == 3
+/     = render partial: 'records/show_templates/view_content_pinzheng'
+/   - else
+= render partial: 'records/show_templates/theme_jzcnw/view_content'

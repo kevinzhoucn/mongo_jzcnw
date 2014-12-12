@@ -1,0 +1,107 @@
+<div class="box_1003"><img src="/images/bk_r1_c1.jpg" width="1003" height="18"></div>
+
+<div class="zs_nr1_1">
+  <div class="ny_bt"><%= @record.title %></div>
+  <div class="ny_day">发布时间: <%= @record.created_at.strftime('%Y-%m-%d').to_s %></br>浏览次数：<span class="txt_4"><%= @record.hits %>次 </span></div>
+</div>
+
+
+<div class="zs_nr1_1">
+  <div class="ny_dbk">
+    <div class="ny_l_k1">
+    <table width="710" height="209" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td width="87" align="right" class="txt_6">更新时间：</td>
+          <td width="273" class="txt_4a"><%= @record.updated_at.strftime('%Y-%m-%d').to_s %> </td>
+          <td width="113" align="right" class="txt_6">公司名称：</td>
+          <td width="237"><a href="#" class="lk_7">中建瑞通</a></td>
+        </tr>
+        <tr>
+          <td align="right" class="txt_6">注册情况：</td>
+          <td class="txt_2"><%= @record.register_status %></td>
+          <td align="right" class="txt_6">联 系 人：</td>
+          <td><a href="#" class="lk_7">李先生</a></td>
+        </tr>
+        <tr>
+          <td align="right" class="txt_6">证书类型：</td>
+          <td class="txt_2">证书类型</td>
+          <td align="right" class="txt_6">手机号码：</td>
+          <td class="txt_2">
+            <% if !@record.contact_phone_number.blank? %>
+              <%= @record.contact_phone_number %>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td align="right" class="txt_6">公司地址：</td>
+          <td class="txt_2"></td>
+          <td align="right" class="txt_6">固定地电话：</td>
+          <td class="txt_2"></td>
+        </tr>
+        <tr>
+          <td align="right" class="txt_6">代办价格：</td>
+          <td class="txt_2"><%= @record.price %></td>
+          <td align="right" class="txt_6">注册情况：</td>
+          <td class="txt_2"><%= @record.register_status %></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center"><a href="#"><img src="/images/wyt.jpg" width="139" height="35" border="0"></a></td>
+          <td align="right" class="txt_6">电子邮箱：</td>
+          <td class="txt_2"></td>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+          <td align="right" class="txt_6">详细说明：</td>
+          <td class="txt_2"><%= @record.details %></td>
+        </tr>
+      </tbody></table>
+  </div>
+  
+    <div class="ny_l_k2">
+      <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+        <div class="cont-tab clearfix">
+        
+        </div>
+        <!--详细说明 begin-->
+        <div id="xxsm" class="maincon_clearfix ui-tabs-panel ui-widget-content ui-corner-bottom txt_6"></div>
+        <!--详细说明 end-->
+        <!--公司介绍 begin-->
+        <div id="gsjs" class="maincon_clearfix ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide"></div>
+        <!--公司介绍 end-->
+        <!--兼职招聘职位 begin-->
+        <div id="zpzw" class="maincon_clearfix ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
+          <table border="0" cellspacing="0" cellpadding="0" width="94%" align="center" height="0" class="juli">
+            
+            <!--循环结束-->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ny_zfg"><img src="/images/tm.png" width="28" height="500"></div>
+  
+  <!--右侧内容-->
+  <div class="ny_r_bk">
+    <div class="ny_r1">会员的所有信息</div>
+  <!--循环开始-->
+  <div class="ny_r2">·<a href="#" class="lk_9">标题名称</a></div>
+  <!--循环结束-->
+  <div class="ny_r3"><a href="#" class="lk_9">更多&gt;&gt;</a></div>
+  <!--分割线-->
+  <div class="box_left"><img src="/images/ny_rfg.jpg"></div>
+  
+  <div class="ny_r1">推荐企业</div>
+  <!--循环开始-->
+  <div class="ny_r2">
+  ·<a href="#" class="lk_9">标题名称</a><br>
+  &nbsp;&nbsp;到期时间：2014-01-01 </div>
+  <!--循环结束-->
+  <div class="ny_r3"><a href="#" class="lk_9">更多&gt;&gt;</a></div>
+  
+  </div>
+  
+</div>
+
+<div class="box_1003"><img src="/images/bk_r3_c1.jpg" width="1003" height="19"></div>

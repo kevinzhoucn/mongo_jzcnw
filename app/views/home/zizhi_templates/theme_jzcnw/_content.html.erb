@@ -1,0 +1,29 @@
+<div class="zs_nr1">
+  <div class="zs_nr3">点选之后</div>
+  <div class="zs_nr2"><a href="#" class="lk_6">标题名称</a></div>
+  <div class="zs_nr4"><a href="#" class="lk_8">免费发布信息&gt;&gt;</a></div>
+</div>
+
+<div id="fb_nrk_2">
+  <div class="zs_nz_1">
+    <div class="zs_nz_b1_1"><strong>信息标题</strong></div>
+    <div class="zs_nz_b2"><strong>发布者</strong></div>
+    <div class="zs_nz_b3"><strong>地区</strong></div>
+    <div class="zs_nz_b4"><strong>代办价格</strong></div>
+    <div class="zs_nz_b6"><strong>更新时间</strong></div>
+  </div>
+</div>
+
+<div id="fb_nrk_2">
+  <% @records.each do |record| %>
+    <div class="zs_nz_1">
+      <div class="zs_nz_b1_1"><a href="<%= record_path(record.id) %>" class="lk_7"><%= record.title %></a></div>
+      <div class="zs_nz_b2">发布者</div>
+      <div class="zs_nz_b3"><%= ChinaCity.get(record.locate_province) %></div>
+      <div class="zs_nz_b4"><%= record.price %></div>
+      <div class="zs_nz_b6"><%= record.updated_at.strftime('%Y-%m-%d %H:%M:%S').to_s %></div>
+    </div>
+  <% end %>
+</div>
+
+<div class="box_1003"><img src="/images/bk_r3_c1.jpg" width="1003" height="19"></div>

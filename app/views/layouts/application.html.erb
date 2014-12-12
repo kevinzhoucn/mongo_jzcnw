@@ -3,12 +3,13 @@
 <head>  
   <%= render_page_title %>
   <%= stylesheet_link_tag "application", media: "all" %>
-  <link href="/style_jianzhu/css.css " rel="stylesheet" type="text/css" />
+  <link href="/style_jzcnw/css.css " rel="stylesheet" type="text/css" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <%= render_page_keywords_descriptoin %>
   <!--脚本区域-->
   <%= yield :styles %>
   <%= javascript_include_tag "application" %>
+  <script src="/script/jquery-ui-1.11.1.min.js" type="text/javascript"></script>
   <script type="text/javaScript">
     var myDivId1, divId2, divId3, divId4, divId5;
     function showDiv(myDivId1, divId2, divId3, divId4, divId5)
@@ -18,26 +19,32 @@
       document.getElementById( divId3 ).style.display   = 'none';
       document.getElementById( divId4 ).style.display   = 'none';
       document.getElementById( divId5 ).style.display   = 'none';
-    }
+    }    
   </script>
+  <script type="text/javascript">
+    $(function () {
+      $("#tabs").tabs({ event: 'mouseover' });
+  });
+</script>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <!--头部功能栏-->
-  <%= render :partial => 'common/theme_jianzhu/top_bar' %>
+  <%= render :partial => 'common/theme_jzcnw/top_bar' %>
   <!--LOGO-->
   <!--导航-->
   <% if @home_index_bar %>
-    <%= render :partial => 'common/theme_jianzhu/top_nav_home_index' %>
+    <%= render :partial => 'common/theme_jzcnw/top_nav_home_index' %>
   <% else %>
-    <%= render :partial => 'common/theme_jianzhu/top_nav' %>
+    <%= render :partial => 'common/theme_jzcnw/top_nav_home_index' %>
   <% end %>
+  <%= render :partial => 'common/theme_jzcnw/column_nav' %>
 
   <%= yield %>
   
   <%# if not mobile? %>
     <a class="go-top" href="#" style="background-color:rgb(208, 208, 208)"><i class="icon icons-go-top"></i></a>
-    <%= render partial: 'common/theme_jianzhu/column_foot' %>
+    <%= render partial: 'common/theme_jzcnw/column_foot' %>
   <%# end %>
   
 </body>

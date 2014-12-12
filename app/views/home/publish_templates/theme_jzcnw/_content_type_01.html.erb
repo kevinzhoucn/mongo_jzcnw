@@ -1,0 +1,45 @@
+<div class="box_1003"><img src="/images/ft_1_r1_c1.jpg"></div>
+
+<div id="fb_nrk">
+  <!--面包屑导航-->
+  <div id="fb_mbx_2">
+    <div class="fb_mbx_txt2"><a href="#" class="lk_6">第一步</a></div>
+    <div class="fb_mbx_txt1">第二步</div>
+    <div class="fb_mbx_txt2">第三步</div>
+  </div>
+  <!--内容开始-->
+    <div id="fabu_two" class="my_left_category">
+  <div class="my_left_cat_list">
+  <table width="755" align="center">
+    <tbody>
+      <tr>
+        <% @segments.each_with_index do |seg, index| %>
+          <td>
+            <div class="h2_cat" onmouseover="this.className='h2_cat active_cat'" onmouseout="this.className='h2_cat'">
+              <h3><a href="javascript:void(0);"><%= seg.title %></a></h3>
+                <div class="h3_cat">
+                  <div class="shadow">
+                    <div class="shadow_border">
+                      <ul>
+                        <% seg.categories.each do |cat| %>
+                          <li>
+                            <a href="<%= jz_build_link(home_publish_add_path, ['seg=' + seg._id.to_s, 'cat=' + cat._id.to_s] ) %>"><%= cat.title %></a>
+                          </li>
+                        <% end %>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          <% if (index + 1) % 2 == 0 && index != 0 %>
+            </tr>
+            <tr>
+          <% end %>
+        <% end %>
+  </tbody></table>
+  </div>
+  </div>
+</div>
+
+<div class="box_1003"><img src="/images/ft_1_r5_c1.jpg"></div>

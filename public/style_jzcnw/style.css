@@ -1,7 +1,9 @@
-.soo{font-family: "Ã‹ÃŽÃŒÃ¥";font-size: 12px;color: #999999;height: 25px;width: 460px;border-top-width: 0px;border-right-width: 0px;border-bottom-width: 0px;border-left-width: 0px;overflow: hidden;}
+.soo{font-family: "ËÎÌå";font-size: 12px;color: #999999;height: 25px;width: 460px;border-top-width: 0px;border-right-width: 0px;border-bottom-width: 0px;border-left-width: 0px;overflow: hidden;}
 
-.dl_sr{font-family: "Ã‹ÃŽÃŒÃ¥";font-size: 14px;color: #666666;height: 25px;width: 188px;border-top-width: 0px;border-right-width: 0px;border-bottom-width: 0px;border-left-width: 0px;}
-.dl_sr2{font-family: "Ã‹ÃŽÃŒÃ¥";font-size: 14px;color: #666666;height: 25px;width: 230px;border-top-width: 0px;border-right-width: 0px;border-bottom-width: 0px;border-left-width: 0px;}
+.dl_sr{font-family: "ËÎÌå";font-size: 14px;color: #666666;height: 25px;width: 188px;border-top-width: 0px;border-right-width: 0px;border-bottom-width: 0px;border-left-width: 0px;}
+.dl_sr2{font-family: "ËÎÌå";font-size: 14px;color: #666666;height: 25px;width: 230px;border-top-width: 0px;border-right-width: 0px;border-bottom-width: 0px;border-left-width: 0px;}
+.box_1003_fbbt { background-image: url(../images/ft_1_r3_c1.jpg); width: 1003px; margin-top: 0px; margin-right: auto; margin-bottom: 0px; margin-left: auto; overflow: hidden; }
+
 
 .my_left_category .h2_cat{position: relative; width: 180px; height: 33px; color: #333333; font-weight: bold; font-size: 14px; line-height: 34px;}
 .my_left_category a{color: #333333;text-decoration: none;font-size: 12px;}
@@ -19,23 +21,23 @@
 .my_left_category .active_cat h3{font-weight: bold;}
 .my_left_category .active_cat h3 span{display: none;}
 .my_left_category .active_cat div{display: block;}
+.my_left_cat_list { height: auto; width: 755px; margin-top: 0px; margin-right: auto; margin-bottom: 0px; margin-left: auto; }
 
-.txt_fbxl{font-family: "Ã‹ÃŽÃŒÃ¥";font-size: 14px;color: #000000;line-height: 28px;border: 1px solid #C8C8C8;}
-.txt_fb_sr1{font-family: "Ã‹ÃŽÃŒÃ¥";font-size: 14px;color: #000000;border: 1px solid #C8C8C8;height: 16px;width: 155px;}
-.txt_fb_sr2{font-family: "Ã‹ÃŽÃŒÃ¥";font-size: 14px;color: #000000;border: 1px solid #C8C8C8;height: 16px;width: 45px;}
-.txt_fb_sr3{font-family: "Ã‹ÃŽÃŒÃ¥";font-size: 14px;color: #000000;border: 1px solid #C8C8C8;height: 16px;width: 25px;}
-.txt_fb_sr4{font-family: "Ã‹ÃŽÃŒÃ¥";font-size: 14px;color: #000000;border: 1px solid #C8C8C8;height: 110px;width: 445px;}
-.txt_fb_sr5{font-family: "Ã‹ÃŽÃŒÃ¥";font-size: 14px;color: #000000;border: 1px solid #C8C8C8;height: 16px;width: 305px;}
-.txt_fb_sr6{font-family: "Ã‹ÃŽÃŒÃ¥";font-size: 14px;color: #000000;border: 1px solid #C8C8C8;height: 16px;width: 150px;}
+.txt_fbxl{font-family: "ËÎÌå";font-size: 14px;color: #000000;line-height: 28px;border: 1px solid #C8C8C8;}
+.txt_fb_sr1{font-family: "ËÎÌå";font-size: 14px;color: #000000;border: 1px solid #C8C8C8;height: 16px;width: 155px;}
+.txt_fb_sr2{font-family: "ËÎÌå";font-size: 14px;color: #000000;border: 1px solid #C8C8C8;height: 16px;width: 45px;}
+.txt_fb_sr3{font-family: "ËÎÌå";font-size: 14px;color: #000000;border: 1px solid #C8C8C8;height: 16px;width: 25px;}
+.txt_fb_sr4{font-family: "ËÎÌå";font-size: 14px;color: #000000;border: 1px solid #C8C8C8;height: 110px;width: 445px;}
+.txt_fb_sr5{font-family: "ËÎÌå";font-size: 14px;color: #000000;border: 1px solid #C8C8C8;height: 16px;width: 305px;}
+.txt_fb_sr6{font-family: "ËÎÌå";font-size: 14px;color: #000000;border: 1px solid #C8C8C8;height: 16px;width: 150px;}
 
-.txt_1{font-family: "Ã‹ÃŽÃŒÃ¥";font-size: 14px;color: #F29021;}
-.txt_2{font-family: "Ã‹ÃŽÃŒÃ¥";font-size: 14px;color: #000000;}
+.txt_1{font-family: "ËÎÌå";font-size: 14px;color: #F29021;}
+.txt_2{font-family: "ËÎÌå";font-size: 14px;color: #000000;}
 .txt_3{font-size: 12px;color: #999999;}
 .txt_4{font-size: 14px;color: #FF0000;line-height: 28px;}
 .txt_4a{font-size: 14px;color: #FF0000;}
-.txt_5{font-size: 32px;color: #000000;line-height: 40px;font-family: "ÃŽÂ¢ÃˆÃ­Ã‘Ã…ÂºÃš";}
+.txt_5{font-size: 32px;color: #000000;line-height: 40px;font-family: "Î¢ÈíÑÅºÚ";}
 .txt_6{font-size: 14px;color: #999999;}
-.txt_004{font-family: "å®‹ä½“";font-size: 14px;color: #777777;line-height: 28px;}
 
-.txt_lxme_1{font-family: "ÃŽÂ¢ÃˆÃ­Ã‘Ã…ÂºÃš";font-size: 38px;line-height: 45px;color: #000000;}
-.txt_lxme_2{font-family: "ÃŽÂ¢ÃˆÃ­Ã‘Ã…ÂºÃš";font-size: 28px;line-height: 45px;color: #FF6600;}
+.txt_lxme_1{font-family: "Î¢ÈíÑÅºÚ";font-size: 38px;line-height: 45px;color: #000000;}
+.txt_lxme_2{font-family: "Î¢ÈíÑÅºÚ";font-size: 28px;line-height: 45px;color: #FF6600;}

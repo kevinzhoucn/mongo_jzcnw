@@ -69,12 +69,17 @@ class User
   # user's favorites
   field :favorite_record_ids, type: Array, default: []
 
+  mount_uploader :avatar, AvatarUploader
+
   #index({ email: 1 }, { unique: true, background: true })
   field :user_name, :type => String
+  field :qq, :type => String, default: ""
   validates_presence_of :user_name, :phone_number, :locate_province
   validates_presence_of :company_name, if: :company_type?
 
-  attr_accessible :user_type, :company_name, :phone_number, :locate_province, :locate_city, :user_name, :email, :password, :password_confirmation, :remember_me, :created_at, :updated_at
+  attr_accessible :user_type, :company_name, :phone_number, :locate_province, :locate_city, :user_name, :email, :password, :password_confirmation, :remember_me, :created_at, :updated_at, :qq
+
+  has_one :company
 
   # favorite record
   def favorite_record(record_id)

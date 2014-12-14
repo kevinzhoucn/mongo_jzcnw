@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   before_filter :authenticate_user!, only: [:publish, :add, :create]
   def index
     set_seo_meta t("menu.home_page")
+    set_hightlight_nav(1)
     @seg_yjgcs = Segment.where(code: "yjgcs").first
     @seg_zjs = Segment.where(code: "zjs").first
     @seg_qtzs = Segment.where(code: "qtzs").first
@@ -115,6 +116,7 @@ class HomeController < ApplicationController
 
   def zizhi
     set_seo_meta t("menu.view")
+    set_hightlight_nav(2)
     # @segments = Segment.where(for: 'zs').all.to_a
     @records = Record.all.recent
 

@@ -12,6 +12,19 @@ class ApplicationController < ActionController::Base
     @meta_description = "#{meta_description}" if meta_description.length > 0
   end
 
+  def set_hightlight_nav(id = 1)
+    case id
+    when 1
+      @nav_01 = true
+    when 2
+      @nav_02 = true
+    when 3
+      @nav_03 = true
+    when 4
+      @nav_04 = true
+    end
+  end
+
   def fresh_when(opts = {})
     opts[:etag] ||= []
     # 保证 etag 参数是 Array 类型

@@ -1,7 +1,4 @@
 Rails3MongoidDevise::Application.routes.draw do
-  
-
-
   devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations"}
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
@@ -32,6 +29,7 @@ Rails3MongoidDevise::Application.routes.draw do
   # end
 
   resources :resumes, only: [:show, :create, :new, :update]
+  resources :companyies, only: [:create]
   resources :records, only: [:show, :favorite, :unfavorite] do
     member do
       post :favorite
@@ -47,8 +45,14 @@ Rails3MongoidDevise::Application.routes.draw do
   # resources :replies
 
   #get "profile/index"
-  match '/profiles/:id' => 'profiles#show', via: :get, as: :profile_show
+  # profile routes
+  match '/users/profiles' => 'profiles#show', via: :get, as: :profile_show
+  get '/users/profiles/personal' => 'profiles#personal', as: :profile_personal
+  put '/users/profiles/personal' => 'profiles#personal_update', as: :profile_personal
+  get '/users/profiles/company' => 'profiles#company', as: :profile_company
+  put '/users/profiles/company' => 'profiles#company_update', as: :profile_company
 
+  get '/users/reg/succeed' => 'users#reg_succeed'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

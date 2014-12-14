@@ -4,53 +4,19 @@
   <!--内容 第一排-->
   <div class="hnr_y">
     <!--一级建造师-->
-    <div class="hnr_bt"><a href="#" class="lk_3">一级建造师</a></div>
-    <div class="hnr_nr">
-      <ul>
-        <li><a href="#" class="hnr_lk">建筑工程<span class="txt_3">(xx)</span></a></li>
-        <li><a href="#" class="hnr_lk">市政公用<span class="txt_3">(xx)</span></a></li>
-        <li><a href="#" class="hnr_lk">机电工程<span class="txt_3">(xx)</span></a></li>
-        <li><a href="#" class="hnr_lk">水利水电<span class="txt_3">(xx)</span></a></li>
-        <li><a href="#" class="hnr_lk">公路工程<span class="txt_3">(xx)</span></a></li>
-        <li><a href="#" class="hnr_lk">矿业工程<span class="txt_3">(xx)</span></a></li>
-        <li><a href="#" class="hnr_lk">通信与广电<span class="txt_3">(xx)</span></a></li>
-        <li><a href="#" class="hnr_lk">港口与航道<span class="txt_3">(xx)</span></a></li>
-        <li><a href="#" class="hnr_lk">铁路工程<span class="txt_3">(xx)</span></a></li>
-        <li><a href="#" class="hnr_lk">民航机场<span class="txt_3">(xx)</span></a></li>
-      </ul>
-    </div>  
+    <%= render partial: @seg_yjgcs, locals: { div_class: "zk_1", link_class: "lk_3", category_class: "zk_1nr"} %>
     <!--行 分割线-->
     <div class="box_left"><img src="images/tm.png" width="170" height="20"></div>
     <!--电气工程师-->
-    <div class="hnr_bt"><a href="#" class="lk_3">电气工程师</a></div>
-    <div class="hnr_nr">
-      <ul>
-        <li><a href="#" class="hnr_lk">供配电<span class="txt_3">(xx)</span></a></li>
-        <li><a href="#" class="hnr_lk">发输变电<span class="txt_3">(xx)</span></a></li>
-      </ul>
-    </div>
+    <%= render partial: @seg_dqgcs, locals: { div_id: "zk_12", link_class: "zk_5bt", category_class: "zk_2nr"} %>  
     <!--行 分割线-->
     <div class="box_left"><img src="images/tm.png" width="170" height="20"></div>
     <!--公用设备工程师-->
-    <div class="hnr_bt"><a href="#" class="lk_3">公用设备工程师</a></div>
-    <div class="hnr_nr">
-      <ul>
-        <li><a href="#" class="hnr_lk">暖通空调<span class="txt_3">(xx)</span></a></li>
-        <li><a href="#" class="hnr_lk">给水排水<span class="txt_3">(xx)</span></a></li>
-        <li><a href="#" class="hnr_lk">动力<span class="txt_3">(xx)</span></a></li>
-      </ul>
-    </div>
+    <%= render partial: @seg_gysbgcs, locals: { div_id: "zk_7", link_class: "zk_6bt", category_class: "zk_4nr"} %> 
     <!--行 分割线-->
     <div class="box_left"><img src="images/tm.png" width="170" height="20"></div>
     <!--造价师-->
-    <div class="hnr_bt"><a href="#" class="lk_3">造价师</a></div>
-    <div class="hnr_nr">
-      <ul>
-        <li><a href="#" class="hnr_lk">建设部<span class="txt_3">(xx)</span></a></li>
-        <li><a href="#" class="hnr_lk">水利部<span class="txt_3">(xx)</span></a></li>
-        <li><a href="#" class="hnr_lk">交通部<span class="txt_3">(xx)</span></a></li>
-      </ul>
-    </div>
+    <%= render partial: @seg_zjs, locals: { div_id: "zk_2", link_class: "zk_2bt", category_class: "zk_1nr"} %>
   </div>
   <!--竖 分割线-->
   <div class="box_left"><img src="images/tm.png" width="30" height="100"></div>
@@ -58,59 +24,29 @@
   <!--内容 第二排-->
   <div class="hnr_y">
     <!--二级建造师-->
-    <div class="hnr_bt"><a href="#" class="lk_3">二级建造师</a></div>
+    <div class="hnr_bt"><a href="<%= post_category_path(:seg_name => @seg_ejjzs) %>" class="lk_3">二级建造师</a></div>
     <div class="hnr_nr">
       <ul>
-        <li><a href="#" class="hnr_lk">建筑工程<span class="txt_3">(xx)</span></a></li>
-        <li><a href="#" class="hnr_lk">机电工程<span class="txt_3">(xx)</span></a></li>
-        <li><a href="#" class="hnr_lk">市政公用工程<span class="txt_3">(xx)</span></a></li>
-        <li><a href="#" class="hnr_lk">水利水电工程<span class="txt_3">(xx)</span></a></li>
-        <li><a href="#" class="hnr_lk">公路工程<span class="txt_3">(xx)</span></a></li>
-        <li><a href="#" class="hnr_lk">矿业工程<span class="txt_3">(xx)</span></a></li>
+        <%= render partial: @seg_ejjzs.categories, locals: { class_name: 'zk_2nr'} %>
       </ul>
     </div>
     <!--行 分割线-->
     <div class="box_left"><img src="images/tm.png" width="170" height="20"></div>
     <!--结构师-->
-    <div class="hnr_bt"><a href="#" class="lk_3">结构师</a></div>
-    <div class="hnr_nr">
-      <ul>
-        <li><a href="#" class="hnr_lk">一级结构师<span class="txt_3">(xx)</span></a></li>
-        <li><a href="#" class="hnr_lk">二级结构师<span class="txt_3">(xx)</span></a></li>
-      </ul>
-    </div>
+    <%= render partial: @seg_jgs, locals: { div_id: "zk_8", link_class: "zk_7bt", category_class: "zk_4nr"} %>
     <!--行 分割线-->
     <div class="box_left"><img src="images/tm.png" width="170" height="20"></div>
     <!--建筑师-->
-    <div class="hnr_bt"><a href="#" class="lk_3">建筑师</a></div>
-    <div class="hnr_nr">
-      <ul>
-        <li><a href="#" class="hnr_lk">一级建筑师<span class="txt_3">(xx)</span></a></li>
-        <li><a href="#" class="hnr_lk">二级建筑师<span class="txt_3">(xx)</span></a></li>
-      </ul>
-    </div>
+    <%= render partial: @seg_jgs, locals: { div_id: "zk_11", link_class: "zk_5bt", category_class: "zk_2nr"} %> 
     <!--行 分割线-->
     <div class="box_left"><img src="images/tm.png" width="170" height="20"></div>
     <!--土木工程师-->
-    <div class="hnr_bt"><a href="#" class="lk_3">土木工程师</a></div>
-    <div class="hnr_nr">
-      <ul>
-        <li><a href="#" class="hnr_lk">注册岩土<span class="txt_3">(xx)</span></a></li>
-        <li><a href="#" class="hnr_lk">水利水电<span class="txt_3">(xx)</span></a></li>
-        <li><a href="#" class="hnr_lk">港口航道<span class="txt_3">(xx)</span></a></li>
-      </ul>
-    </div>
+    <%= render partial: @seg_jls, locals: { div_id: "zk_6", link_class: "zk_5bt", category_class: "zk_2nr"} %>
+    
     <!--行 分割线-->
     <div class="box_left"><img src="images/tm.png" width="170" height="20"></div>
     <!--监理师-->
-    <div class="hnr_bt"><a href="#" class="lk_3">监理师</a></div>
-    <div class="hnr_nr">
-      <ul>
-        <li><a href="#" class="hnr_lk">建设部<span class="txt_3">(xx)</span></a></li>
-        <li><a href="#" class="hnr_lk">水利部<span class="txt_3">(xx)</span></a></li>
-        <li><a href="#" class="hnr_lk">交通部<span class="txt_3">(xx)</span></a></li>
-      </ul>
-    </div>
+    <%= render partial: @seg_qtzs, locals: { div_id: "zk_5", link_class: "zk_5bt", category_class: "zk_2nr"} %>
   </div>
   <!--竖 分割线-->
   <div class="box_left"><img src="images/tm.png" width="30" height="100"></div>

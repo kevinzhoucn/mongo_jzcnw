@@ -2,13 +2,45 @@
   <div class="box_left"><img src="/images/top_r5_c1.jpg"></div>
   <div id="dh_bj">
     <ul>
-    <li><div class="dh_lk">首页</div></li>
-    <li><a href="#" class="dh_lk">证书信息</a></li>
-    <li><a href="#" class="dh_lk">资质信息</a></li>
-    <li><a href="#" class="dh_lk">简历库</a></li>
-    <li><a href="#" class="dh_lk">公司黄页</a></li>
-    <li><a href="#" class="dh_lk">证书培训</a></li>
-    <li><a href="#" class="dh_lk">资质查询</a></li>
+      <li>
+        <a href="/" 
+        class="<%= @nav_01 ? 'dh_lk_active' : 'dh_lk_inactive' %>"
+        >
+          首页
+        </a>
+      </li>
+      <li>
+        <a href="<%= zizhi_daiban_path %>" 
+          class="<%= @nav_02 ? 'dh_lk_active' : 'dh_lk_inactive' %>"
+          >证书信息
+        </a>
+      </li>
+      <li>
+        <a href="/" 
+          class="<%= @nav_03 ? 'dh_lk_active' : 'dh_lk_inactive' %>"
+          >资质信息
+        </a>
+      </li>
+      <li>
+        <a href="/" 
+          class="<%= @nav_04 ? 'dh_lk_active' : 'dh_lk_inactive' %>"
+          >简历库
+        </a>
+      </li>
+      <li>
+        <a href="/" 
+          class="<%= @nav_05 ? 'dh_lk_active' : 'dh_lk_inactive' %>"
+          >公司黄页
+        </a>
+      </li>
+      <li>
+        <a href="/" class="<%= @nav_06 ? 'dh_lk_active' : 'dh_lk_inactive' %>">证书培训
+        </a>
+      </li>
+      <li>
+        <a href="/" class="<%= @nav_07 ? 'dh_lk_active' : 'dh_lk_inactive' %>">资质查询
+        </a>
+      </li>
     </ul>
   </div>
   <div class="box_left"><img src="/images/top_r5_c22.jpg"></div>

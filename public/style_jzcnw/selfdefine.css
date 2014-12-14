@@ -1,0 +1,12 @@
+.fb_nk_n4 label, .fb_nk_n4 option {
+  overflow: hidden;
+  text-align: right;
+  padding-right: 17px;
+  font-size: 14px;
+  color: #777777;
+  line-height: 28px;
+}
+
+input.p_input {
+  width: 200px;
+}

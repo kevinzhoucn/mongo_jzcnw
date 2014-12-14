@@ -1,0 +1,8 @@
+<div class="hnr_bt">
+  <%= link_to segment.title, post_category_path(:seg_name => segment), class: "lk_3" %>
+</div>
+<div class="hnr_nr">
+  <ul>    
+    <%= render segment.categories %>
+  </ul>
+</div>

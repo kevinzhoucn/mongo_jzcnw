@@ -1,16 +1,21 @@
 <div class="box_1003"><img src="/images/ft_1_r1_c1.jpg"></div>
 
-<div id="fb_nrk">
-  <!--面包屑导航-->
+
+<div class="box_1003_fbbt">
   <div id="fb_mbx_2">
-    <div class="fb_mbx_txt2"><a href="#" class="lk_6">第一步</a></div>
+    <div class="fb_mbx_txt2"><a href="<%= home_publish_url %>" class="lk_6">第一步</a></div>
     <div class="fb_mbx_txt1">第二步</div>
     <div class="fb_mbx_txt2">第三步</div>
   </div>
+</div>
+
+
+<div id="fb_nrk">
+  <!--面包屑导航-->
   <!--内容开始-->
-    <div id="fabu_two" class="my_left_category">
+  <div id="fabu_two" class="my_left_category">
   <div class="my_left_cat_list">
-  <table width="755" align="center">
+  <table width="755">
     <tbody>
       <tr>
         <% @segments.each_with_index do |seg, index| %>

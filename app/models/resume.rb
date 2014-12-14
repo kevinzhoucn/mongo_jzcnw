@@ -33,7 +33,7 @@ class Resume
   belongs_to :category
   belongs_to :segment
 
-  validates_presence_of :name, :mobile, :edu_level, :person_summary
+  validates_presence_of :name, :edu_level, :person_summary
   validates_presence_of :resume_title, :work_province, :work_city, :price_month, if: :quanzhi_type?
   
   validates_presence_of :job_title, :guakao_price, :register_status, if: :jianzhi_type?

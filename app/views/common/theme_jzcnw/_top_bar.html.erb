@@ -1,24 +1,52 @@
 <div id="top_auto">
   <div class="box_1003">
     <!--城市切换-->
-    <div id="top_1"><span class="txt_1">【全国】</span>&nbsp;<span class="txt_2">[切换城市</span>&nbsp;<a href="#" class="lk_1">北京</a>&nbsp;<a href="#" class="lk_1">上海</a>&nbsp;<a href="#" class="lk_1">天津</a>&nbsp;<a href="#" class="lk_1">深圳</a>&nbsp;<a href="#" class="lk_1">山东</a><span class="txt_2">]</span></div>
-    
+    <div id="top_1">
+      <span class="txt_1">
+        <a href="/" class="lk_1">【全国】</a>
+      </span>
+      <span class="txt_2">[切换城市</span>
+      &nbsp;
+      <a href="<%= zizhi_province_path('110000') %>" class="lk_1">北京</a>
+      &nbsp;
+      <a href="<%= zizhi_province_path('310000') %>" class="lk_1">上海</a>
+      &nbsp;
+      <a href="<%= zizhi_province_path('120000') %>" class="lk_1">天津</a>
+      &nbsp;
+      <a href="<%= zizhi_province_path('440000') %>" class="lk_1">广东</a>
+      &nbsp;
+      <a href="<%= zizhi_province_path('370000') %>" class="lk_1">山东</a>
+      <span class="txt_2">]</span>
+    </div>
     <!--功能选择-->
     <div id="top_2">
       <% if current_user %>
         <div class="top_2a">
-          <a href="#" class="lk_1">会员中心</a>        
+          <a href="<%= profile_show_path %>" class="lk_1">会员中心</a>
         </div>
-        <div class="top_2a"><img src="/images/top_r1_c19.jpg" width="23" height="29"></div>
+        <div class="top_2a">
+          <img src="/images/top_r1_c19.jpg" width="23" height="29">
+        </div>
       <% end %>
-      <div class="top_2a"><a href="<%= home_publish_url %>" class="lk_1">发布</a>&nbsp;&nbsp;</div>
-      <% if !current_user %>
-        <div class="top_2a"><a href="<%= new_user_registration_path %>" class="lk_1">免费注册</a>&nbsp;&nbsp;</div>
-        <div class="top_2a"><a href="<%= new_user_session_path %>" class="lk_1">会员登录</a>&nbsp;&nbsp;</div>
-      <% else %>
-        用户:<%= current_user.phone_number %>
-        &nbsp;&nbsp;
-      <% end %>
+      <div class="top_2a">
+        <a href="<%= home_publish_url %>" class="lk_1">发布</a>&nbsp;&nbsp;
+      </div>
+      <div class="top_2a">
+        <% if !current_user %>
+          <div class="top_2a">
+            <a href="<%= new_user_registration_path %>" class="lk_1">免费注册</a>&nbsp;&nbsp;
+          </div>
+          <div class="top_2a">
+            <a href="<%= new_user_session_path %>" class="lk_1">会员登录</a>&nbsp;&nbsp;
+          </div>
+        <% else %>
+          <div class="top_2a">
+            用户:<%= current_user.phone_number %>
+            <%= link_to '退出', destroy_user_session_path, { method: :delete, class: 'lk_1'} %>
+            &nbsp;
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

@@ -1,0 +1,93 @@
+<div id="m_center">
+  <!--左侧菜单-->
+  <div id="m_left" style="min-height:500px">
+    <div class="m_left_bt">个人中心</div>
+    <a href="<%= profile_personal_path %>" class="m_l_dx">个人信息</a>
+    <a href="<%= profile_company_path %>" class="m_l_dx">公司信息</a>
+  </div>
+  <!---->
+
+  <!--右侧内容-->
+  <div id="m_right" style="min-height:500px">
+    <div class="m_rk">欢迎您，
+      <span class="txt_2"><%= @profile.user_name %></span>，
+      <%= link_to '安全退出', destroy_user_session_path, { method: :delete, class: 'm_ck'} %>
+      &nbsp;&nbsp;&nbsp;
+      成为VIP会员享受更多服务！
+      &nbsp;&nbsp;&nbsp;
+    </div>
+    <div class="left"><img src="/images/member/hy_r4_c4.jpg"></div>
+    <div class="m_rk">
+      <table width="790" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td width="79" height="35">账户状态：</td>
+          <td width="711" height="35">
+            启用中&nbsp;&nbsp;&nbsp;手机未验证
+            <img src="/images/member/m_s1.jpg" width="16" height="18">
+            <img src="/images/member/m_s2.jpg" width="16" height="18">
+            &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
+            营业执照未认证
+            <img src="/images/member/m_y1.jpg" width="23" height="18">
+            &nbsp;
+            <img src="/images/member/m_y2.jpg" width="23" height="18">
+            &nbsp;&nbsp;            
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+    <div class="left"><img src="/images/member/hy_r4_c4.jpg"></div>
+    <div class="m_rk">
+      <div class="m_rbt">24小时内的消息</div>
+      <div class="m_rxh">
+        <table border="0" align="right" cellpadding="0" cellspacing="0">
+          <tbody><tr>
+            <td><img src="/images/member/b1.png"></td>
+            <td></td>
+            <td><img src="/images/member/b2.png"></td>
+            <td></td>
+          </tr>
+        </tbody></table>
+      </div>
+    </div>
+    <div class="m_rk">
+      <table width="791" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td width="383" align="left" bgcolor="#F7F7F7">标题</td>
+          <td width="150" align="center" bgcolor="#F7F7F7"><span class="STYLE1">类型</span></td>
+          <td width="258" align="center" bgcolor="#F7F7F7"><span class="STYLE1">管理</span></td>
+        </tr>
+      </tbody></table>
+    </div>
+    <!--内容循环开始-->
+    <div class="m_rk">
+      <% @records.each do |record| %>
+        <div class="m_x1">
+          <%= link_to record.title, '/', class: "m_ck" %>
+        </div>
+        <div class="m_x2">
+          <img src="/images/member/xs.jpg"><img src="/images/member/wxs.jpg"> 显示中
+        </div>
+        <div class="m_x3">
+        <!--   <a href="#" class="m_ck">置顶</a>
+          &nbsp;&nbsp;
+          <a href="#" class="m_ck">刷新</a>
+          &nbsp;&nbsp;
+          <a href="#" class="m_ck">修改</a>
+          &nbsp;&nbsp;
+          <a href="#" class="m_ck">删除</a> -->
+        </div>                
+      <% end %>      
+    </div>
+    <div class="left"><img src="/images/member/hy_r4_c4.jpg"></div>
+    <!--内容循环结束-->
+    <!-- <div class="m_rk">
+      <p>
+        <strong>说明：</strong> <br> 
+        1、刷新：将您的信息靠前显示，相当于新发一条。<br>
+        2、置顶：将您的信息固定排在页面最顶部，不会被其他信息挤下去。<br>
+        3、已删除：删除后别人就无法看到信息了。自己删除后可恢复，管理员删除的无法恢复，但有些信息可修改合规后再发布。
+      </p>
+    </div> -->
+  </div>
+</div>

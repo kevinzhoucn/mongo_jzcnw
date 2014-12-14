@@ -1,0 +1,127 @@
+<div id="m_center">
+  <!--左侧菜单-->
+  <div id="m_left" style="min-height:500px">
+    <div class="m_left_bt">个人中心</div>
+    <a href="<%= profile_personal_path %>" class="m_l_dx">个人信息</a>
+    <div class="m_left_dx">公司信息</div>
+  </div>
+  <!---->
+
+  <!--右侧内容-->
+  <div id="m_right" style="min-height:500px">
+    <div class="m_rk">欢迎您，
+      <span class="txt_2"><%= @profile.user_name %></span>，
+      <%= link_to '安全退出', destroy_user_session_path, { method: :delete, class: 'm_ck'} %>
+      &nbsp;&nbsp;&nbsp;
+      成为VIP会员享受更多服务！
+      &nbsp;&nbsp;&nbsp;
+    </div>
+    <div class="left"><img src="/images/member/hy_r4_c4.jpg"></div>    
+    <%= simple_form_for @company, url: :profile_company, method: :put do |f| %>
+      <% if @company.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= "#{@company.errors.count}个错误:" %>
+          </h2>
+          <ul>
+            <% @company.errors.full_messages.each do |msg| %>
+              <li style="float:none">
+                <%= msg %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="m_rk">
+        <div class="m_rbt">公司 LOGO</div>
+        <div class="m_rxh">
+        </div>
+      </div>
+      <div class="m_rk">
+        <table width="791" border="0" cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td width="149" rowspan="3" align="center" bgcolor="#F7F7F7">
+                <% if @company.avatar? %>
+                  <img src="<%= @company.avatar.thumb.url if @company.avatar? %>" width="135" height="100" alt="头像">
+                <% else %>
+                  <img src="" width="135" height="100" alt="上传Logo">
+                <% end %>
+                
+              </td>
+              <td width="642" height="40" bgcolor="#F7F7F7">
+                <%= f.file_field :avatar, class: "txt_4" %>
+              </td>
+            </tr>
+            <tr>
+              <td height="40" align="left" bgcolor="#F7F7F7">图片格式:GIF、JPG、JPEG、PNG,最适合尺寸160*120 像素</td>
+            </tr>
+            <tr>
+              <td height="40" align="left" bgcolor="#F7F7F7">保存Logo: 选择好公司Logo，如要替换，请点击"<span class="txt_2">保存</span>"按钮</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="left"><img src="/images/member/hy_r4_c4.jpg"></div>
+      <div class="m_rk">
+        <div class="m_rbt">详细信息</div>
+        <div class="m_rxh">
+        </div>
+      </div>
+      <div class="m_rk">
+        <table width="791" height="200" border="0" cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td align="right">公司名称：</td>
+              <td>
+                <%= f.input_field :name, class: "p_input" %>
+              </td>
+            </tr>
+            <tr>
+              <td align="right">公司简介：</td>
+              <td>
+                <%= f.input_field :summary, class: "p_input" %>
+              </td>
+            </tr>
+            <tr>
+              <td align="right">联系人：</td>
+              <td>
+                <%= f.input_field :contact, class: "p_input" %>
+              </td>
+            </tr>
+            <tr>
+              <td align="right">固定电话：</td>
+              <td>
+                <%= f.input_field :desk_phone, class: "p_input" %>
+              </td>
+            </tr>
+            <tr>
+              <td align="right">公司网址：</td>
+              <td>
+                <%= f.input_field :website, class: "p_input" %>
+              </td>
+            </tr>
+            <tr>
+              <td align="right">公司邮箱：</td>
+              <td>
+                <%= f.input_field :corp_email, class: "p_input" %>
+              </td>
+            </tr>
+            <tr>
+              <td align="right">公司地址：</td>
+              <td>
+                <%= f.input_field :corp_address, class: "p_input" %>
+              </td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>
+                <input name="" type="image" src="/images/member/CompleteEdit.jpg" width="116" height="37">
+              </td>
+            </tr>
+          </tbody>
+        </table>  
+      </div>
+    <% end %>
+  </div>
+</div>

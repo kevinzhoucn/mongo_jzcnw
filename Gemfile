@@ -5,6 +5,7 @@ else
   source 'http://ruby.taobao.org'
 end
 
+ruby '1.9.3'
 gem 'rails', '3.2.16'
 
 # Bundle edge Rails instead:

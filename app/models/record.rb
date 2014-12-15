@@ -13,6 +13,7 @@ class Record
   field :register_status, type: String
   field :title, type: String
   field :job_type, type: Integer
+  # field :record_type, type: Integer
   
   field :company_name, type: String
   field :contact_phone_number, type: String
@@ -24,6 +25,7 @@ class Record
 
   belongs_to :category
   belongs_to :segment
+  belongs_to :user
   has_many :replies
 
   # default_scope desc(:created_at)
@@ -34,6 +36,24 @@ class Record
 
   # counter :hits, default: 0
   scope :fields_for_list, -> { without(:details) }
+
+  def get_user_name
+    record_contact = ''
+    if user_id
+      return self.user.user_name
+    end
+  end
+
+  def get_company_name
+    company_name = ''
+    if user_id
+      if self.user.company
+        if !self.user.company.name.blank?
+          self.user.company.name
+        end
+      end
+    end
+  end
 
   protected
     def zhengshu_type?

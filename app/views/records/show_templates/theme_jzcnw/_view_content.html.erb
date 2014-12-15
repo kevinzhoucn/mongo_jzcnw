@@ -14,13 +14,13 @@
           <td width="87" align="right" class="txt_6">更新时间：</td>
           <td width="273" class="txt_4a"><%= @record.updated_at.strftime('%Y-%m-%d').to_s %> </td>
           <td width="113" align="right" class="txt_6">公司名称：</td>
-          <td width="237"><a href="#" class="lk_7">中建瑞通</a></td>
+          <td width="237"><a href="#" class="lk_7"><%= @record.get_company_name %></a></td>
         </tr>
         <tr>
           <td align="right" class="txt_6">注册情况：</td>
           <td class="txt_2"><%= @record.register_status %></td>
           <td align="right" class="txt_6">联 系 人：</td>
-          <td><a href="#" class="lk_7">李先生</a></td>
+          <td><a href="#" class="lk_7"><%= @record.get_user_name %></a></td>
         </tr>
         <tr>
           <td align="right" class="txt_6">证书类型：</td>

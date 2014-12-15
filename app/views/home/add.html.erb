@@ -1,5 +1,5 @@
 <% if @type_id == '3' %>
   <%= render partial: 'home/publish_templates/theme_jzcnw/content_add_resume' %>
 <% else %>
-  <%= render partial: 'home/publish_templates/theme_jzcnw/content_add', locals: { seg_id: @seg_id, cat_id: @cat_id } %>
+  <%= render partial: 'home/publish_templates/theme_jzcnw/content_add', locals: { seg_id: @seg_id, cat_id: @cat_id, job_type: @job_type } %>
 <% end %>

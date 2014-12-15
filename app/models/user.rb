@@ -75,11 +75,14 @@ class User
   field :user_name, :type => String
   field :qq, :type => String, default: ""
   validates_presence_of :user_name, :phone_number, :locate_province
+  validates_length_of :phone_number, :is => 11
+  validates :phone_number, format: { with: /\d{11}/, message: "Invliad phone number." }
   validates_presence_of :company_name, if: :company_type?
 
   attr_accessible :user_type, :company_name, :phone_number, :locate_province, :locate_city, :user_name, :email, :password, :password_confirmation, :remember_me, :created_at, :updated_at, :qq
 
   has_one :company
+  has_many :records
 
   # favorite record
   def favorite_record(record_id)

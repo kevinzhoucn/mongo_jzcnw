@@ -8,6 +8,7 @@ Rails3MongoidDevise::Application.routes.draw do
   get '/publish' => 'home#publish', as: :home_publish
   match '/publish/:type' => 'home#publish', :via => :get, as: :publish
   match '/publish/:type/add' => 'home#add', :via => :get, :as => :home_publish_add
+  get '/jz/succeed' => 'home#publish_succeed', as: :publish_succeed
   match '/add/resumes' => 'home#publishresumes', via: :get, as: :publish_resumes
   match '/records/create' => 'home#create', :via => :post, :as => :home_records
   # match '/records/:id' => 'home#show', :via => :get, :as => :record_show

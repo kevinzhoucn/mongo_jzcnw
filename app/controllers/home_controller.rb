@@ -20,6 +20,7 @@ class HomeController < ApplicationController
     @resumes = Resume.where(resume_type: 2).recent.all.limit(9).to_a
     @qualifies = Qualify.fields_for_list.recent.all.limit(24).to_a
     # @resumes = Resume.resume_jianzhi.recent
+    @segments = Segment.where(for: "zs").all
 
     @useful_links = UsefulLink.all.limit(15)
 
@@ -48,6 +49,8 @@ class HomeController < ApplicationController
         else type_id == '6'
           # @job_type = 2
         end
+      elsif type_id = '3'
+        @segments = Segment.where(for: "zs").all
       elsif ( type_id == '9' or type_id == '10' )
         @segments = Segment.where(for: "zz").all
       else

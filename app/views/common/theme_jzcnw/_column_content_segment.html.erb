@@ -54,20 +54,19 @@
   <!--内容 第三排-->
   <div class="hnr_y">
     <!--个人兼职简历-->
-    <div class="hnr_bt"><a href="/" class="lk_3">个人兼职简历</a></div>
+    <div class="hnr_bt"><a href="<%= resume_category_path %>" class="lk_3">个人兼职简历</a></div>
     <div class="hnr_nr">
       <ul>
-        <li><a href="/" class="hnr_lk">二级建造师<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">一级建造师<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">初级职称证书<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">结构师<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">建筑师<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">造价师<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">公用设备工程师<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">注册咨询师<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">监理师<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">电气工程师<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">土木工程师<span class="txt_3">(xx)</span></a></li>
+        <% @segments.each do |segment| %>
+          <li>
+            <a href="<%= resume_category_path(seg_name: segment.id) %>" class="hnr_lk">
+              <%= segment.title %>
+              <span>(<%= segment.resumes.count %>)</span>
+            </a>
+          </li>
+        <% end %>
+        <li><a href="#" class="hnr_lk"><span class="txt_3"></span></a></li>
+
       </ul>
     </div>
     <!--行 分割线-->

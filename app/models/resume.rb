@@ -39,6 +39,7 @@ class Resume
   validates_presence_of :job_title, :guakao_price, :register_status, if: :jianzhi_type?
 
   scope :resume_jianzhi, -> {where(:resume_type => 2)}
+  scope :fields_for_list, -> { without(:person_summary) }
 
   def birthday
     if !birth_day.blank? && !birth_month.blank? && !birth_day.blank?

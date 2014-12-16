@@ -16,6 +16,7 @@ Rails3MongoidDevise::Application.routes.draw do
 
   match '/categories/(:cat_name)' => 'home#zizhi', :as => :zizhi_daiban
   match '/posts(/:seg_name)(/:cat_name)(/:province)(/:city)' => 'home#zizhi', as: :post_category
+  get '/resume(/:seg_name)(/:cat_name)(/:province)(/:city)' => 'resumes#index', as: :resume_category
   match '/qualification(/:type)(/:seg_name)(/:cat_name)(/:province)(/:city)' => 'home#qualify', as: :home_qualify
   # scope '(home)' do
   #   controller :home do
@@ -29,7 +30,7 @@ Rails3MongoidDevise::Application.routes.draw do
   #   end
   # end
 
-  resources :resumes, only: [:show, :create, :new, :update]
+  resources :resumes, only: [:index, :show, :create]
   resources :companyies, only: [:create]
   resources :records, only: [:show, :favorite, :unfavorite] do
     member do

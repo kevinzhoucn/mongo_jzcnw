@@ -49,8 +49,9 @@ class ResumesController < ApplicationController
   def show
     set_seo_meta t("menu.resume")
     @resume = Resume.find(params[:id])
+    @resume.inc(:hits, 1)
     
-    fresh_when(etag: [@record])
+    fresh_when(etag: [@resume])
 
     respond_to do |format|
       format.html # show.html.erb

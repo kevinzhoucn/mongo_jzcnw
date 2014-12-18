@@ -59,10 +59,7 @@
       <ul>
         <% @segments.each do |segment| %>
           <li>
-            <a href="<%= resume_category_path(seg_name: segment.id) %>" class="hnr_lk">
-              <%= segment.title %>
-              <span>(<%= segment.resumes.count %>)</span>
-            </a>
+            <%= link_to "#{segment.title}(#{segment.resumes.count})", resume_category_path(:seg_name => segment), class: 'hnr_lk' %>
           </li>
         <% end %>
         <li><a href="#" class="hnr_lk"><span class="txt_3"></span></a></li>
@@ -128,19 +125,14 @@
     <!--行 分割线-->
     <div class="box_left"><img src="/images/tm.png" width="170" height="20"></div>
     <!--资质代办-->
-    <div class="hnr_bt"><a href="/" class="lk_3">资质代办</a></div>
+    <div class="hnr_bt"><a href="<%= agent_category_path %>" class="lk_3">资质代办</a></div>
     <div class="hnr_nr">
       <ul>
-        <li><a href="/" class="hnr_lk">总承包资质办理<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">园林绿化资质代办<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">施工专业承包资质<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">园林绿化资质代办<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">设计施工一体化资质..<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">代办劳务分包资质<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">代办企业资质<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">建筑企业资质办理<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">代办资质证书<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">更多<span class="txt_3">(xx)</span></a></li>
+        <% @seg_zzdb.each do |segment| %>
+          <li>
+            <%= link_to "#{segment.title}(#{segment.records.count})", agent_category_path(:seg_name => segment), class: 'hnr_lk' %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>

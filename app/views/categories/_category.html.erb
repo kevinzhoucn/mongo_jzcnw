@@ -1,3 +1,3 @@
 <li>
-  <%= link_to "#{category.title}(#{category.records.count})", post_category_path(:seg_name => category.segment_id, :cat_name => category), class: 'hnr_lk' %>
+  <%= link_to "#{category.title}<span>(#{category.records.count})</span>".html_safe, post_category_path(:seg_name => category.segment_id, :cat_name => category), class: 'hnr_lk' %>
 </li>

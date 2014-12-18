@@ -27,6 +27,7 @@ class Resume
   field :resume_type, type: Integer
   field :job_title, type: Integer
   field :guakao_price, type: String
+  field :hits, type: Integer, default: 0
 
   mount_uploader :avatar, AvatarUploader
   
@@ -45,6 +46,10 @@ class Resume
     if !birth_day.blank? && !birth_month.blank? && !birth_day.blank?
       birth_year + '-' + birth_month + '-' + birth_day
     end
+  end
+
+  def get_age
+    
   end
 
   protected

@@ -82,6 +82,6 @@ test:
 production:
   sessions:
     default:
-      database: jzcnw_01_test
+      database: jzcnw_01_production
       hosts:
         - localhost:27017

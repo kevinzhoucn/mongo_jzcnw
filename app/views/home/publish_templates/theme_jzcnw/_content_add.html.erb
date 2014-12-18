@@ -31,9 +31,7 @@
     <table width="964" height="323" border="0" cellpadding="0" cellspacing="0">
       <input type="hidden" name="record[segment_id]" value="<%= seg_id %>" >
       <input type="hidden" name="record[category_id]" value="<%= cat_id %>" >
-      <% if job_type %>
-        <input type="hidden" name="record[job_type]" value="<%= job_type %>" >
-      <% end %>
+      <input type="hidden" name="record[job_type]" value="<%= job_type %>" >
       <tr>
         <td width="125" height="45" align="right" class="txt_004"><span class="txt_4">*</span> 标题：</td>
         <td width="566" height="45">
@@ -41,7 +39,14 @@
         </td>
       </tr>
       <tr>
-        <td height="45" align="right" class="txt_004"><span class="txt_4">*</span> 证书所在地：</td>
+        <td height="45" align="right" class="txt_004"><span class="txt_4">*</span> 
+          <% if job_type == '1' or job_type == '2' %>
+            证书所在地：
+          <% end %>
+          <% if job_type == '5' or job_type == '6' or job_type == '7' or job_type == '8' or job_type == '9' %>
+            服务区域：
+          <% end %>
+        </td>
         <td height="45">
           <div class="city-group">
             <select name="record[locate_province]" class="txt_004 city-select">
@@ -57,18 +62,28 @@
           </div>
         </td>
       </tr>
+
+      <% if job_type == '1' or job_type == '2' %>
+        <tr>
+          <td height="45" align="right" class="txt_004"><span class="txt_4">*</span> 注册情况：</td>
+          <td height="45" class="txt_004"><input type="radio" name="record[register_status]" value="初始注册" />
+            初始注册
+            <input type="radio" name="record[register_status]" value="转注册" />
+            转注册
+            <input type="radio" name="record[register_status]" value="两者皆可" />
+            两者皆可
+          </td>
+        </tr>
+      <% end %>
       <tr>
-        <td height="45" align="right" class="txt_004"><span class="txt_4">*</span> 注册情况：</td>
-        <td height="45" class="txt_004"><input type="radio" name="record[register_status]" value="初始注册" />
-          初始注册
-          <input type="radio" name="record[register_status]" value="转注册" />
-          转注册
-          <input type="radio" name="record[register_status]" value="两者皆可" />
-          两者皆可
+        <td height="45" align="right" class="txt_004">          
+          <% if job_type == '1' or job_type == '2' %>
+            薪资水平:
+          <% end %>
+          <% if job_type == '5' or job_type == '6' or job_type == '7' or job_type == '8' or job_type == '9' %>
+            代办价格：
+          <% end %>
         </td>
-      </tr>
-      <tr>
-        <td height="45" align="right" class="txt_004">薪资水平:</td>
         <td height="45" class="txt_004">
           <select name="record[price]" class="txt_004">
             <option value="" selected="selected">面议</option>
@@ -80,11 +95,13 @@
             <option value="10-15万元">10-15万元</option>
             <option value="15万元以上">15万元以上</option>
           </select>
-          职称：
-          <select name="record[job_title]" class="txt_004">
-            <option value="没有">没有</option>
-            <option value="有">有</option>
-          </select>
+          <% if job_type == '1' or job_type == '2' %>
+            职称：
+            <select name="record[job_title]" class="txt_004">
+              <option value="没有">没有</option>
+              <option value="有">有</option>
+            </select>
+          <% end %>
         </td>
       </tr>
       <tr>

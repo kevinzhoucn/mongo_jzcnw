@@ -24,7 +24,11 @@
         </tr>
         <tr>
           <td align="right" class="txt_6">证书类型：</td>
-          <td class="txt_2">证书类型</td>
+          <td class="txt_2">
+            <%= @record.segment.title %>
+            -
+            <%= @record.category.title %>
+          </td>
           <td align="right" class="txt_6">手机号码：</td>
           <td class="txt_2">
             <% if !@record.contact_phone_number.blank? %>
@@ -45,7 +49,9 @@
           <td class="txt_2"><%= @record.register_status %></td>
         </tr>
         <tr>
-          <td colspan="2" align="center"><a href="#"><img src="/images/wyt.jpg" width="139" height="35" border="0"></a></td>
+          <!-- <td colspan="2" align="center"><a href="#"><img src="/images/wyt.jpg" width="139" height="35" border="0"></a></td> -->
+          <td></td>
+          <td></td>
           <td align="right" class="txt_6">电子邮箱：</td>
           <td class="txt_2"></td>
         </tr>

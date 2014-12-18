@@ -12,7 +12,7 @@ class Record
   field :price, type: String
   field :register_status, type: String
   field :title, type: String
-  field :job_type, type: Integer
+  field :job_type, type: Integer #[1 geren, 2 gongsi, 3 jianli, 4 quanzhi, 5 zizhi daiban, 6 zizhi chuanrang, 7 qiugouzizhi, 8 zizhixiangmu, 9 xiangmuzizhi ]
   # field :record_type, type: Integer
   
   field :company_name, type: String

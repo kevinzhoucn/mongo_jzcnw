@@ -12,7 +12,11 @@
         <% else %>
             <div class="zs_fl3">
                 <% if controller_name == 'home' %>
-                    <%= link_to seg.title, post_category_path(:seg_name => seg), class: 'lk_7' %>
+                    <% if action_name == 'zizhi_agent' %>
+                        <%= link_to seg.title, agent_category_path(:seg_name => seg), class: 'lk_7' %>
+                    <% else %>
+                        <%= link_to seg.title, post_category_path(:seg_name => seg), class: 'lk_7' %>
+                    <% end %>
                 <% elsif controller_name == 'resumes' %>
                     <%= link_to seg.title, resume_category_path(:seg_name => seg), class: 'lk_7' %>
                 <% end %>

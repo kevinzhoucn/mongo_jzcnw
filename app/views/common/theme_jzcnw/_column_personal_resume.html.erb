@@ -1,0 +1,20 @@
+<div class="box_1003">
+  <div class="h_tk1">最新简历</div>
+  <div class="h_tk2"><a href="<%= resume_category_path %>" class="lk_2">更多 &gt;&gt;</a></div>
+  <div class="h_tk3">
+    <!--循环 开始 呈 单数显示-->
+    <% @resumes.each do | resume | %>
+      <div class="h_tk3_b">
+        &gt;&gt;&nbsp;
+        <a href="<%= resume_path(resume) %>" class="lk_4"><%= resume.name %></a>
+        &nbsp;&nbsp;
+        <span class="txt_3">
+          <%= resume.created_at.strftime('%Y-%m-%d').to_s %>
+        </span>
+      </div>
+    <% end %>
+    <!--循环 结束 呈 单数显示-->
+  </div>
+</div>
+
+<div class="box_1003"><img src="images/h_tk_r4_c1.jpg"></div>

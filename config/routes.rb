@@ -18,6 +18,7 @@ Rails3MongoidDevise::Application.routes.draw do
   match '/posts(/:seg_name)(/:cat_name)(/:province)(/:city)' => 'home#zizhi', as: :post_category
   get '/resume(/:seg_name)(/:cat_name)(/:province)(/:city)' => 'resumes#index', as: :resume_category
   match '/qualification(/:type)(/:seg_name)(/:cat_name)(/:province)(/:city)' => 'home#qualify', as: :home_qualify
+  get 'agent(/:seg_name)(/:cat_name)(/:province)(/:city)' => 'home#zizhi_agent', as: :agent_category
   # scope '(home)' do
   #   controller :home do
   #     get '/' => :index

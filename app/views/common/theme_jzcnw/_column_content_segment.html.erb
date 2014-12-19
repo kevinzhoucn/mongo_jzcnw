@@ -12,11 +12,10 @@
     <!--行 分割线-->
     <div class="box_left"><img src="/images/tm.png" width="170" height="20"></div>
     <!--公用设备工程师-->
-    <%= render partial: @seg_gysbgcs, locals: { div_id: "zk_7", link_class: "zk_6bt", category_class: "zk_4nr"} %> 
     <!--行 分割线-->
     <div class="box_left"><img src="/images/tm.png" width="170" height="20"></div>
     <!--造价师-->
-    <%= render partial: @seg_zjs, locals: { div_id: "zk_2", link_class: "zk_2bt", category_class: "zk_1nr"} %>
+    
   </div>
   <!--竖 分割线-->
   <div class="box_left"><img src="/images/tm.png" width="30" height="100"></div>
@@ -37,16 +36,13 @@
     <!--行 分割线-->
     <div class="box_left"><img src="/images/tm.png" width="170" height="20"></div>
     <!--建筑师-->
-    <%= render partial: @seg_jgs, locals: { div_id: "zk_11", link_class: "zk_5bt", category_class: "zk_2nr"} %> 
-    <!--行 分割线-->
-    <div class="box_left"><img src="/images/tm.png" width="170" height="20"></div>
     <!--土木工程师-->
-    <%= render partial: @seg_jls, locals: { div_id: "zk_6", link_class: "zk_5bt", category_class: "zk_2nr"} %>
     
+    <%= render partial: @seg_zczxs, locals: { div_id: "zk_5", link_class: "zk_5bt", category_class: "zk_2nr"} %>
     <!--行 分割线-->
     <div class="box_left"><img src="/images/tm.png" width="170" height="20"></div>
     <!--监理师-->
-    <%= render partial: @seg_qtzs, locals: { div_id: "zk_5", link_class: "zk_5bt", category_class: "zk_2nr"} %>
+    
   </div>
   <!--竖 分割线-->
   <div class="box_left"><img src="/images/tm.png" width="30" height="100"></div>
@@ -54,50 +50,20 @@
   <!--内容 第三排-->
   <div class="hnr_y">
     <!--个人兼职简历-->
-    <div class="hnr_bt"><a href="<%= resume_category_path %>" class="lk_3">个人兼职简历</a></div>
-    <div class="hnr_nr">
-      <ul>
-        <% @segments.each do |segment| %>
-          <li>
-            <%= link_to "#{segment.title}(#{segment.resumes.count})", resume_category_path(:seg_name => segment), class: 'hnr_lk' %>
-          </li>
-        <% end %>
-        <li><a href="#" class="hnr_lk"><span class="txt_3"></span></a></li>
-
-      </ul>
-    </div>
+    <%= render partial: @seg_gysbgcs, locals: { div_id: "zk_7", link_class: "zk_6bt", category_class: "zk_4nr"} %> 
     <!--行 分割线-->
     <div class="box_left"><img src="/images/tm.png" width="170" height="20"></div>
+  
+    <%= render partial: @seg_jls, locals: { div_id: "zk_6", link_class: "zk_5bt", category_class: "zk_2nr"} %>
+    
+
+    <div class="box_left"><img src="/images/tm.png" width="170" height="20"></div>
+    <div class="box_left"><img src="/images/tm.png" width="170" height="20"></div>
     <!--注册咨询师-->
-    <div class="hnr_bt"><a href="/" class="lk_3">注册咨询师</a></div>
-    <div class="hnr_nr">
-      <ul>
-        <li><a href="/" class="hnr_lk">环境工程和生态建设<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">市政公用工程<span class="txt_3">(xx)</span></a></li>
-      </ul>
-    </div>
+    <%= render partial: @seg_zjs, locals: { div_id: "zk_2", link_class: "zk_2bt", category_class: "zk_1nr"} %>
     <!--行 分割线-->
     <div class="box_left"><img src="/images/tm.png" width="170" height="20"></div>
     <!--其他证书-->
-    <div class="hnr_bt"><a href="/" class="lk_3">其他证书</a></div>
-    <div class="hnr_nr">
-      <ul>
-        <li><a href="/" class="hnr_lk">城市规划师<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">环评工程师<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">房地产估价师<span class="txt_3">(xx)</span></a></li>
-      </ul>
-    </div>
-    <!--行 分割线-->
-    <div class="box_left"><img src="/images/tm.png" width="170" height="20"></div>
-    <!--注册消防工程师-->
-    <div class="hnr_bt"><a href="/" class="lk_3">注册消防工程师</a></div>
-    <div class="hnr_nr">
-      <ul>
-        <li><a href="/" class="hnr_lk">视频课程</a></li>
-        <li><a href="/" class="hnr_lk">在线做题</a></li>
-        <li><a href="/" class="hnr_lk">考试资讯</a></li>
-      </ul>
-    </div>
   </div>
   <!--竖 分割线-->
   <div class="box_left"><img src="/images/tm.png" width="30" height="100"></div>
@@ -105,27 +71,32 @@
   <!--内容 第四排-->
   <div class="hnr_y">
     <!--初/中/高级职称证书-->
-    <div class="hnr_bt"><a href="/" class="lk_3">初/中/高级职称证书</a></div>
+    <div class="hnr_bt">
+      <a href="<%= resume_category_path %>" class="lk_3">个人兼职简历</a>
+    </div>
     <div class="hnr_nr">
       <ul>
-        <li><a href="/" class="hnr_lk">建筑/建筑施工..<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">园林设计/园艺..<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">建筑电气类<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">给排水<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">暖通/暖通空调..<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">市政/公路<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">工民建<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">机械、自动化类..<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">园林绿化<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">水利水电/化工..<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">建设设计/测量..<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">更多<span class="txt_3">(xx)</span></a></li>
+        <% @segments.each do |segment| %>
+          <li>
+            <%= link_to "#{segment.title}(#{segment.resumes.count})", resume_category_path(:seg_name => segment), class: 'hnr_lk' %>
+          </li>
+        <% end %>
       </ul>
     </div>
     <!--行 分割线-->
     <div class="box_left"><img src="/images/tm.png" width="170" height="20"></div>
     <!--资质代办-->
-    <div class="hnr_bt"><a href="<%= agent_category_path %>" class="lk_3">资质代办</a></div>
+    <%= render partial: @seg_qtzs, locals: { div_id: "zk_5", link_class: "zk_5bt", category_class: "zk_2nr"} %>
+  </div>
+  <!--竖 分割线-->
+  <div class="box_left"><img src="/images/tm.png" width="30" height="100"></div>
+  
+  <!--内容 第五排-->
+  <div class="hnr_y">
+    <!--全职招聘-->
+    <div class="hnr_bt">
+      <a href="<%= agent_category_path %>" class="lk_3">资质代办</a>
+    </div>
     <div class="hnr_nr">
       <ul>
         <% @seg_zzdb.each do |segment| %>
@@ -135,48 +106,10 @@
         <% end %>
       </ul>
     </div>
-  </div>
-  <!--竖 分割线-->
-  <div class="box_left"><img src="/images/tm.png" width="30" height="100"></div>
-  
-  <!--内容 第五排-->
-  <div class="hnr_y">
-    <!--全职招聘-->
-    <div class="hnr_bt"><a href="/" class="lk_3">全职招聘</a></div>
-    <div class="hnr_nr">
-      <ul>
-        <li><a href="/" class="hnr_lk">工程/项目管理<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">建筑设计<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">土木/工程<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">给排水/暖通/空调..<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">市政/路桥/轨道/..<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">造价/预算/评估/..<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">现场专业人员<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">装饰装修/室内设计..<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">钢结构<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">综合管理<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">园林景观<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">环境工程<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">市场/营销/策划<span class="txt_3">(xx)</span></a></li>
-      </ul>
-    </div>
     <!--行 分割线-->
     <div class="box_left"><img src="/images/tm.png" width="170" height="20"></div>
-    <!--资质代办-->
-    <div class="hnr_bt"><a href="/" class="lk_3">新版资质代办</a></div>
-    <div class="hnr_nr">
-      <ul>
-        <li><a href="/" class="hnr_lk">施工专业承包资质<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">施工总承包资质<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">设计施工一体化资质..<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">园林绿化资质<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">施工劳务分包资质<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">设计资质<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">监理资质<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">勘察资质<span class="txt_3">(xx)</span></a></li>
-        <li><a href="/" class="hnr_lk">其他资质<span class="txt_3">(xx)</span></a></li>
-      </ul>
-    </div>
+    <!--其它证书-->
+
   </div>
 </div>
 

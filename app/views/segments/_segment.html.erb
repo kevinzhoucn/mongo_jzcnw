@@ -1,5 +1,5 @@
 <div class="hnr_bt">
-  <%= link_to segment.title, post_category_path(:seg_name => segment), class: "lk_3" %>
+  <%= link_to truncate(strip_tags(segment.title), :length => 10), post_category_path(:seg_name => segment), class: "lk_3" %>
 </div>
 <div class="hnr_nr">
   <ul>    

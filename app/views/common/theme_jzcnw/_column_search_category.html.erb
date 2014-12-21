@@ -27,4 +27,31 @@
   </div>
 </div>
 
+<div id="fb_nrk_2">
+  <div class="zs_fl1">分类：</div>
+  <div class="zs_fl2">
+    <!--循环开始-->
+    <% @categories.each do |cat| %>
+        <% if !@cat_name.blank? && @cat_name.to_s == cat.id.to_s %>
+            <div class="zs_fl4">
+                <%= cat.title %>
+            </div>
+        <% else %>
+            <div class="zs_fl3">
+                <% if controller_name == 'home' %>
+                    <% if action_name == 'zizhi_agent' %>
+                        <%= link_to cat.title, agent_category_path(:cat_name => cat), class: 'lk_7' %>
+                    <% else %>
+                        <%= link_to cat.title, post_category_path(:cat_name => cat), class: 'lk_7' %>
+                    <% end %>
+                <% elsif controller_name == 'resumes' %>
+                    <%= link_to cat.title, resume_category_path(:cat_name => cat), class: 'lk_7' %>
+                <% end %>
+            </div>
+        <% end %>
+    <% end %>
+    <!--循环结束-->
+  </div>
+</div>
+
 <div class="box_1003"><img src="/images/bk_r3_c1.jpg" width="1003" height="19"></div>

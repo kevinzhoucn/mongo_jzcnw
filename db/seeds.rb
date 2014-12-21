@@ -141,6 +141,7 @@ Category.delete_all
 Segment.delete_all
 Record.delete_all
 Qualify.delete_all
+Resume.delete_all
 categories = Category.create! ([{code: "jzs", title: "建造师", top: 1}, {code: "xmjl", title: "项目经理", top: 2},
                {code: "xmgl", title: "项目管理", top: 3}, {code: "gcs", title: "工程师", top: 4},
                {code: "zrgcs", title: "责任工程师", top: 5}, {code: "gz", title: "工长", top: 6},
